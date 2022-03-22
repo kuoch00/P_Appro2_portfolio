@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="resources/bootstrap-5.1.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="resources/fontawesome-free-6.1.0-web/css/all.css">
     <link rel="stylesheet" href="resources/css/stylesheet.css">
+    <link rel="stylesheet" href="resources/css/mediaQueries.css">
 
     <!-- js scripts -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

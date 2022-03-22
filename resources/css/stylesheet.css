@@ -1,3 +1,9 @@
+/*
+auteur : Elisa Kuoch
+date de création : 22.03.2022
+description : Feuille de style CSS
+
+ */
 :root{
     --accent-color:#cc8645;
 
@@ -76,7 +82,7 @@ body{
 .txt-img-container{
     position: relative;
     text-align: center;
-    color: white;
+    color: var(--txt-color);
 }
  
 /* footer  */
@@ -98,12 +104,19 @@ body{
 
 }
  
-
 a.btn.btn.btn-outline-light.btn-floating.m-2:hover{
     color: var(--txt-color);
     background-color: var(--accent-color);
 }
 
+/*general*/
 p{
     color: var(--txt-color);
+    text-align: justify;
 }
+
+.container-item{
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
