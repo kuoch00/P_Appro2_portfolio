@@ -12,12 +12,94 @@
 }
 body{
     margin: 0%;
+    
+    background-color: var(--mainbg-color);
 }
-/*doesnt work ??*/
-.gradient{
-    background: -moz-linear-gradient(90deg, rgba(2,0,36,0) 0%, rgba(9,9,121,1) 44%, rgba(0,212,255,1) 100%);
-    height: 500px;
-    width: 100px;
+.header-container{
+    min-width: 100%;
+    width: 100%;
+    height: auto;
+
+    /* centers image  */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.gradient-overlay{
+    position: relative;
+    /* width: 100%; */
+    height: auto;
+    text-align: center;
+    
+    /* left: 0;
+    right: 0;
+    top: -100%;
+    bottom: 12.75%;
+
+    background: url(../img/head2.png);
+    background-repeat: repeat-x; */
+    
+    
+    /* background: -moz-linear-gradient(90deg, rgba(2,0,36,0) 0%, rgba(9,9,121,1) 44%, rgba(0,212,255,1) 100%);
+    height: 100;
+    width: 100px; */
 
     /* https://cssgradient.io/ */
 }
+.gradient-overlay::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(0deg, #000000 0%, rgba(0, 0, 0, 0) 33.33%);
+}
+.header-img{
+    width: 100%;
+    /* bizarre ce truc  */
+    max-width: 1920px;
+    max-height: auto;
+    
+}
+.navbar-light{
+    background-color: var(--accent-color);
+}
+.nav-link.active{
+    font-weight: bolder;
+    
+}
+.navbar-light .navbar-nav .nav-link, .navbar-light .navbar-nav .nav-link.nav-link.active, .navbar-light .navbar-nav .nav-link.nav-link:focus{
+    color: white;
+}
+.navbar-light .navbar-nav .nav-link:hover {
+    font-weight: bold;
+    color: white;
+}
+.nav-item{
+    margin-right: 20px;
+}
+.title{
+    position: absolute;
+    bottom: 8px;
+    left: 15%;
+}
+.txt-img-container{
+    position: relative;
+    text-align: center;
+    color: white;
+}
+ 
+.footer-container{
+    /* width: 100%; */
+    background-color: var(--footer-color);
+    border-radius: 35px ;
+    color: var(--txt-color);
+    padding-top: 32px;
+    padding-left: 61px ;
+    padding-bottom: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+ 
