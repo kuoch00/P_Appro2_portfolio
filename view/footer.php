@@ -1,8 +1,16 @@
+
+<!-- 
+auteur : Elisa Kuoch
+date de création : 22.03.2022
+description : footer de la page
+-->
+
+
 <footer>
     <div class="container">
         
         <div class="footer-container ">
-            <div class="footer-section">
+            <div class="footer-section ">
                 <h4>Sarah Souffleur</h4>
                 <!-- Grid container -->
                 <div>
@@ -34,14 +42,13 @@
                 </div>
                 <!-- Grid container -->
 
-                <p></p>
             </div>
-            <div class="footer-section">
-                <p></p>
-                <div class="text-center p-3">
-                    <p> © 2020 Copyright:</p>
+            <div class="footer-section" style="display:block">
+                
+                <div class="text-center p-3" style="align-self: center;">
+                    <p> All rights reserved </p>
                 </div>
-                <p></p>
+                
             </div>
         </div>
         

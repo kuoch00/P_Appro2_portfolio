@@ -1,3 +1,10 @@
+
+<!-- 
+auteur : Elisa Kuoch
+date de création : 22.03.2022
+description : header de la page (image avec menu de navigation)
+-->
+
 <header>
     <div>
         <!-- to center image children-->
@@ -12,7 +19,8 @@
                 <h1 class="title ">Sarah Souffleur</h1>
             </div>
         </div>
-            
+
+            <!-- menu de navigation  -->
         <div>
             <nav class="navbar navbar-expand-lg navbar-light ">
                 <div class="container">
@@ -21,12 +29,21 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
-                            <a class="nav-item nav-link active" href="#">About me </a>
-                            <!-- sinspirer de josé ici pour mettre en valeur celui en cours -->
-                            <a class="nav-item nav-link" href="#">Projects</a>
-                            <a class="nav-item nav-link" href="#">School work</a>
-                            <a class="nav-item nav-link" href="#">Shop</a>
-                            <a class="nav-item nav-link" href="#">Contact</a>
+                            <a class="nav-item nav-link 
+                                <?= isset($_GET["page"])? ($_GET["page"]== "home" ? "active" : ""):"" ?> "
+                                href="?page=home"
+                                >About me 
+                            </a>
+                            
+                            <!-- 
+                                1. classe regarde si doit mettre en active ou non 
+                                2. href va permettre au GET dans le controller de changer de page en changeant l'adresse
+                            -->
+                            
+                            <a class="nav-item nav-link <?= isset($_GET["page"])? ($_GET["page"]== "projects" ? "active" : ""):"" ?> " href="?page=projects">Projects</a>
+                            <a class="nav-item nav-link <?= isset($_GET["page"])? ($_GET["page"]== "school" ? "active" : ""):"" ?> " href="?page=school">School work</a>
+                            <a class="nav-item nav-link <?= isset($_GET["page"])? ($_GET["page"]== "shop" ? "active" : ""):"" ?> " href="?page=shop">Shop</a>
+                            <a class="nav-item nav-link <?= isset($_GET["page"])? ($_GET["page"]== "contact" ? "active" : ""):"" ?> " href="?page=contact">Contact</a>
                         </div>
                     </div>
                 </div>

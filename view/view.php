@@ -1,7 +1,7 @@
 <!--
     auteur : Elisa Kuoch
     date de création : 21.03.2022
-    description : page qui
+    description : head du site 
 
 
 -->
