@@ -98,8 +98,12 @@ body{
     padding-top: 32px;
     padding-left: 61px ;
     padding-bottom: 32px;
+    
+}
+.footer-section{
     display: flex;
     align-items: center;
     justify-content: space-between;
+
 }
  
