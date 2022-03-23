@@ -118,13 +118,21 @@ p{
 
 .container-item{
     padding-top: 2em;
-    padding-bottom: 4em;
+    padding-bottom: em;
 }
 
 .container-flex{
     display: flex;
     justify-content: center;
 }
+.container-centertextV{ 
+    align-items: center;
+}
+.container-centertextV > p{ 
+    margin: 0 0;
+    margin-right: 25px;
+}
+
 .container-flex-programs{
     display: flex;
     width: 100%;

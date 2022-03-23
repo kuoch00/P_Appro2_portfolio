@@ -15,27 +15,37 @@ description : footer de la page
                 <!-- Grid container -->
                 <div>
                     <!-- Section: Social media -->
-                    <section class="mb-2" >
+                    <section class="mb-2 container-flex " >
+                        <div class="container-flex container-centertextV"><!-- ArtStation -->
+                            <a class="btn btn-outline-light btn-floating m-2" href="#!" role="button">
+                                <i class="fab fa-artstation"></i> 
+                            </a>
+                            <p>Artstation</p>
+                        </div>
                         
-                        <!-- ArtStation -->
-                        <a class="btn btn-outline-light btn-floating m-2" href="#!" role="button"
-                            ><i class="fab fa-artstation"></i
-                        ></a>
+                        <div  class="container-flex container-centertextV"> <!-- Instagram -->
+                            <a class="btn btn-outline-light btn-floating m-2" href="#!" role="button">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <p>Instagram</p>
+                        </div>
+                         
+                        <div class="container-flex container-centertextV"><!-- Linkedin -->
+                            <a class="btn btn-outline-light btn-floating m-2" href="#!" role="button">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <p>Linkedin</p>
+                        </div>
+                        
+                        
 
-                        <!-- Instagram -->
-                        <a class="btn btn-outline-light btn-floating m-2" href="#!" role="button"
-                            ><i class="fab fa-instagram"></i
-                        ></a>
-
-                        <!-- Linkedin -->
-                        <a class="btn btn-outline-light btn-floating m-2" href="#!" role="button"
-                            ><i class="fab fa-linkedin-in"></i
-                        ></a>
-
-                        <!-- Linkedin -->
-                        <a class="btn btn-outline-light btn-floating m-2" href="#!" role="button">
-                            <i class="fa-solid fa-envelope"></i>
-                        </a>
+                        <div class="container-flex container-centertextV"> <!-- E-Mail -->
+                            <a class="btn btn-outline-light btn-floating m-2" href="#!" role="button">
+                                <i class="fa-solid fa-envelope"></i>
+                            </a>
+                            <p>E-mail</p>
+                        </div>
+                        
 
                     </section>
                     <!-- Section: Social media -->
