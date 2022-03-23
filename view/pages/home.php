@@ -6,6 +6,7 @@ description : page index/home où l'artiste est présentée
 -->
 
 <!-- faire flex son contenu  -->
+<!-- faire un media query pour celui là peut etre à cause de la photo  -->
 <div class="container container-item"> 
     <div class="row">
         <div class="col col-3">
@@ -20,5 +21,100 @@ description : page index/home où l'artiste est présentée
             </p>
         </div>
     </div>
-    
+</div>
+
+<div class="container container-item">
+    <div>
+        <h2>Projects</h2>
+        <!-- slider ? -->
+
+
+
+    </div>
+</div>
+
+<div class="container container-item">
+    <div>
+        <h2>Skills</h2>
+        <div class="container-flex">
+            <div class="container-mini">
+                <div class="row ">
+                    <div class="col skillsbox">
+                        <img src="" alt="">
+                        <h4 class="skillsbox-text">Illustration</h4>
+                    </div>
+                </div>
+                
+                <div class="row ">
+                    <div class="col col-6 skillsbox">
+                        <img src="" alt="">
+                        <h4 class="skillsbox-text">Character design</h4>
+                    </div>
+                    <div class="col skillsbox ">
+                        <img src="" alt="">
+                        
+                        <h4 class="skillsbox-text">Environment design</h4>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col col-4 skillsbox">
+                        <img src="" alt="">
+                        
+                        <h4 class="skillsbox-text">Storyboard</h4>
+                    </div>
+                    <div class="col col-4 skillsbox">
+                        <img src="" alt="">
+                        <h4 class="skillsbox-text">Character Model Sheet</h4>
+                    </div>
+                    <div class="col skillsbox">
+                        <img src="" alt="">
+                        <h4 class="skillsbox-text">Layout</h4>
+                    </div>
+                </div>
+                <div class=" row ">
+                    <div class="col skillsbox">
+                        <img src="" alt=""> 
+                        <h4 class="skillsbox-text">Traditional drawing</h4>
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+        
+
+
+
+    </div>
+</div>
+
+<div class="container container-item">
+    <div>
+        <h2>Programs</h2>
+        
+        <div class="container-flex">
+            <div class=" container-flex-programs">
+                <div class="container-program">
+                    <img class="img-program" src="resources/img/home/clipstudiopaint-icon.png" alt="">
+                    <h5>noom</h5>
+                </div>
+
+                <div class="container-program">
+                    <img class="img-program" src="resources/img/home/photoshop-icon.png" alt="">
+                    <h5>noom</h5>
+                </div>
+
+                <div class="container-program">
+                    <img class="img-program" src="resources/img/home/procreate-icon.png" alt="">
+                    <h5>noom</h5>
+                </div>
+                
+            </div>
+        </div>
+
+
+
+    </div>
 </div>

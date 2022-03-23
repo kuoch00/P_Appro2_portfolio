@@ -115,8 +115,49 @@ p{
     text-align: justify;
 }
 
+
 .container-item{
     padding-top: 2em;
     padding-bottom: 2em;
 }
 
+.container-flex{
+    display: flex;
+    justify-content: center;
+}
+.container-flex-programs{
+    display: flex;
+    justify-content:space-between;
+}
+
+.skillsbox{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin : 10px 10px;
+    
+    background-color: var(--accent-color);
+}
+
+.skillsbox-text{
+    text-align: center;    
+}
+
+.container-mini{
+    width: 1000px;
+}
+
+.container-program{
+    display: flex;
+    margin: 10px;
+    padding: 10px;
+    align-items: center;
+}
+.img-program{
+    height: 70px;
+    width: 70px;
+}
+h5{
+    margin-left: 10px;
+}

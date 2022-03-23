@@ -33,6 +33,10 @@
 
         }
     }
+    else{
+        // permet de redirectionner directement la page home s'il n'y a rien
+        echo "<script>location.href=\"?page=home\"</script>";
+    }
 
 
 ?>
