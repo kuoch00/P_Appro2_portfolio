@@ -118,7 +118,7 @@ p{
 
 .container-item{
     padding-top: 2em;
-    padding-bottom: 2em;
+    padding-bottom: 4em;
 }
 
 .container-flex{
@@ -127,7 +127,8 @@ p{
 }
 .container-flex-programs{
     display: flex;
-    justify-content:space-between;
+    width: 100%;
+    justify-content: space-between;
 }
 
 .skillsbox{
@@ -151,13 +152,17 @@ p{
 .container-program{
     display: flex;
     margin: 10px;
-    padding: 10px;
+    width: 300px;
     align-items: center;
+    justify-content: center;
 }
 .img-program{
     height: 70px;
     width: 70px;
 }
 h5{
-    margin-left: 10px;
+    margin-left: 20px;
+}
+h2{
+    margin-bottom: 25px;
 }

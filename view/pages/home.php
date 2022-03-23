@@ -8,13 +8,14 @@ description : page index/home où l'artiste est présentée
 <!-- faire flex son contenu  -->
 <!-- faire un media query pour celui là peut etre à cause de la photo  -->
 <div class="container container-item"> 
+    <h2>The Artist</h2>
     <div class="row">
         <div class="col col-3">
             <img class="img-fluid" src="./resources/img/photo.png" alt="">
         </div>
 
         <div class="col">
-            <h2> The artist </h2>
+            <h2> Sarah Souffleur </h2>
             <p>
                 Qu'est-ce que le Lorem Ipsum?
                 Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.
@@ -95,20 +96,20 @@ description : page index/home où l'artiste est présentée
         <h2>Programs</h2>
         
         <div class="container-flex">
-            <div class=" container-flex-programs">
+            <div class="container-mini container-flex-programs">
                 <div class="container-program">
                     <img class="img-program" src="resources/img/home/clipstudiopaint-icon.png" alt="">
-                    <h5>noom</h5>
+                    <h5>Clip Studio Paint Pro</h5>
                 </div>
 
                 <div class="container-program">
                     <img class="img-program" src="resources/img/home/photoshop-icon.png" alt="">
-                    <h5>noom</h5>
+                    <h5>Adobe Photoshop</h5>
                 </div>
 
                 <div class="container-program">
                     <img class="img-program" src="resources/img/home/procreate-icon.png" alt="">
-                    <h5>noom</h5>
+                    <h5>Procreate</h5>
                 </div>
                 
             </div>
