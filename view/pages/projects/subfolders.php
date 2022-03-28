@@ -18,6 +18,8 @@ liste les sujets du projet (bd)
 <div class="container">
     <h2><?=$projectInfo[0]["catName"]?></h2>
     <p><?=$projectInfo[0]["catDescription"]?></p>
+
+    
     <?php
         foreach ($listSubcategories as $subcategory){?>
             <div class = "container-item container-center">

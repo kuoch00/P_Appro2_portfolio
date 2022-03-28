@@ -28,4 +28,8 @@ description : page de contact
         <label for="exampleFormControlTextarea1">Message</label>
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
     </div>
+
+    <div class="formButtonBox">
+        <input class="btn btn-primary formButtonSubmit" type="submit" value="Submit">
+    </div>
 </form>

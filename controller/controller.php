@@ -80,9 +80,21 @@
             //     break;
                 
             case 'shop':
-                include("view/pages/shop/products.php");
+                $connect= new Database();
+                $products = $connect->getProducts();
+                // var_dump($products);
+                if(isset($_GET["artId"])){
+                    $artId = $_GET["artId"];
+                    include("view/pages/shop/details.php");
+                }
+                else{
+                    
+                    include("view/pages/shop/products.php");
+                }
+                
                 break;
             case 'contact':
+                // $connect= new Database();
                 include("view/pages/contact.php");
                 break;
             default :

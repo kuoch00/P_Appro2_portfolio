@@ -6,7 +6,7 @@ description : page liste où tous les projets sont présentés
 -->
 
 <?php
-
+header("Content-Type: text/html;charset=UTF-8");
 class Database{
     public $pdo;
 
@@ -19,11 +19,14 @@ class Database{
 
         try{
             // dsn = data source name 
-            $dsn = "mysql:host=" . $login["servername"] . "; dbname=" . $login["database"];
+            $dsn = "mysql:host=" . $login["servername"] . "; dbname=" . $login["database"] . "; charset=utf8" ;
             $this->pdo=new PDO($dsn, $login['username'], $login['password']);
 
             //Activer le mode exeption du pdo
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            
+            
  
         }
         // message d'erreur si connection ratée
@@ -31,8 +34,9 @@ class Database{
             echo "Impossible de se connecter à la base de données. Code d'erreur : \n";
             echo $exeption->getMessage(); 
         }
+        
     }
-
+    
 
     /**
      * permet de préparer et d’exécuter une requête de type simple (sans where)
@@ -116,8 +120,10 @@ class Database{
                 'marker' => ':catId',
                 'type' => PDO::PARAM_STR
             )
-            );
+        );
         $result = $this->queryPrepareExecute($query, $binds);
+        //deja erreur ici
+        //var_dump($result);
         return $result;
         # code...
     }
@@ -161,6 +167,14 @@ class Database{
 
         return $result;
 
+    }
+
+    public function getProducts()
+    {
+        $query = "SELECT * FROM `t_article` ";
+        $result = $this->querySimpleExecute($query);
+        return $result;
+        # code...
     }
 }
 
