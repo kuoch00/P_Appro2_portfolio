@@ -49,7 +49,7 @@
                 }
                 break;
 
-
+            //old
             // case 'projects':
             //     //id >1
             //     $connect = new Database();
@@ -79,15 +79,15 @@
             //     include("view/pages/schoolWork/subfolders.php");
             //     break;
                 
-            // case 'shop':
-            //     include("view/pages/shop/products.php");
-            //     break;
-            // case 'contact':
-            //     include("view/pages/contact.php");
-            //     break;
-            // default :
-            //     include("view/pages/404.php");
-            //     break;
+            case 'shop':
+                include("view/pages/shop/products.php");
+                break;
+            case 'contact':
+                include("view/pages/contact.php");
+                break;
+            default :
+                include("view/pages/404.php");
+                break;
 
         }
     }
