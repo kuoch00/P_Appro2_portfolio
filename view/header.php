@@ -41,7 +41,8 @@ description : header de la page (image avec menu de navigation)
                             -->
                             
                             <a class="nav-item nav-link <?= isset($_GET["page"])? ($_GET["page"]== "projects" ? "active" : ""):"" ?> " href="?page=projects">Projects</a>
-                            <a class="nav-item nav-link <?= isset($_GET["page"])? ($_GET["page"]== "school" ? "active" : ""):"" ?> " href="?page=school">School work</a>
+                            <!-- ne fonctionnne plus on met un case project pour projects et school  -->
+                            <a class="nav-item nav-link <?= isset($_GET["page"])? ($_GET["page"]== "projects" ? "active" : ""):"" ?> " href="?page=projects&catId=1">School work</a>
                             <a class="nav-item nav-link <?= isset($_GET["page"])? ($_GET["page"]== "shop" ? "active" : ""):"" ?> " href="?page=shop">Shop</a>
                             <a class="nav-item nav-link <?= isset($_GET["page"])? ($_GET["page"]== "contact" ? "active" : ""):"" ?> " href="?page=contact">Contact</a>
                         </div>

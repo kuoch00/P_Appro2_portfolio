@@ -107,6 +107,20 @@ class Database{
         return $result;
     }
 
+    public function getProjectDescription($catId)
+    {
+        $query = "SELECT t_category.catName, t_category.catDescription FROM t_category WHERE idCategory LIKE :catId";
+        $binds = array(
+            0 => array (
+                'var' => $catId,
+                'marker' => ':catId',
+                'type' => PDO::PARAM_STR
+            )
+            );
+        $result = $this->queryPrepareExecute($query, $binds);
+        return $result;
+        # code...
+    }
     public function getSubcategoryList($catId)
     {
         # code...
@@ -123,23 +137,28 @@ class Database{
         //catId fixe donc pas bon mais celui ci fonctionne ?
         //$query = "SELECT t_subcategory.idSubCategory, t_subcategory.subName, COUNT(t_image.idSubCategory) as total FROM t_image INNER JOIN t_subcategory on t_image.idSubCategory = t_subcategory.idSubCategory WHERE t_image.idCategory LIKE 2 GROUP BY t_image.idSubCategory ORDER by total DESC ";
 
-        //not working with catId ? help
-        $query = "SELECT t_subcategory.idSubCategory, t_subcategory.subName, COUNT(t_image.idSubCategory) as total FROM t_image INNER JOIN t_subcategory on t_image.idSubCategory = t_subcategory.idSubCategory WHERE t_image.idCategory LIKE :catID GROUP BY t_image.idSubCategory ORDER by total DESC ";
+        //do not put catid=:catId but :catId simple
+        //$query = "SELECT t_subcategory.idSubCategory, t_subcategory.subName, COUNT(t_image.idSubCategory) as total FROM t_image INNER JOIN t_subcategory on t_image.idSubCategory = t_subcategory.idSubCategory WHERE t_image.idCategory LIKE :catID GROUP BY t_image.idSubCategory ORDER by total DESC ";
         
-        $binds = array(
-            0 => array(
-                'var' => $catId,
-                'marker' => ':catID',
-                'type' => PDO::PARAM_STR
-            )
-        );
-        
+        //get idCat, idSubCat, subName, total (entries in subcat per cat)
+        //$query = "SELECT t_image.idCategory, t_subcategory.idSubCategory, t_subcategory.subName, COUNT(t_image.idSubCategory) as total FROM t_image INNER JOIN t_subcategory on t_image.idSubCategory = t_subcategory.idSubCategory WHERE t_image.idCategory GROUP BY t_image.idSubCategory ORDER by total DESC ";
         //working
         //$result = $this->querySimpleExecute($query);
 
-        //not working ?
+        //get only subcat of a cat
+        $query = "SELECT t_image.idCategory, t_subcategory.idSubCategory, t_subcategory.subName, COUNT(t_image.idSubCategory) as total FROM t_image INNER JOIN t_subcategory on t_image.idSubCategory = t_subcategory.idSubCategory WHERE t_image.idCategory LIKE :catId GROUP BY t_image.idSubCategory ORDER by total DESC ";
+
+        //$query = "SELECT t_image.idCategory, t_subcategory.idSubCategory, t_subcategory.subName, COUNT(t_image.idSubCategory) as total FROM t_image INNER JOIN t_subcategory on t_image.idSubCategory = t_subcategory.idSubCategory WHERE t_image.idCategory LIKE :catId GROUP BY t_image.idSubCategory ORDER by total DESC ";
+        $binds = array(
+            0 => array(
+                'var' => $catId,
+                'marker' => ':catId',
+                'type' => PDO::PARAM_STR
+            )
+        );
+
         $result = $this->queryPrepareExecute($query, $binds);
-        
+
         return $result;
 
     }

@@ -16,11 +16,16 @@ liste les sujets du projet (bd)
 
 -->
 <div class="container">
+    <h2><?=$projectInfo[0]["catName"]?></h2>
+    <p><?=$projectInfo[0]["catDescription"]?></p>
     <?php
         foreach ($listSubcategories as $subcategory){?>
             <div class = "container-item container-center">
-                <a class="container-center" href=" ">
-                    <img class="img-full" src="" alt="">
+            <!-- id subcat?  -->
+                <a class="container-center" href="?page=projects&catId=<?= $subcategory["idCategory"]?>&subcatId=<?=$subcategory["idSubCategory"]?>">
+                <!-- id du projet + id du subfolder -->
+                <!-- img derniere image ajoutée -->
+                    <img class="img-full" src="" alt="image">
                     <h3><?= $subcategory["subName"]?></h3>
                 </a> 
             </div>
