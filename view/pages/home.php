@@ -92,6 +92,7 @@ description : page index/home où l'artiste est présentée
     </div>
 </div>
 
+<!-- mettre dans grid row col  -->
 <div class="container container-item">
     <div>
         <h2>Programs</h2>

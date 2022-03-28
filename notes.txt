@@ -1,0 +1,9 @@
+chercher dans catégorie les images
+-> afficher tous les sub cat existants 
+
+
+bonus : (le dossier ayant le + d'images a celui qui en a le moins ?)
+
+
+toutes les entrées de cat 2 trié par nb occurences
+SELECT t_subcategory.subName, COUNT(t_image.idSubCategory) as total FROM t_image INNER JOIN t_subcategory on t_image.idSubCategory = t_subcategory.idSubCategory WHERE t_image.idCategory LIKE 2 GROUP BY t_image.idSubCategory ORDER by total DESC 

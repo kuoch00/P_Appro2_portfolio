@@ -1,0 +1,7 @@
+si catégorie ou sous catégorie inexistante : la créer 
+josé a fait : checkauthor et insertAuthor 
+
+
+<!-- mettre dans grid row col  -->
+home :programs
+footer : links

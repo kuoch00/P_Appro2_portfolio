@@ -8,19 +8,19 @@ description : page liste où tous les projets sont présentés
 
 
 <!-- liste tous les projets existants avec image de couverture et nom en dessous-->
-<div class="container">
+<div class="container ">
     <?php
-        foreach ($list_projects as $project){?>
+        foreach ($listProjects as $project){?>
         <!-- affichage d'un projet  -->
-            <div class="container-item">
-                <!-- va a case gallery et on pourra aller ensuite dans catId  -->
-                <a href="?page=projects&catId=<?=$category["idCategory"]?>">
+            <div class="container-item container-center">
+                <!-- va a case project et on pourra aller ensuite dans catId  -->
+                <a class="container-center" href="?page=projects&catId=<?=$project["idCategory"]?>">
 
                     <!-- affiche l'image  -->
-                    <img src="/resources/img/<?= $category["catImage"]?>" alt="image">
+                    <img class="img-full"  src="resources/img/<?=$project["catImage"]?>" alt="image">
 
                     <!-- affiche le nom du projet  -->
-                    <h3><?= $category["catName"] ?></h3>
+                    <h3><?= $project["catName"] ?></h3>
                 </a>
             </div>
         <?php }

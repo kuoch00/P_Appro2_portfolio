@@ -157,7 +157,12 @@ p{
 .container-mini{
     width: 1000px;
 }
-
+.container-center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+}
 .container-program{
     display: flex;
     margin: 10px;
@@ -179,4 +184,22 @@ h2{
 /* contact  */
 .form-group{
     margin: 1em 0em;
+}
+
+/*displays image with good width*/
+.img-full{
+    width: 100%;
+    margin: 2em 0em 1em 0em;
+}
+
+a{
+    text-decoration: none;
+    color: var(--txt-color);
+}
+a:hover{
+    color: var(--accent-color);
+}
+
+a.container-center{
+    width: 70%;
 }
