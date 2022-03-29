@@ -1,3 +1,6 @@
+<?php
+
+?>
 
 <!-- 
 auteur : Elisa Kuoch
@@ -14,11 +17,14 @@ description : page où on consulte les détails d'un article
 <p><?= $products[$artId-1]["artDescription"]?></p>
 <h4><?=$products[$artId-1]["artPrice"]?> $</h4>
 <p>stock : <?=$products[$artId-1]["artStock"]?></p>
-<form action="">
-<div class="formButtonBox">
-    <input class="btn btn-primary formButtonSubmit" type="submit" value="Ajouter au panier">
-</div>
 
+<form method="POST" action="?page=shop&artId=<?=$products[$artId-1]["idArticle"]?>&addedToCart=true ">
+
+    <label for="quantity">Quantity</label>
+    <input type="number" id="quantity" name="quantity" min="1" max="<?=$products[$artId-1]["artStock"]?>"> 
+
+    <button class="btn btn-primary formButtonSubmit" name="article" type="submit" value="<?=$products[$artId-1]["idArticle"]?>">Ajouter au panier</button>
+    
 </form>
 <?php ?>
 </div>

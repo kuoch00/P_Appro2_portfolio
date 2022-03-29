@@ -13,5 +13,22 @@ presente le projet brièvement  -->
 
 <!-- implementer modal view (js) -->
 <div class="container">
+<a href="?page=projects&catId=<?=$listGallery[0]["idCategory"]?>">go back</a>
+<?php
+
+    foreach($listGallery as $img){ 
+        // if($img["idImage"]%2==1){
+        //     echo $img["idImage"];
+        // }
+        ?>
+            <img class="gallery-width" src="resources/img/<?=$img["imaFilename"]?>" alt="image">
+        <?php
+        } ?>
+        
+
+
+    <?php
+    
+    ?>
 
 </div>

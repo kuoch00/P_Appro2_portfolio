@@ -127,6 +127,7 @@ class Database{
         return $result;
         # code...
     }
+
     public function getSubcategoryList($catId)
     {
         # code...
@@ -167,6 +168,25 @@ class Database{
 
         return $result;
 
+    }
+
+    public function getGallery($catId, $subcatId)
+    {
+        $query = "SELECT * FROM `t_image` WHERE `idCategory` = :catId AND `idSubCategory` = :subcatId ";
+        $binds = array (
+            0 => array (
+                'var' => $catId,
+                'marker' => ':catId',
+                'type' => PDO::PARAM_STR
+            ),
+            1 => array (
+                'var' => $subcatId,
+                'marker' => ':subcatId',
+                'type' => PDO::PARAM_STR
+            )
+        );
+        $result = $this->queryPrepareExecute($query, $binds);
+        return $result;
     }
 
     public function getProducts()

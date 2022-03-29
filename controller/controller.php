@@ -28,7 +28,8 @@
                         
 
                         //liste la gallerie
-                        // $listGallery = $connect-> 
+                        $listGallery = $connect->getGallery($catId, $subcatId);
+                        
                         include("view/pages/projects/gallery.php");
                     }
                     // va afficher les subcat selon le projet/school work
@@ -84,14 +85,23 @@
                 $products = $connect->getProducts();
                 // var_dump($products);
                 if(isset($_GET["artId"])){
-                    $artId = $_GET["artId"];
-                    include("view/pages/shop/details.php");
-                }
+                    $artId = $_GET["artId"]; 
+
+                    if(isset($_GET["addedToCart"])){
+                        include("view/pages/shop/addToBasket.php");
+                    }
+                    else{
+                        include("view/pages/shop/details.php");
+                    }
+                }  
                 else{
                     
                     include("view/pages/shop/products.php");
                 }
-                
+                break;
+            case 'checkout':
+                $connect = new Database();
+                include("view/pages/shop/basket.php");
                 break;
             case 'contact':
                 // $connect= new Database();

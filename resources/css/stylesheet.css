@@ -203,3 +203,7 @@ a:hover{
 a.container-center{
     width: 70%;
 }
+
+.gallery-width{
+    width: 100%;
+}
