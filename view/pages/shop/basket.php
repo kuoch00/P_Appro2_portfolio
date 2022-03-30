@@ -7,8 +7,14 @@ description : page où l'on consulte le panier
 <?php
 
 // $_SESSION["items"];
-foreach($_SESSION["items"] as $item => $price){
-    echo $item . " => " . $price .  "<br>";
+
+if(isset($_SESSION['cart'])){
+    foreach($_SESSION['cart'] as $array){
+        echo $array['artId'] . " => " . $array['artQuantity'] . "<br>";
+    }
+}
+else{
+    echo "caca";
 }
 
 

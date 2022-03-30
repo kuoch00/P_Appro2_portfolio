@@ -21,7 +21,7 @@ description : page où on consulte les détails d'un article
 <form method="POST" action="?page=shop&artId=<?=$products[$artId-1]["idArticle"]?>&addedToCart=true ">
 
     <label for="quantity">Quantity</label>
-    <input type="number" id="quantity" name="quantity" min="1" max="<?=$products[$artId-1]["artStock"]?>"> 
+    <input value="1" type="number" id="quantity" name="quantity" min="1" max="<?=$products[$artId-1]["artStock"]?>"> 
 
     <button class="btn btn-primary formButtonSubmit" name="article" type="submit" value="<?=$products[$artId-1]["idArticle"]?>">Ajouter au panier</button>
     

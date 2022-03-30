@@ -7,6 +7,7 @@
 
     include("model/model.php");
     include("view/view.php");//header (img et nav)
+    session_start();
     //pages
     if(isset($_GET["page"])){
         switch($_GET["page"]){
@@ -83,6 +84,7 @@
             case 'shop':
                 $connect= new Database();
                 $products = $connect->getProducts();
+                
                 // var_dump($products);
                 if(isset($_GET["artId"])){
                     $artId = $_GET["artId"]; 

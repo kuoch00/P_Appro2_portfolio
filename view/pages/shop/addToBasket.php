@@ -7,11 +7,23 @@
  * description : page permettant ajout d'objets au panier
  */
 
-$_SESSION['items'] = array(
-    $_POST["article"] => $_POST["quantity"]
-); 
-//  echo var_dump($_SESSION['items']);
-
+if (!isset($_SESSION['cart'])){
+    $_SESSION['cart'] = array(
+        array(
+            "artId"=> $_POST["article"],
+            "artQuantity"=> $_POST["quantity"] 
+        ),
+    );
+}
+else{
+    $data = array(
+        "artId"=> $_POST["article"],
+        "artQuantity"=> $_POST["quantity"] 
+    );
+    array_push($_SESSION['cart'], $data);
+}
+  echo var_dump($_SESSION['cart']);
+  //echo print_r($_SESSION['items']);
 //  rediriger autrement?
 // header("location:?page=shop&added");
 ?>
