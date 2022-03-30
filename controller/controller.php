@@ -97,14 +97,19 @@
                     }
                 }  
                 else{
-                    
                     include("view/pages/shop/products.php");
                 }
                 break;
+
             case 'checkout':
                 $connect = new Database();
+                $products = $connect->getProducts();
+                if(isset($_SESSION['cart'])){ 
+                    $cartProducts = $connect->getCartProducts($_SESSION['cart']);
+                }
                 include("view/pages/shop/basket.php");
                 break;
+
             case 'contact':
                 // $connect= new Database();
                 include("view/pages/contact.php");

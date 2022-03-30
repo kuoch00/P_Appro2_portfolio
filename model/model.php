@@ -196,6 +196,25 @@ class Database{
         return $result;
         # code...
     }
+    public function getCartProducts($array)
+    {
+        //array not work??
+        
+        foreach($array as $row){
+            $query = "SELECT * FROM `t_article` WHERE `idArticle` = :artId";
+            $binds = array(
+                0 => array (
+                    'var' => $row['artId'],
+                    'marker' => ':artId',
+                    'type' => PDO::PARAM_STR
+                )
+            );
+            $result[] = $this->queryPrepareExecute($query, $binds);
+            // $finalArray[] = $result;
+        }
+        return $result;
+        # code...
+    }
 }
 
 ?>
