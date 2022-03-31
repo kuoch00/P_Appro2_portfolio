@@ -69,15 +69,15 @@ if(isset($_SESSION['cart'])){
     <?php
     ?>
     </table>
-    <a class="btn btn-primary" href="?page=shop">Continue Shopping</a>
-    <a class="btn btn-primary" href="?page=checkout&order=login">Order</a>
+    <a class="btn btn-primary" href="?order=shop">Continue Shopping</a>
+    <a class="btn btn-primary" href="?order=checkout&order=login">Order</a>
    
     <?php
 }
 else{
     echo "Your cart is empty";
     ?>
-    <a class="btn btn-primary" href="?page=shop">Go Shopping</a>
+    <a class="btn btn-primary" href="?order=shop">Go Shopping</a>
     <?php
 }
 

@@ -81,61 +81,7 @@
             //     include("view/pages/schoolWork/subfolders.php");
             //     break;
                 
-            case 'shop':
-                $connect= new Database();
-                $products = $connect->getProducts();
-                
-                // var_dump($products);
-                if(isset($_GET["artId"])){
-                    $artId = $_GET["artId"]; 
-
-                    if(isset($_GET["addedToCart"])){
-                        include("view/pages/shop/addToBasket.php");
-                    }
-                    else{
-                        include("view/pages/shop/details.php");
-                    }
-                }  
-                else{
-                    include("view/pages/shop/products.php");
-                }
-                break;
-
-            case 'checkout':
-                $connect = new Database();
-                $products = $connect->getProducts();
-
-                if(isset($_GET['order'])){
-                    $step = $_GET['order'];
-                    //connection
-                    if($step == "login"){
-                        //si deja login, passer à la prochaine étape?
-                        include("view/pages/shop/login.php");
-                    }
-                    //address
-                    if($step == "shipping"){
-                        //include shipping tracking
-                        include("view/pages/shop/fillAddress.php");
-
-                    }
-                    //order
-                    if($step == ""){
-                        
-                    }
-
-                    
-
-                }
-
-                else{
-                    //panier
-                    if(isset($_SESSION['cart'])){ 
-                        $cartProducts = $connect->getCartProducts($_SESSION['cart']);
-                    }
-                    include("view/pages/shop/basket.php");
-                }
-                
-                break;
+            
 
             case 'contact':
                 // $connect= new Database();
@@ -148,7 +94,62 @@
         }
     }
     else if (isset($_GET["order"])){
+        switch($_GET['order']){
+            case 'shop':
+                $connect= new Database();
+                $products = $connect->getProducts();
+                
+                // var_dump($products);
+                if(isset($_GET["artId"])){
+                    $artId = $_GET["artId"]; 
+    
+                    if(isset($_GET["addedToCart"])){
+                        include("view/pages/shop/addToBasket.php");
+                    }
+                    else{
+                        include("view/pages/shop/details.php");
+                    }
+                }  
+                else{
+                    include("view/pages/shop/products.php");
+                }
+                break;
+    
+            case 'checkout':
+                $connect = new Database();
+                $products = $connect->getProducts();
+    
+                //panier
+                if(isset($_SESSION['cart'])){ 
+                    $cartProducts = $connect->getCartProducts($_SESSION['cart']);
+                }
+                include("view/pages/shop/basket.php");
+            
+                break;
+            case 'login':
+                if(isset($_GET['order'])){
+                    $step = $_GET['order'];
+                    //si deja login, passer à la prochaine étape?
+                    include("view/pages/shop/login.php");
+                
+                }
+                # code...
+                break;
+            case 'shipping':
+                # code...
+                //include shipping tracking
+                    include("view/pages/shop/fillAddress.php");
+                break;
+            case 'summary':
+                # code...
+                break;
+            default :
+                include("view/pages/404.php");
+                break;
+            
+        }
         
+
     }
     else{
         // permet de redirectionner directement la page home s'il n'y a rien

@@ -10,7 +10,7 @@ description : page où on consulte les détails d'un article
 
 <div class="container">
 <?php ?>
-<a href="?page=shop"><- retour</a><br>
+<a href="?order=shop"><- retour</a><br>
 <img src="/resources/img-shop/<?=$products[$artId-1]["artImage"]?>" alt="image">
 <h4><?=$products[$artId-1]["artName"]?></h4>
 <h5>Description :</h5>
@@ -18,7 +18,7 @@ description : page où on consulte les détails d'un article
 <h4><?=$products[$artId-1]["artPrice"]?> $</h4>
 <p>stock : <?=$products[$artId-1]["artStock"]?></p>
 
-<form method="POST" action="?page=shop&artId=<?=$products[$artId-1]["idArticle"]?>&addedToCart=true ">
+<form method="POST" action="?order=shop&artId=<?=$products[$artId-1]["idArticle"]?>&addedToCart=true ">
     <!-- déjà dans panier ? -->
     <?php
         if(isset($_SESSION['cart'])){

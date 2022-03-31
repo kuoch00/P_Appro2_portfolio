@@ -119,11 +119,11 @@ else{
   //echo var_dump($_SESSION['cart']);
   //echo print_r($_SESSION['items']);
 //  rediriger autrement?
-// header("location:?page=shop&added");
+// header("location:?order=shop&added");
 ?>
 <div class="container">
 <h1>Article successfully added to your shopping cart</h1>
-<a class="btn btn-primary" href="?page=shop">Continue Shopping</a>
-<a class="btn btn-primary" href="?page=checkout">Checkout</a>
+<a class="btn btn-primary" href="?order=shop">Continue Shopping</a>
+<a class="btn btn-primary" href="?order=checkout">Checkout</a>
 
 </div>
