@@ -26,14 +26,38 @@ else{
         "artId"=> $_POST["article"],
         "artQuantity"=> $_POST["quantity"] 
     );
-
-    //supprime ancienne entrée si deja existante
-
+    $changed = false;
+    //remplace ancienne quantité de l'article si deja existante
     $i = 0;
     foreach($_SESSION['cart'] as $row){
         if($row['artId']==$data['artId']){
-            array_splice($_SESSION['cart'], $i);
+            //réindexe tout bien avec 0,1,2,3...
+            //supprime entrées en dessous ?
+            //array_splice($_SESSION['cart'], $i);
+
+            //ne remplace pas car ne se trouve pas deans le tab assoc
+            $_SESSION['cart'][$i] = array_replace($row, $data);
+
+
+
+            //lors changement donnée : entrer depuis $session[cart][index]
+            print_r($_SESSION['cart'][$i]) . "<br>";
+            //$row['artQuantity'] = $data['artQuantity'];
+            // print_r($row);
+            $changed = true;
+            break;
+
+
         }
+        $i++;
+        echo $i;
+        
+    }
+
+    //si pas de changement = nouvel article
+    if($changed==false){
+        // $basket = $data;
+        array_push($_SESSION['cart'], $data);
     }
         // $cart = $_SESSION['cart'];
         
@@ -90,7 +114,7 @@ else{
         // }
     
 
-    array_push($_SESSION['cart'], $data);
+    
     print_r($_SESSION['cart']);
     //unset($_SESSION['cart']);
 
