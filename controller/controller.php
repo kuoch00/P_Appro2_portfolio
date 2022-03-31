@@ -104,10 +104,37 @@
             case 'checkout':
                 $connect = new Database();
                 $products = $connect->getProducts();
-                if(isset($_SESSION['cart'])){ 
-                    $cartProducts = $connect->getCartProducts($_SESSION['cart']);
+
+                if(isset($_GET['order'])){
+                    $step = $_GET['order'];
+                    //connection
+                    if($step == "login"){
+                        //si deja login, passer à la prochaine étape?
+                        include("view/pages/shop/login.php");
+                    }
+                    //address
+                    if($step == "shipping"){
+                        //include shipping tracking
+                        include("view/pages/shop/fillAddress.php");
+
+                    }
+                    //order
+                    if($step == ""){
+                        
+                    }
+
+                    
+
                 }
-                include("view/pages/shop/basket.php");
+
+                else{
+                    //panier
+                    if(isset($_SESSION['cart'])){ 
+                        $cartProducts = $connect->getCartProducts($_SESSION['cart']);
+                    }
+                    include("view/pages/shop/basket.php");
+                }
+                
                 break;
 
             case 'contact':
@@ -119,6 +146,9 @@
                 break;
 
         }
+    }
+    else if (isset($_GET["order"])){
+        
     }
     else{
         // permet de redirectionner directement la page home s'il n'y a rien

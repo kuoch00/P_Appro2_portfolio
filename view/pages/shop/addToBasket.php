@@ -3,11 +3,11 @@
 
 /**
  * auteur : Elisa Kuoch
- * date :
+ * date : 31.03.2022
  * description : page permettant ajout d'objets au panier
  */
 
- /*si premier article, creer un panier */
+ /*si premier article ajouté, creer un panier */
 if (!isset($_SESSION['cart'])){
     $_SESSION['cart'] = array(
         array(
@@ -16,56 +16,52 @@ if (!isset($_SESSION['cart'])){
         ),
     );
 }
+
 /*ajout au panier */
 else{
-    //si deja existant, remplacer les valeurs
-    #il le fait deja tout seul car la derniere entrée met a jour dans basket.php
-    
     //ajoute données entrées dans un tableau
-    $data = array(
+    $input = array(
         "artId"=> $_POST["article"],
         "artQuantity"=> $_POST["quantity"] 
     );
+
+    //remet les variables à 0
     $changed = false;
-    //remplace ancienne quantité de l'article si deja existante
     $i = 0;
+
+    //remplace ancienne quantité de l'article s'il est deja dans le panier
     foreach($_SESSION['cart'] as $row){
-        if($row['artId']==$data['artId']){
-            //réindexe tout bien avec 0,1,2,3...
-            //supprime entrées en dessous ?
-            //array_splice($_SESSION['cart'], $i);
-
-            //ne remplace pas car ne se trouve pas deans le tab assoc
-            $_SESSION['cart'][$i] = array_replace($row, $data);
-
-
+        if($row['artId']==$input['artId']){
+            
+            //remplace le tableau concernant l'article avec le nouveau (input)
+            $_SESSION['cart'][$i] = array_replace($row, $input);
 
             //lors changement donnée : entrer depuis $session[cart][index]
-            print_r($_SESSION['cart'][$i]) . "<br>";
-            //$row['artQuantity'] = $data['artQuantity'];
+            //print_r($_SESSION['cart'][$i]) . "<br>";
+            //$row['artQuantity'] = $input['artQuantity'];
             // print_r($row);
+
+            //indique qu'une donnée a changé
             $changed = true;
+            
             break;
-
-
         }
         $i++;
-        echo $i;
-        
     }
 
     //si pas de changement = nouvel article
     if($changed==false){
-        // $basket = $data;
-        array_push($_SESSION['cart'], $data);
+        // $basket = $input;
+        array_push($_SESSION['cart'], $input);
     }
+    
         // $cart = $_SESSION['cart'];
         
         // $i = 0;
         // for ($i=0; $i < count($_SESSION['cart']) ; $i++) { 
             
         //     $row = $_SESSION['cart'][$i];
-        //     if($row['artId'] == $data['artId']){
+        //     if($row['artId'] == $input['artId']){
         //         array_splice($_SESSION['cart'][$i],1);
         //         break;
         //     }
@@ -79,7 +75,7 @@ else{
 
         // foreach ($_SESSION['cart'] as $row){
             
-        //     if($row['artId'] == $data['artId']){
+        //     if($row['artId'] == $input['artId']){
         //         unset($row);
         //         // 
         //         break;
@@ -91,7 +87,7 @@ else{
         // }
 
         // foreach ($_SESSION['cart'] as $row){
-        //     if($row['artId'] == $data['artId']){
+        //     if($row['artId'] == $input['artId']){
         //         unset($_SESSION['cart'][$i]);
         //         //echo $i;
         //         break;
@@ -105,13 +101,14 @@ else{
         //variante 
         //remplace donnée si existante
         // foreach ($_SESSION['cart'] as $row){
-        //     if($row['artId'] == $data['artId']){
-        //         //echo $row['artQuantity'] .  "!=" . $data['artQuantity'];
-        //         $row = array_replace($row, $data);
-        //         //$row['artQuantity'] = $data['artQuantity'];
+        //     if($row['artId'] == $input['artId']){
+        //         //echo $row['artQuantity'] .  "!=" . $input['artQuantity'];
+        //         $row = array_replace($row, $input);
+        //         //$row['artQuantity'] = $input['artQuantity'];
         //         break;
         //     }
         // }
+        
     
 
     

@@ -5,6 +5,7 @@ date de création : 22.03.2022
 description : page où l'on consulte le panier
 -->
 <div class="container">
+<h1>Panier</h1>
 <?php
 
 // $_SESSION["items"];
@@ -21,6 +22,7 @@ if(isset($_SESSION['cart'])){
         </tr>
         
     <?php
+    $subtotal = 0;
     $cart = $_SESSION['cart'];
             //print_r($cart);
 
@@ -34,6 +36,7 @@ if(isset($_SESSION['cart'])){
         //echo $product['idArticle'];
     foreach($cartProducts as $row ){
         foreach($row as $product){
+            
 
             //MATCHES ID FROM SESSION CART AND ID FROM DB
             foreach ($cart as $article){
@@ -50,19 +53,34 @@ if(isset($_SESSION['cart'])){
                 <td><?=$product['artPrice']*$quantity?></td>
             </tr>
         <?php
+        //ajoute au sous-total
+        $subtotal += $product['artPrice']*$quantity;
         }
     }
     
-    
     ?>
-   </table>
+    <tr>
+        <th>Total</th>
+        <td></td>
+        <td></td>
+        <td><?=$subtotal?></td>
+
+    </tr>
+    <?php
+    ?>
+    </table>
+    <a class="btn btn-primary" href="?page=shop">Continue Shopping</a>
+    <a class="btn btn-primary" href="?page=checkout&order=login">Order</a>
    
     <?php
 }
 else{
-    echo "il n'y a rien dans votre panier";
+    echo "Your cart is empty";
+    ?>
+    <a class="btn btn-primary" href="?page=shop">Go Shopping</a>
+    <?php
 }
 
-
 ?>
+
 </div>

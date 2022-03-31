@@ -91,10 +91,11 @@ body{
     background-color: var(--footer-color);
     border-radius: 35px ;
     color: var(--txt-color);
-    padding-top: 30px;
+    padding: 30px 60px;
+    /* padding-top: 30px;
     padding-left: 60px ;
     padding-bottom: 30px;
-    padding-right: 60px ;
+    padding-right: 60px ; */
     
 }
 .footer-section{
@@ -152,6 +153,13 @@ p{
 
 .skillsbox-text{
     text-align: center;    
+}
+
+.container-background{
+    border-radius: 35px;
+    background-color: var(--secondbg-color);
+    padding: 30px 60px;
+
 }
 
 .container-mini{
