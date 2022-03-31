@@ -7,6 +7,7 @@
  * description : page permettant ajout d'objets au panier
  */
 
+ /*si premier article, creer un panier */
 if (!isset($_SESSION['cart'])){
     $_SESSION['cart'] = array(
         array(
@@ -15,14 +16,19 @@ if (!isset($_SESSION['cart'])){
         ),
     );
 }
+/*ajout au panier */
 else{
+    //si deja existant, remplacer les valeurs
+    #code
+
+    //ajoute l'article au panier
     $data = array(
         "artId"=> $_POST["article"],
         "artQuantity"=> $_POST["quantity"] 
     );
     array_push($_SESSION['cart'], $data);
 }
-  echo var_dump($_SESSION['cart']);
+  //echo var_dump($_SESSION['cart']);
   //echo print_r($_SESSION['items']);
 //  rediriger autrement?
 // header("location:?page=shop&added");

@@ -19,10 +19,20 @@ description : page où on consulte les détails d'un article
 <p>stock : <?=$products[$artId-1]["artStock"]?></p>
 
 <form method="POST" action="?page=shop&artId=<?=$products[$artId-1]["idArticle"]?>&addedToCart=true ">
+    <!-- déjà dans panier ? -->
+    <?php
+        if(isset($_SESSION['cart'])){
+            if(isset($_SESSION['cart'])){
+                
+            }
+        }
+    ?>
 
     <label for="quantity">Quantity</label>
-    <input value="1" type="number" id="quantity" name="quantity" min="1" max="<?=$products[$artId-1]["artStock"]?>"> 
 
+    <!-- si deja dans panier, indiquer la quantité -->
+    <input value="1" type="number" id="quantity" name="quantity" min="1" max="<?=$products[$artId-1]["artStock"]?>"> 
+    <!-- si déjà dans panier, message : cet article se trouve déjà dans votre panier ! -->
     <button class="btn btn-primary formButtonSubmit" name="article" type="submit" value="<?=$products[$artId-1]["idArticle"]?>">Ajouter au panier</button>
     
 </form>
