@@ -14,15 +14,15 @@ if(isset($_SESSION['cart'])){
     
     <table class="table">
         <tr>
-            <th scope="col">article name</th>
-            <th scope="col">price</th>
-            <th scope="col">quantity</th>
-            <th scope="col">subtotal</th>
+            <th scope="col">Article name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Subtotal</th>
         </tr>
         
     <?php
     $cart = $_SESSION['cart'];
-            print_r($cart);
+            //print_r($cart);
 
             //GET QUANTITY 
             // $cart[3]['artId']
@@ -38,6 +38,7 @@ if(isset($_SESSION['cart'])){
             //MATCHES ID FROM SESSION CART AND ID FROM DB
             foreach ($cart as $article){
                 if ($article['artId'] == $product['idArticle']){
+                    //met a jour la quantité voulue avec derniere entrée de user
                     $quantity = $article['artQuantity'];
                 }
             }
