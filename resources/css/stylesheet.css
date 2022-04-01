@@ -219,3 +219,22 @@ a.container-center{
     width: 100%;
 }
 
+.card{
+    background-color:var(--secondbg-color);
+    margin: 1em;
+    max-height: 18em;
+    max-width: 14em;
+}
+.img-card{
+    height: 14em;
+    width: 12em;
+    object-fit: contain;
+}
+a > p:hover{
+    color: var(--accent-color);
+}
+
+.img-detail{
+    width: 100%;
+    
+}
