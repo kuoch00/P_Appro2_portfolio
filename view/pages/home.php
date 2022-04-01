@@ -35,10 +35,10 @@ description : page index/home où l'artiste est présentée
     </div>
 </div>
 
-<div class="container container-item">
+<div class="container container-item ">
     <div>
         <h2>Skills</h2>
-        <div class="container-flex">
+        <div class="d-flex justify-content-center">
             <div class="container-mini">
                 <div class="row ">
                     <div class="col-sm skillsbox">

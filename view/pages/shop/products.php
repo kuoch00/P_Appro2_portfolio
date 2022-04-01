@@ -12,16 +12,16 @@ description : page galerie où on consulte les articles
    <?php
    
    foreach ($products as $product){?>
-
-        
-            <div class="card col-sm-4" > 
-               <a href="?order=shop&artId=<?=$product["idArticle"]?>">
-                  <img class="img-card" src="resources/img-shop/<?=$product["artImage"]?>" alt="image">
-                  <h4><?=$product["artName"]?></h4>
-                  <p><?=$product["artPrice"]?> $</p> 
-               </a>
+      <div class="card col-sm-4" > 
+         <a href="?order=shop&artId=<?=$product["idArticle"]?>">
+            <div>
+               <img class="img-card" src="resources/img-shop/<?=$product["artImage"]?>" alt="image">
+               <h4><?=$product["artName"]?></h4>
+               <p class="text-right"><?=$product["artPrice"]?> $</p> 
             </div>
-         
+            
+         </a>
+      </div>
       <?php
    } ?>
  </div>

@@ -222,12 +222,14 @@ a.container-center{
 .card{
     background-color:var(--secondbg-color);
     margin: 1em;
+    padding: 1em 1em;
     max-height: 18em;
     max-width: 14em;
 }
 .img-card{
-    height: 14em;
+    height: 11em;
     width: 12em;
+    margin-bottom: 1em;
     object-fit: contain;
 }
 a > p:hover{
