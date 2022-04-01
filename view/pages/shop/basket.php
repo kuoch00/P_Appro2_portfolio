@@ -70,7 +70,7 @@ if(isset($_SESSION['cart'])){
     ?>
     </table>
     <a class="btn btn-primary" href="?order=shop">Continue Shopping</a>
-    <a class="btn btn-primary" href="?order=checkout&order=login">Order</a>
+    <a class="btn btn-primary" href="?order=login">Order</a>
    
     <?php
 }

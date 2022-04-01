@@ -15,31 +15,29 @@ description : footer de la page
                 <!-- Grid container -->
                 <div>
                     <!-- Section: Social media -->
-                    <section class="mb-2 container-flex " >
-                        <div class="container-flex container-centertextV"><!-- ArtStation -->
+                    <section class="mb-2 container-flex row " >
+                        <div class="container-flex container-centertextV col"><!-- ArtStation -->
                             <a class="btn btn-outline-light btn-floating m-2" href="#!" role="button">
                                 <i class="fab fa-artstation"></i> 
                             </a>
                             <p>Artstation</p>
                         </div>
                         
-                        <div  class="container-flex container-centertextV"> <!-- Instagram -->
+                        <div  class="container-flex container-centertextV col"> <!-- Instagram -->
                             <a class="btn btn-outline-light btn-floating m-2" href="#!" role="button">
                                 <i class="fab fa-instagram"></i>
                             </a>
                             <p>Instagram</p>
                         </div>
                          
-                        <div class="container-flex container-centertextV"><!-- Linkedin -->
+                        <div class="container-flex container-centertextV col"><!-- Linkedin -->
                             <a class="btn btn-outline-light btn-floating m-2" href="#!" role="button">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
                             <p>Linkedin</p>
                         </div>
                         
-                        
-
-                        <div class="container-flex container-centertextV"> <!-- E-Mail -->
+                        <div class="container-flex container-centertextV col"> <!-- E-Mail -->
                             <a class="btn btn-outline-light btn-floating m-2" href="#!" role="button">
                                 <i class="fa-solid fa-envelope"></i>
                             </a>

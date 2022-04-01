@@ -10,8 +10,8 @@ description : page index/home où l'artiste est présentée
 <div class="container container-item"> 
     <h2>The Artist</h2>
     <div class="row">
-        <div class="col col-3">
-            <img class="img-fluid" src="./resources/img/photo.png" alt="">
+        <div class=" col-md-3 d-flex justify-content-center">
+            <img class="img-fluid " src="./resources/img/photo.png" alt="">
         </div>
 
         <div class="col">
@@ -41,18 +41,18 @@ description : page index/home où l'artiste est présentée
         <div class="container-flex">
             <div class="container-mini">
                 <div class="row ">
-                    <div class="col skillsbox">
+                    <div class="col-sm skillsbox">
                         <img src="" alt="">
                         <h4 class="skillsbox-text">Illustration</h4>
                     </div>
                 </div>
                 
                 <div class="row ">
-                    <div class="col col-6 skillsbox">
+                    <div class="col-sm skillsbox">
                         <img src="" alt="">
                         <h4 class="skillsbox-text">Character design</h4>
                     </div>
-                    <div class="col skillsbox ">
+                    <div class="col-sm skillsbox ">
                         <img src="" alt="">
                         
                         <h4 class="skillsbox-text">Environment design</h4>
@@ -61,22 +61,22 @@ description : page index/home où l'artiste est présentée
                 </div>
 
                 <div class="row">
-                    <div class="col col-4 skillsbox">
+                    <div class="col-sm  skillsbox">
                         <img src="" alt="">
                         
                         <h4 class="skillsbox-text">Storyboard</h4>
                     </div>
-                    <div class="col col-4 skillsbox">
+                    <div class="col-sm  skillsbox">
                         <img src="" alt="">
                         <h4 class="skillsbox-text">Character Model Sheet</h4>
                     </div>
-                    <div class="col skillsbox">
+                    <div class="col-sm skillsbox">
                         <img src="" alt="">
                         <h4 class="skillsbox-text">Layout</h4>
                     </div>
                 </div>
                 <div class=" row ">
-                    <div class="col skillsbox">
+                    <div class="col-sm skillsbox">
                         <img src="" alt=""> 
                         <h4 class="skillsbox-text">Traditional drawing</h4>
                     </div>
@@ -97,19 +97,19 @@ description : page index/home où l'artiste est présentée
     <div>
         <h2>Programs</h2>
         
-        <div class="container-flex">
-            <div class="container-mini container-flex-programs">
-                <div class="container-program">
+        <div class="container-flex container-center  row">
+            <div class="container-mini container-flex-programs row">
+                <div class="container-program col">
                     <img class="img-program" src="resources/img/home/clipstudiopaint-icon.png" alt="">
                     <h5>Clip Studio Paint Pro</h5>
                 </div>
 
-                <div class="container-program">
+                <div class="container-program col">
                     <img class="img-program" src="resources/img/home/photoshop-icon.png" alt="">
                     <h5>Adobe Photoshop</h5>
                 </div>
 
-                <div class="container-program">
+                <div class="container-program col">
                     <img class="img-program" src="resources/img/home/procreate-icon.png" alt="">
                     <h5>Procreate</h5>
                 </div>

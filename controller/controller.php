@@ -126,23 +126,22 @@
                 include("view/pages/shop/basket.php");
             
                 break;
+
             case 'login':
-                if(isset($_GET['order'])){
-                    $step = $_GET['order'];
-                    //si deja login, passer à la prochaine étape?
-                    include("view/pages/shop/login.php");
-                
-                }
-                # code...
+                //si deja login, passer à la prochaine étape?
+                include("view/pages/shop/login.php");
                 break;
+
             case 'shipping':
                 # code...
                 //include shipping tracking
                     include("view/pages/shop/fillAddress.php");
                 break;
+
             case 'summary':
                 # code...
                 break;
+                
             default :
                 include("view/pages/404.php");
                 break;
@@ -153,7 +152,7 @@
     }
     else{
         // permet de redirectionner directement la page home s'il n'y a rien
-        echo "<script>location.href=\"?page=home\"</script>";
+        //echo "<script>location.href=\"?page=home\"</script>";
     }
 
 

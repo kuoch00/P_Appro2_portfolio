@@ -8,7 +8,7 @@ description : page où le client se connecte afin de recuprerer ses données
 <div class="container">
     <div class="container-background">
         <h1>Login</h1>
-        <form action="?page=checkout&order=shipping">
+        <form method="POST" action="?order=shipping">
             <div class="form-group">
                 <!-- bootstrap verifie la forme de l'adresse !! :D -->
                 <label for="exampleInputEmail1">Email address</label>
