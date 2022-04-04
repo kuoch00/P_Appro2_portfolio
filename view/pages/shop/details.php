@@ -30,8 +30,15 @@ description : page où on consulte les détails d'un article
                 <!-- déjà dans panier ? -->
                 <?php
                     if(isset($_SESSION['cart'])){
-                        if(isset($_SESSION['cart'])){
-                            
+                        $id = $_GET['artId'];
+                        foreach($_SESSION['cart'] as $row){
+                            if($id == $row['artId']){
+                                ?>
+                                <div class="alert alert-success" role="alert">
+                                    This article is already in your cart ! 
+                                </div>
+                                <?php
+                            }
                         }
                     }
                 ?>
@@ -39,10 +46,10 @@ description : page où on consulte les détails d'un article
                 <label for="quantity">Quantity</label>
 
                 <!-- si deja dans panier, indiquer la quantité -->
-                <input value="1" type="number" id="quantity" name="quantity" min="1" max="<?=$products[$artId-1]["artStock"]?>" style="width: 5em;"> 
+                <!-- si n'est plus en stock : disable le bouton -->
+                <input value="<?= isset($row['artQuantity']) ? $row['artQuantity'] : ""  ?>" type="number" id="quantity" name="quantity" min="1" max="<?=$products[$artId-1]["artStock"]?>" style="width: 5em;"> 
                 <!-- si déjà dans panier, message : cet article se trouve déjà dans votre panier ! -->
-                <button class="btn btn-primary formButtonSubmit" name="article" type="submit" value="<?=$products[$artId-1]["idArticle"]?>">Ajouter au panier</button>
-                
+                <br><button class="btn btn-primary formButtonSubmit" name="article" type="submit" value="<?=$products[$artId-1]["idArticle"]?>" <?=$products[$artId-1]['artStock']==0 ? "disabled" : ""?>>Ajouter au panier</button>
             </form>
         </div>
     </div>

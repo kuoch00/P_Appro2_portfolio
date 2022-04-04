@@ -8,12 +8,12 @@ description : page de contact
 <form class="container"> 
     <h2>Contact </h2>
     <div style="width: 1000px;">
-        <div class="row">
-            <div class="form-group col">
+        <div class=" row">
+            <div class="col">
                 <label for="exampleFormControlInput1">First Name</label>
                 <input type="firstname" class="form-control" id="exampleFormControlInput1" placeholder="First Name">
             </div>
-            <div class="form-group col">
+            <div class="col">
                 <label for="exampleFormControlInput1">Last Name</label>
                 <input type="lastname" class="form-control" id="exampleFormControlInput1" placeholder="Last Name">
             </div>

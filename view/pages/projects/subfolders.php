@@ -32,7 +32,7 @@ liste les sujets du projet (bd)
                 <a class="container-center" href="?page=projects&catId=<?= $subcategory["idCategory"]?>&subcatId=<?=$subcategory["idSubCategory"]?>">
                 <!-- id du projet + id du subfolder -->
                 <!-- img derniere image ajoutée -->
-                    <img class="img-full" src="" alt="image">
+                    <img class="subcat-cover" src="resources/img/2.png" alt="image">
                     <h3><?= $subcategory["subName"]?></h3>
                 </a> 
             </div>
