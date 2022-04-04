@@ -16,12 +16,13 @@ presente le projet brièvement  -->
 <a href="?page=projects&catId=<?=$listGallery[0]["idCategory"]?>">go back</a>
 <?php
 
+//affiche la galerie
     foreach($listGallery as $img){ 
         // if($img["idImage"]%2==1){
         //     echo $img["idImage"];
         // }
         ?>
-            <img class="gallery-width" src="resources/img/<?=$img["imaFilename"]?>" alt="image" data-toggle="modal" data-target=".bd-example-modal-xl">
+            <img class="gallery-width" src="resources/img/<?=$img["imaFilename"]?>" alt="image" data-bs-toggle="modal" data-bs-target="#exampleModal">
 
             <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-xl">Extra large modal</button> -->
 
@@ -29,16 +30,18 @@ presente le projet brièvement  -->
 
         <?php
         } ?>
-        
-<!-- modal -->
-            <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-xl">
-                    <!-- conntent -->
-                    <div class="modal-content">
-                        <img src="resources/img/<?=$img["imaFilename"]?>" alt="Cannot show image">
-                    </div>
-                </div>
-            </div>
+        <!-- Modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="item"><img id="modalImage" class="img-fluid" /></div>
+      </div>
+    </div>
+  </div>
+</div>
     <?php
     
     ?>
