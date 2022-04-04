@@ -31,9 +31,70 @@ description : page index/home où l'artiste est présentée
         <!-- http://sachinchoolur.github.io/lightslider/ -->
 
 
+<!-- carousel 
+source : https://getbootstrap.com/docs/4.3/components/carousel/#individual-carousel-item-interval
+ -->
+ <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+     <!-- foreach ici -->
+     <?php
+     $numberProjects = count($listProjects); //=2
 
-    </div>
+     for ($i=0; $i < $numberProjects-1 ; $i++) { 
+        ?>
+         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to= <?= $i + 1?> aria-label="slide 2"></button>
+        <?php
+     }
+     ?>
+    
+    <!-- <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button> -->
+  </div>
+  <div class="carousel-inner">
+    
+    <!-- foreach ici -->
+    <?php
+    foreach($listProjects as $project){
+        if($project['idCategory'] == 2){?>
+            <div class="carousel-item active">
+                <img src="resources/img/<?=$project['catImage']?>" class="d-block w-100" alt="1">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5><?=$project['catName']?></h5>
+                </div>
+            </div>
+            <?php
+        }
+        else{?>
+            <div class="carousel-item">
+                <img src="resources/img/<?=$project['catImage']?>" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5><?=$project['catName']?></h5>
+                </div>
+            </div>
+            <?php
+        }
+    }
+    
+    ?>
+
+
+    
+    
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
+
+                
+
+            
 
 <div class="container container-item ">
     <div>

@@ -13,6 +13,8 @@
         switch($_GET["page"]){
 
             case 'home':
+                $connect= new Database();
+                $listProjects = $connect->getProjectList();
                 include("view/pages/home.php");
                 break;
 
@@ -119,7 +121,7 @@
     }
     else{
         // permet de redirectionner directement la page home s'il n'y a rien
-        //echo "<script>location.href=\"?page=home\"</script>";
+        echo "<script>location.href=\"?page=home\"</script>";
     }
 
 
