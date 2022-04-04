@@ -172,7 +172,7 @@ class Database{
 
     public function getGallery($catId, $subcatId)
     {
-        $query = "SELECT * FROM `t_image` WHERE `idCategory` = :catId AND `idSubCategory` = :subcatId ";
+        $query = "SELECT * FROM `t_image` WHERE `idCategory` = :catId AND `idSubCategory` = :subcatId  ORDER BY `t_image`.`idImage` DESC";
         $binds = array (
             0 => array (
                 'var' => $catId,

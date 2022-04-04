@@ -19,7 +19,6 @@ liste les sujets du projet (bd)
     <?php
         if($_GET["catId"]>1){?>
             <a class="btn btn-primary" href="?page=projects" role="button"><- go back</a>
-
         <?php
         } 
     ?>
