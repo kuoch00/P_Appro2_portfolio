@@ -218,7 +218,9 @@ a.container-center{
 .gallery-width{
     width: 100%;
 }
-
+/* .gallery-width{
+    width: 50%;
+} */
 .card{
     background-color:var(--secondbg-color);
     margin: 1em;
@@ -242,10 +244,11 @@ a > p:hover{
 }
 
 .thumb {
-    width: 100px;
     cursor: pointer;
+    padding: 1em 0em;
   }
 
   .modal-content{
       background-color: rgba(0, 0, 0, 0);
+      border: none;
   }
