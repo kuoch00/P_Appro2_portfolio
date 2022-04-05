@@ -28,7 +28,7 @@ description : page où on consulte les détails d'un article
 ?>
 </div>
 <div class="row">
-    <div class="col-sm-3">
+    <div class="col-sm-4">
         <img class="img-detail" src="resources/img-shop/<?=$products[$artId-1]["artImage"]?>" alt="image">
     </div>
     <div class="col-sm">

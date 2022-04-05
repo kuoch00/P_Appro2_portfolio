@@ -63,6 +63,8 @@
         }
     }
     else if (isset($_GET["order"])){
+        include("view/pages/shop/shopNav.php");
+
         switch($_GET['order']){
             case 'shop':
                 $connect= new Database();
