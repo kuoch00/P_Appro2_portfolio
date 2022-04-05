@@ -227,12 +227,16 @@ a.container-center{
     background-color:var(--secondbg-color);
     margin: 1em;
     padding: 1em 1em;
-    max-height: 18em;
-    max-width: 14em;
+    max-height: auto;
+    /* max-width: 14em; */
+    width: 100%;
+}
+.card:hover{
+    background-color:#ffffff2f;
 }
 .img-card{
-    height: 11em;
-    width: 12em;
+    height: auto;
+    width: auto;
     margin-bottom: 1em;
     object-fit: contain;
 }
@@ -284,4 +288,5 @@ a > p:hover{
 .btn-primary:hover{
     background-color: var(--accent-color-hover);
 }
+
 
