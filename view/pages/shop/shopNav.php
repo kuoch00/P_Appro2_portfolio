@@ -1,7 +1,15 @@
 <div>
-<nav class="navbar">
-<div class="container" style="margin-top: 1em;">
-    <i class="fa-solid fa-cart-shopping fa-lg"></i>
-</div>
-</nav>
+    <nav class="navbar">
+        <div class="container " >
+            <div class="float-right">
+            <!-- a aligner a droite pour linstant a gauche -->
+                <a href="?order=checkout" >
+                    
+                        <i class="fa-solid fa-cart-shopping fa-2x"></i>
+                        <p>Shopping Cart</p>
+                
+                </a>
+             </div>
+        </div>
+    </nav>
 </div>
