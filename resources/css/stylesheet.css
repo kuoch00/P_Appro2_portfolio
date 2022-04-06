@@ -115,9 +115,11 @@ a.btn.btn.btn-outline-light.btn-floating.m-2:hover{
 /*general*/
 p{
     color: var(--txt-color);
+    
+}
+p.artistDescription{
     text-align: justify;
 }
-
 
 .container-item{
     /* padding-top: 2em; */
