@@ -110,8 +110,13 @@
                 break;
 
             case 'summary':
+                $connect = new Database();
+                $products = $connect->getProducts();
+                if(isset($_SESSION['cart'])){ 
+                    $cartProducts = $connect->getCartProducts($_SESSION['cart']);
+                }
                     include("view/pages/shop/summary.php");
-                break;
+                    break;
                 
             default :
                 include("view/pages/404.php");
