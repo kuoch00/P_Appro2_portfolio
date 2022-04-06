@@ -9,30 +9,30 @@ description : page où on consulte les détails d'un article
     <div class="container-background">
         <h1>Address</h1>
 
-        <form method="post" action="?order=shipping&summary=0">
+        <form method="post" action="?order=summary">
             <div class="row">    
                 <div class="form-group col-sm">
                     <!-- bootstrap verifie la forme de l'adresse !! :D -->
                     <label for="exampleInputEmail1">First Name</label>
-                    <input type="text" class="form-control" id="firstname" aria-describedby="emailHelp" placeholder="John">
+                    <input type="text" class="form-control" id="firstname" name="firstname" aria-describedby="emailHelp" value="John">
                 </div>
 
                 <div class="form-group col-sm">
                     <!-- bootstrap verifie la forme de l'adresse !! :D -->
                     <label for="exampleInputEmail1">Last Name</label>
-                    <input type="text" class="form-control" id="lastname" aria-describedby="emailHelp" placeholder="Doe">
+                    <input type="text" class="form-control" id="lastname" name="lastname" aria-describedby="emailHelp" placeholder="Doe">
                 </div>
             </div>
             
             <div class="row">
                 <div class="form-group col-sm">
                     <label for="exampleInputEmail1">Address</label>
-                    <input type="email" class="form-control" id="address" aria-describedby="emailHelp" placeholder="street">
+                    <input type="text" class="form-control" id="address" name="address" aria-describedby="emailHelp" placeholder="street">
                 </div>
 
                 <div class="form-group col-sm">
                     <label for="exampleInputEmail1">Address complement</label>
-                    <input type="email" class="form-control" id="addressComplement" aria-describedby="emailHelp" placeholder="appt">
+                    <input type="text" class="form-control" id="addressComplement" name="addressComp" aria-describedby="emailHelp" placeholder="appt">
                 </div>
 
             </div>
@@ -42,13 +42,13 @@ description : page où on consulte les détails d'un article
                 <div class="form-group col-sm">
                     <!-- bootstrap verifie la forme de l'adresse !! :D -->
                     <label for="exampleInputEmail1">Postal code</label>
-                    <input type="email" class="form-control" id="postalCode" aria-describedby="emailHelp" placeholder="102581">
+                    <input type="text" class="form-control" id="postalCode" name="postalCode" aria-describedby="emailHelp" placeholder="102581">
                 </div>
 
                 <div class="form-group col-sm">
                     <!-- bootstrap verifie la forme de l'adresse !! :D -->
                     <label for="exampleInputEmail1">City</label>
-                    <input type="email" class="form-control" id="city" aria-describedby="emailHelp" placeholder="City name">
+                    <input type="text" class="form-control" id="city" name="city" aria-describedby="emailHelp" placeholder="City name">
                 </div>
             </div>
             
@@ -58,12 +58,13 @@ description : page où on consulte les détails d'un article
                 <div class="form-group col-sm">
                     <!-- bootstrap verifie la forme de l'adresse !! :D -->
                     <label for="exampleInputEmail1">Country</label>
-                    <input type="email" class="form-control" id="country" aria-describedby="emailHelp" placeholder="Switzerland">
+                    <input type="text" class="form-control" id="country" name="country" aria-describedby="emailHelp" placeholder="Switzerland">
+                    <!-- select country  -->
                 </div>
                 <div class="form-group col-sm">
                     <!-- bootstrap verifie la forme de l'adresse !! :D -->
                     <label for="exampleInputEmail1">State</label>
-                    <input type="email" class="form-control" id="state" aria-describedby="emailHelp" placeholder="Waadt">
+                    <input type="text" class="form-control" id="state" name="state" aria-describedby="emailHelp" placeholder="Waadt">
                 </div> 
             </div>
             
@@ -72,13 +73,13 @@ description : page où on consulte les détails d'un article
                 <div class="form-group col-sm">
                     <!-- bootstrap verifie la forme de l'adresse !! :D -->
                     <label for="exampleInputEmail1">Phone number</label>
-                    <input type="email" class="form-control" id="phone number" aria-describedby="emailHelp" placeholder="+41 000 000 00 00">
+                    <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" aria-describedby="emailHelp" placeholder="+41 000 000 00 00">
                 </div>
 
                 <div class="form-group col-sm">
                     <!-- bootstrap verifie la forme de l'adresse !! :D -->
                     <label for="exampleInputEmail1">Email Address</label>
-                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="example@email.com">
+                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="example@email.com">
                 </div>
             </div>
 

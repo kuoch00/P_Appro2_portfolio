@@ -7,7 +7,7 @@ description : page où l'on consulte le panier
 <div class="container">
 <h1>Panier</h1>
 <?php
-
+// todo ? : possibilité ajouter +- quantité / supp article
 // $_SESSION["items"];
 
 if(isset($_SESSION['cart'])){

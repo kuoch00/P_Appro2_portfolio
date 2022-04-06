@@ -110,7 +110,7 @@
                 break;
 
             case 'summary':
-                # code...
+                    include("view/pages/shop/summary.php");
                 break;
                 
             default :
