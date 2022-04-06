@@ -16,10 +16,10 @@ description : shop : page galerie où on consulte les articles
                      <img class="img-card" src="resources/img-shop/<?=$product["artImage"]?>" alt="image">
                      <h4><?=$product["artName"]?></h4>
                      <div class="row">
-                        <div class="col">
+                        <div class="col-sm">
                            <p><?= $product['artStock']>0 ? "stock : ". $product['artStock'] : "out of stock" ?></p>
                         </div>
-                        <div class="col-4">
+                        <div class="col-sm-4">
                            <p style="text-align: right;"><?=$product["artPrice"]?> $</p>
                         </div>
                      </div>

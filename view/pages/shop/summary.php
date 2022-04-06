@@ -23,6 +23,8 @@ description : page où on consulte les détails d'un article
             echo "Phone : " . $_POST['phoneNumber']. "<br> ";
             echo "Email : " . $_POST['email']. "<br> ";
 
+            //check val shipping tracking
+            
             ?>
         </p>
     </div>
@@ -30,11 +32,16 @@ description : page où on consulte les détails d'un article
 
     <div>
     <!-- tab articles + total + (shipping ? + total) -->
+    <!-- $trackingFee = -->
         <?php
-            include("view/pages/shop/basket.php");
+            $trackingFee = $_POST["radioShipping"];
+            include("view/pages/shop/arrayCart.php");
 
         ?>
 
     </div>
 
+<div>
+
+</div>
 </div>

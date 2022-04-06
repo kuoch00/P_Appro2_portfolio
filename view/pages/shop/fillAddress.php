@@ -86,18 +86,16 @@ description : page où on consulte les détails d'un article
             <div class="row">
                 <h1>Tracking</h1>
             </div>
-
-            
             <div class="row">
                 <div class="form-group col">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                        <input class="form-check-input" type="radio" name="radioShipping" id="flexRadioDefault1"  value="0" checked>
                         <label class="form-check-label" for="flexRadioDefault1">
                             No tracking
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
+                        <input class="form-check-input" type="radio" name="radioShipping" id="flexRadioDefault2" value="7">
                         <label class="form-check-label" for="flexRadioDefault2">
                             With tracking (+7$)
                         </label>

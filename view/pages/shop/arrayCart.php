@@ -1,5 +1,4 @@
 <div>
-
     <table class="table">
         <tr>
             <th scope="col">Article name</th>
@@ -37,7 +36,7 @@
                 <th scope="row"><?=$product['artName']?></td>
                 <td><?=$product['artPrice']?></td>
                 <td><?=$quantity?></td>
-                <td><?=$product['artPrice']*$quantity?></td>
+                <td><?=$product['artPrice']*$quantity . " $"?></td>
             </tr>
         <?php
         //ajoute au sous-total
@@ -47,32 +46,30 @@
     
     
 
-    if($_GET['order']=='summary'){
-        if(isset($trackingFee)){?>
-
-            <tr>
-                <th>Subtotal</th>
-                <td></td>
-                <td></td>
-                <td><?=$subtotal?></td>
-
-            </tr>
-            <tr>
-                <th>Tracking</th>
-                <td></td>
-                <td></td>
-                <td><!-- prix --></td>
-            </tr>
-            <tr>
-                <th>Total</th>
-                <td></td>
-                <td></td>
-                <td><?=$subtotal + $trackingFee?></td>
-            </tr>
-            <?php   
-        }
+    if($_GET['order']=='summary' && isset($trackingFee) && $trackingFee!=0){
+        ?>
+        <tr>
+            <th>Subtotal</th>
+            <td></td>
+            <td></td>
+            <td><?=$subtotal . " $"?></td>
+        </tr>
+        <tr>
+            <th>Tracking</th>
+            <td></td>
+            <td></td>
+            <td><?=$trackingFee . " $"?></td>
+        </tr>
+        <tr>
+            <th>Total</th>
+            <td></td>
+            <td></td>
+            <td><?=$subtotal + $trackingFee . " $"?></td>
+        </tr>
+        <?php   
+        
     }
-    else{ //order=checkout
+    else{ //order=checkout ou summary et no tracking
         ?>
         <tr>
             <th>Total</th>
