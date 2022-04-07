@@ -99,8 +99,17 @@
                 break;
 
             case 'login':
+                $connect = new Database();
+                if(isset($_GET['check'])){ //tentative de connexion
+                    //check if  user exists //check if password is the same
+                    $userCheck = $connect->CheckUser($_POST['username'], $_POST['password']);
+
+                }
                 //si deja login, passer à la prochaine étape?
-                include("view/pages/shop/login.php");
+                else{
+                    include("view/pages/shop/login.php");
+                    
+                }
                 break;
 
             case 'shipping':

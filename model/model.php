@@ -215,6 +215,54 @@ class Database{
         return $result;
         # code...
     }
+
+    public function CheckUser($username, $password)
+    {
+        
+        //user exists ?
+        $userInfo = $this->CheckIfUserExists($username);
+        //echo $userinfo[0]['cliEmailAddress'];
+        if(count($userInfo)!=0){
+            echo "existe";
+            if($checkPassword = $this->CheckPassword($userInfo[0]['cliPassword'], $password)==true){
+                echo "Successfully connected";
+
+            }
+            else{
+                echo "Email address or password wrong";
+            }
+            
+        }
+        else{
+            echo "Email address or password wrong";
+            
+        }
+        
+    }
+
+
+    public function CheckIfUserExists($username)
+    {
+        $query = "SELECT * FROM `t_client` WHERE `cliEmailAddress` = :username";
+        
+        $binds = array(
+            0=> array(
+                'var' => $username,
+                'marker' => ':username',
+                'type' => PDO::PARAM_STR
+            )
+        );
+
+        $result = $this->queryPrepareExecute($query, $binds);
+        return $result;
+        # code...
+    }
+
+    public function CheckPassword($cliPassword, $inputPassword)
+    {
+        return password_verify($inputPassword, $cliPassword);
+        
+    }
 }
 
 ?>

@@ -75,7 +75,7 @@
             <th>Total</th>
             <td></td>
             <td></td>
-            <td><?=$subtotal?></td>
+            <td><?=$subtotal?> $</td>
         </tr>
         <?php
     }

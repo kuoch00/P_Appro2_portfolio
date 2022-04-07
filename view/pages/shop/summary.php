@@ -5,7 +5,7 @@ date de création : 22.03.2022
 description : page où on consulte les détails d'un article
 -->
 <div class="container">
-
+    <h1>Order Summary</h1>
     <!-- address -->
     <div>
         <h4>Send to : </h4>
