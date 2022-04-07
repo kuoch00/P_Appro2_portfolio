@@ -107,7 +107,7 @@
                 }
                 //si deja login, passer à la prochaine étape?
                 else{
-                    include("view/pages/shop/login.php");
+                    
                     
                 }
                 break;

@@ -254,11 +254,15 @@ a > p:hover{
 .thumb {
     cursor: pointer;
     padding: 1em 0em;
-  }
+}
 
 .modal-content{
     background-color: rgba(0, 0, 0, 0);
     border: none;
+}
+.content-login{
+    background-color: var(--secondbg-color);
+    
 }
 /* The Close Button */
 .close {
@@ -291,6 +295,5 @@ a > p:hover{
     background-color: var(--accent-color-hover);
 }
 i{
-    margin-right: 5px;
+    /* margin-right: 5px; */
 }
-
