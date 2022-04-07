@@ -216,30 +216,33 @@ class Database{
         # code...
     }
 
+    /**
+     * Checks if username exists then if password is correct
+     *
+     * @param [string] $username
+     * @param [string] $password
+     * @return bool
+     */
     public function CheckUser($username, $password)
     {
-        
-        //user exists ?
         $userInfo = $this->CheckIfUserExists($username);
         //echo $userinfo[0]['cliEmailAddress'];
         if(count($userInfo)!=0){
-            echo "existe";
             if($checkPassword = $this->CheckPassword($userInfo[0]['cliPassword'], $password)==true){
                 echo "Successfully connected";
-
+                //return to page ? (popup would be nice)
+                return true;
             }
             else{
                 echo "Email address or password wrong";
+                return false;
             }
-            
         }
         else{
             echo "Email address or password wrong";
-            
+            return false;
         }
-        
     }
-
 
     public function CheckIfUserExists($username)
     {
@@ -261,7 +264,6 @@ class Database{
     public function CheckPassword($cliPassword, $inputPassword)
     {
         return password_verify($inputPassword, $cliPassword);
-        
     }
 }
 

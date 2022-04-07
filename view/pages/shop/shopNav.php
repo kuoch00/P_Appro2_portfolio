@@ -1,15 +1,18 @@
-<div>
-    <nav class="navbar">
-        <div class="container" style="justify-content: flex-end;" >
-            <div>
-            <!-- a aligner a droite pour linstant a gauche -->
-                <a class="d-flex" href="?order=checkout">
-                    
-                        <i class="fa-solid fa-cart-shopping fa-2x"></i>
-                        <p> Shopping Cart</p>
-                
+<div class="container">
+    <nav class="mt-2">
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+                <a href="?order=login">
+                    <i class="fa-solid fa-user"></i>
+                    Login
                 </a>
-             </div>
-        </div>
+            </li>
+            <li class="nav-item">
+                <a class="d-flex" href="?order=checkout">
+                    <i class="fa-solid fa-cart-shopping mt-1"></i>
+                     Shopping Cart
+                </a>
+            </li>
+        </ul>
     </nav>
 </div>

@@ -40,9 +40,30 @@ description : header de la page (image avec menu de navigation)
                                 2. href va permettre au GET dans le controller de changer de page en changeant l'adresse
                             -->
                             
-                            <a class="nav-item nav-link <?= isset($_GET["page"])? ($_GET["page"]== "projects" ? "active" : ""):"" ?> " href="?page=projects">Projects</a>
                             <!-- ne fonctionnne plus on met un case project pour projects et school  -->
-                            <a class="nav-item nav-link <?= isset($_GET["page"])? ($_GET["page"]== "projects" ? "active" : ""):"" ?> " href="?page=projects&catId=1">School work</a>
+                            <?php
+                                $activeState;
+                                if(isset($_GET['page'])){
+                                    if($_GET['page']=="projects"){
+                                        if(isset($_GET['catId'])){
+                                            if($_GET['catId']!=1){
+                                                $activeState = "active";
+                                            }
+                                            else{
+                                                $activeState = "";
+                                            }
+                                        }
+                                        else{
+                                            $activeState = "active";
+                                        }
+                                    }
+                                }
+
+                            ?>
+
+                            <a class="nav-item nav-link <?=$activeState?>" href="?page=projects">Projects</a>
+
+                            <a class="nav-item nav-link <?= isset($_GET["page"]) ? ($_GET["page"]== "projects" && isset($_GET['catId']) && $_GET['catId']==1 ? "active" : ""):"" ?> " href="?page=projects&catId=1">School work</a>
                             <a class="nav-item nav-link <?= isset($_GET["order"])? ($_GET["order"]== "shop" ? "active" : ""):"" ?> " href="?order=shop">Shop</a>
                             <a class="nav-item nav-link <?= isset($_GET["page"])? ($_GET["page"]== "contact" ? "active" : ""):"" ?> " href="?page=contact">Contact</a>
                         </div>

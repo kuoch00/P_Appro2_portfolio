@@ -74,7 +74,7 @@ body{
 }
 .nav-item{
     margin-right: 20px;
-    font-weight: bold;
+    
 }
 .title{
     position: absolute;
@@ -289,5 +289,8 @@ a > p:hover{
 }
 .btn-primary:hover{
     background-color: var(--accent-color-hover);
+}
+i{
+    margin-right: 5px;
 }
 
