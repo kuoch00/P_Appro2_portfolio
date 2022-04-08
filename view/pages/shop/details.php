@@ -10,7 +10,9 @@ description : page où on consulte les détails d'un article
 
 <div class="container">
 <?php ?>
-<a class="btn btn-primary" role="button" href="?order=shop"><- retour</a><br>
+<a class="btn btn-primary" role="button" href="?order=shop">
+<i class="fa-solid fa-arrow-left"></i>
+ retour</a><br>
 <div class="row">
 <?php
     if(isset($_SESSION['cart'])){

@@ -4,7 +4,8 @@
  * date de création : 21.03.2022
  * description : controlleur de l'application
  */
-    
+ob_start();
+
     include("model/model.php");
     include("view/view.php");//header (img et nav)
     
@@ -100,18 +101,31 @@
 
             case 'login':
                 $connect = new Database();
-                if(isset($_GET['check'])){ //tentative de connexion
-                    //check if  user exists //check if password is the same
+                
+                //est co ? oui
+                if(isset($_GET['check'])){
+                    //est connecté
+                
                     $userCheck = $connect->CheckUser($_POST['username'], $_POST['password']);
-
+                    if($userCheck == true){
+                        $_SESSION["connected"] = 1;
+                        // echo "successsfullyyy connectted";
+                        header("Location: " . $_SERVER["HTTP_REFERER"]);
+                     } 
                 }
-                //si deja login, passer à la prochaine étape?
                 else{
-                    
-                    
+                    include("view/pages/shop/login.php");
                 }
                 break;
-
+            case 'disconnect' :
+                if(isset($_SESSION["connected"])!=0){
+                    unset($_SESSION["connected"]);
+                    unset($_SESSION["username"]);
+                    unset($_SESSION["password"]);
+                    unset($_SESSION["cart"]);
+                    // echo "Successfully disconnected";
+                    header("Location: ?order=shop");
+                }
             case 'shipping':
                 # code...
                 //include shipping tracking
@@ -139,6 +153,7 @@
         // permet de redirectionner directement la page home s'il n'y a rien
         echo "<script>location.href=\"?page=home\"</script>";
     }
+    
 
-
+    ob_end_flush(); 
 ?>

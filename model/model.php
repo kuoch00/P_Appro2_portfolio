@@ -229,17 +229,17 @@ class Database{
         //echo $userinfo[0]['cliEmailAddress'];
         if(count($userInfo)!=0){
             if($checkPassword = $this->CheckPassword($userInfo[0]['cliPassword'], $password)==true){
-                echo "Successfully connected";
+                // echo "Successfully connected";
                 //return to page ? (popup would be nice)
                 return true;
             }
             else{
-                echo "Email address or password wrong";
+                // echo "Email address or password wrong";
                 return false;
             }
         }
         else{
-            echo "Email address or password wrong";
+            // echo "Email address or password wrong";
             return false;
         }
     }

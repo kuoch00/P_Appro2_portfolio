@@ -1,18 +1,50 @@
 <div class="container">
     <nav class="mt-2">
-        <ul class="nav justify-content-end">
-            <li class="nav-item">
-                <a data-bs-toggle="modal" data-bs-target="#myModal" href="">
-                    <i class="fa-solid fa-user"></i>
-                    Login
-                </a>
-            </li>
+        <ul class="nav justify-content-end mb-3">
+            
             <li class="nav-item">
                 <a class="d-flex" href="?order=checkout">
                     <i class="fa-solid fa-cart-shopping mt-1  me-1"></i>
                      Shopping Cart
                 </a>
             </li>
+            
+              <?php
+              //is connected
+              if (isset($_SESSION["connected"]) == 1){?>
+                <li class="nav-item">
+                  <a href="?order=account" >
+                      <i class="fa-solid fa-user"></i>
+                      <!-- connecté -->
+                      My Account
+                  </a>
+                </li>
+                <li>
+                  <a href="?order=disconnect">
+                    <i class="fa-solid fa-arrow-right-from-bracket mt-1  me-1"></i>
+                      <!-- deconnecter -->
+                      Disconnect
+                  </a>
+                </li>
+                
+                <?php
+              }
+              else{?>
+                <!-- <a data-bs-toggle="modal" data-bs-target="#myModal" href=""> -->
+                <li class="nav-item">
+                  <a href="?order=login">
+                    <i class="fa-solid fa-user"></i>                    
+                    <!-- pas co = -->
+                    Login
+                  </a>
+                </li>
+                
+                <?php 
+              }
+              ?>
+                
+            
+            
         </ul>
     </nav>
 </div>

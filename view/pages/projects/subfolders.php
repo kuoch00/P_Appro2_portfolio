@@ -18,7 +18,7 @@ liste les sujets du projet (bd)
 <div class="container">
     <?php
         if($_GET["catId"]>1){?>
-            <a class="btn btn-primary" href="?page=projects" role="button"><- go back</a>
+            <a class="btn btn-primary" href="?page=projects" role="button"><i class="fa-solid fa-arrow-left"></i> go back</a>
         <?php
         } 
     ?>

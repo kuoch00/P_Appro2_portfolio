@@ -162,7 +162,7 @@ description : page index/home où l'artiste est présentée
     <div>
         <h2>Programs</h2>
         
-        <div class="container-flex container-center  row">
+        <div class="container-flex container-center  row" style="width: auto;">
             <div class="container-mini container-flex-programs row">
                 <div class="container-program col">
                     <img class="img-program" src="resources/img/home/clipstudiopaint-icon.png" alt="">
