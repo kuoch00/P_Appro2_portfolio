@@ -4,5 +4,5 @@ josé a fait : checkauthor et insertAuthor
 
 create account
 
-write in db the irder
+write in db the order
 
