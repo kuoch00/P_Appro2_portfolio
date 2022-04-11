@@ -11,7 +11,7 @@
             
             <?php
               //is connected
-              if (isset($_SESSION["connected"]) == 1){?>
+              if (isset($_SESSION["connected"]) && $_SESSION["connected"]){?>
                 <li class="nav-item">
                   <a href="?order=account" >
                       <i class="fa-solid fa-user"></i>

@@ -14,11 +14,11 @@ description : page où le client se connecte afin de recuprerer ses données
                 <div class="form-group">
                     <!-- bootstrap verifie la forme de l'adresse !! :D -->
                     <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control <?= isset($isInvalid)==true ? "is-invalid" : ""?>" id="exampleInputEmail1" name="username" aria-describedby="emailHelp" placeholder="Enter email" value= <?= isset($_POST['username'])!="" ? $_POST["username"] : "" ?>>
+                    <input type="email" class="form-control <?= isset($isInvalid) && $isInvalid==true ? "is-invalid" : ""?>" id="exampleInputEmail1" name="username" aria-describedby="emailHelp" placeholder="Enter email" value= <?= isset($_POST['username'])!="" ? $_POST["username"] : "" ?>>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control <?= isset($isInvalid)==true ? "is-invalid" : ""?>" id="exampleInputPassword1" name="password" placeholder="Password">
+                    <input type="password" class="form-control <?= isset($isInvalid) && $isInvalid==true ? "is-invalid" : ""?>" id="exampleInputPassword1" name="password" placeholder="Password">
                     <div id="validationServerUsernameFeedback" class="invalid-feedback">
                         Email address not found or wrong password.
                     </div>

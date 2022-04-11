@@ -153,7 +153,11 @@ class Database{
         //$result = $this->querySimpleExecute($query);
 
         //get only subcat of a cat
-        $query = "SELECT t_image.idCategory, t_subcategory.idSubCategory, t_subcategory.subName, COUNT(t_image.idSubCategory) as total FROM t_image INNER JOIN t_subcategory on t_image.idSubCategory = t_subcategory.idSubCategory WHERE t_image.idCategory LIKE :catId GROUP BY t_image.idSubCategory ORDER by total DESC ";
+        $query = "SELECT t_image.idCategory, t_subcategory.idSubCategory, t_subcategory.subName, 
+        COUNT(t_image.idSubCategory) as total FROM t_image 
+        INNER JOIN t_subcategory on t_image.idSubCategory = t_subcategory.idSubCategory 
+        WHERE t_image.idCategory LIKE :catId 
+        GROUP BY t_image.idSubCategory ORDER by total DESC ";
 
         //$query = "SELECT t_image.idCategory, t_subcategory.idSubCategory, t_subcategory.subName, COUNT(t_image.idSubCategory) as total FROM t_image INNER JOIN t_subcategory on t_image.idSubCategory = t_subcategory.idSubCategory WHERE t_image.idCategory LIKE :catId GROUP BY t_image.idSubCategory ORDER by total DESC ";
         $binds = array(

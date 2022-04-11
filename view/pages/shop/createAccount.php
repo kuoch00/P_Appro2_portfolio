@@ -11,16 +11,19 @@ si le temps le permet : ajouter regex pour verifier adresse (no bootstrap le fai
     <div class="d-flex justify-content-center">
         <div class="col-8 container-background">
             <h1>Create Account</h1>
-            <p><?=$accountExists . " " . $isInvalid?></p>
+            
+            
             <form action="?order=createAccount" method="post">
                 <div class="form-group row">
                     <label for="exampleFormControlInput1">E-mail address</label>
-                    <input type="email" class="form-control <?= isset($isInvalid)==true ? "is-invalid" : ""?>" id="" placeholder="Enter email address" name="email" required>
+                    <input type="email" class="form-control <?= (isset($isInvalid) && $isInvalid=="true") ? "is-invalid" : ""?>" id="EMAIL" name="email" placeholder="Enter email address"  required>
+                    <?php 
+                    var_dump($isInvalid);
+                    ?>
                     <div id="validationServerUsernameFeedback" class="invalid-feedback">
                         An existing account already uses this email address. Please use another one.
                     </div> 
-                </div>
-                
+                </div> 
 
                 <div class="form-group row">
                     <label for="exampleFormControlInput1">Password</label>

@@ -108,10 +108,13 @@ ob_start();
                     
                     //réussi
                     if($userCheck == true){
-                        $_SESSION["connected"] = 1;
+                        $_SESSION["connected"] = true;
                         // echo "successsfullyyy connectted";
                         $isInvalid = false;
-                        include("view/pages/shop/successfulConnection.php");//contourner avec bouton  hihi
+                       //contourner avec bouton  hihi
+                        
+                        header("Location: ?order=successfulConnection");
+                        
                         
                         //header("Location: " . $_SERVER["HTTP_REFERER"]);//retourner a page précédente si btn etait bouton login (là fait order=login&check=0 à order=login :/) 
                         ///get order=$?
@@ -129,9 +132,13 @@ ob_start();
                     include("view/pages/shop/login.php"); 
                 }
                 break;
+                
+            case 'successfulConnection' :
+                include("view/pages/shop/successfulConnection.php");
+                break;
 
             case 'disconnect' :
-                if(isset($_SESSION["connected"])!=0){
+                if(isset($_SESSION["connected"]) && $_SESSION["connected"]){
                     unset($_SESSION["connected"]);
                     unset($_SESSION["username"]);
                     unset($_SESSION["password"]);
@@ -142,7 +149,7 @@ ob_start();
             case 'shipping':
                 # code...
                 //include shipping tracking
-                    include("view/pages/shop/fillAddress.php");
+                include("view/pages/shop/fillAddress.php");
                 break;
 
             case 'summary':
@@ -165,17 +172,18 @@ ob_start();
                     $email = $_POST["email"];
                     //true = already used // false = free
                     $accountExists = $connect->checkEmailAddress($email);
-                    if($accountExists==true){
+                    if($accountExists=="true"){
                         
-                        $isInvalid=true;
+                        $isInvalid = "true";
                     }
                     else{
-                        $isInvalid=false;
+                        $isInvalid = "false";
                     }
                     include("view/pages/shop/createAccount.php");
 
                 }
                 else{
+                    $isInvalid = "false";
                     $accountExists = 0;
                     include("view/pages/shop/createAccount.php");
 

@@ -6,7 +6,7 @@ description : page où on consulte les détails d'un article
 -->
 <?php
 //is connected
-if(isset($_SESSION["connected"])!=1){
+if(!isset($_SESSION["connected"])){
 ?>
     <div class="container">
         <h1>Order Summary</h1>
