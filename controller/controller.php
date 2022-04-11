@@ -107,7 +107,7 @@ ob_start();
                     $userCheck = $connect->CheckUser($_POST['username'], $_POST['password']);
                     
                     //réussi
-                    if($userCheck == true){//est connecté
+                    if($userCheck == true){
                         $_SESSION["connected"] = 1;
                         // echo "successsfullyyy connectted";
                         $isInvalid = false;
@@ -159,7 +159,27 @@ ob_start();
                 break;
 
             case 'createAccount':
-                include("view/pages/shop/createAccount.php");
+                $connect = new Database();
+                // $isInvalid=true;
+                if(isset($_POST["email"])){ 
+                    $email = $_POST["email"];
+                    //true = already used // false = free
+                    $accountExists = $connect->checkEmailAddress($email);
+                    if($accountExists==true){
+                        
+                        $isInvalid=true;
+                    }
+                    else{
+                        $isInvalid=false;
+                    }
+                    include("view/pages/shop/createAccount.php");
+
+                }
+                else{
+                    $accountExists = 0;
+                    include("view/pages/shop/createAccount.php");
+
+                }
                 break;
 
             default :

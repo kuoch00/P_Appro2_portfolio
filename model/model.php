@@ -226,20 +226,19 @@ class Database{
     public function CheckUser($username, $password)
     {
         $userInfo = $this->CheckIfUserExists($username);
-        //echo $userinfo[0]['cliEmailAddress'];
+        //if pas vide = existe
         if(count($userInfo)!=0){
             if($checkPassword = $this->CheckPassword($userInfo[0]['cliPassword'], $password)==true){
                 // echo "Successfully connected";
-                //return to page ? (popup would be nice)
                 return true;
             }
             else{
-                // echo "Email address or password wrong";
+                // echo "password wrong";
                 return false;
             }
         }
         else{
-            // echo "Email address or password wrong";
+            // echo "Email address wrong";
             return false;
         }
     }
@@ -264,6 +263,25 @@ class Database{
     public function CheckPassword($cliPassword, $inputPassword)
     {
         return password_verify($inputPassword, $cliPassword);
+    }
+
+    public function checkEmailAddress($email)
+    {
+        $query ="SELECT cliEmailAddress FROM `t_client` WHERE cliEmailAddress LIKE :email ";
+        $binds = array( 
+            0 => array(
+                'var' => $email,
+                'marker' => ':email',
+                'type' => PDO::PARAM_STR
+                )
+            );
+           $result = $this->queryPrepareExecute($query, $binds);
+        if(count($result)>0){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }
 
