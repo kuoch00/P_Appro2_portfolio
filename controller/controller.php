@@ -132,7 +132,7 @@ ob_start();
                     include("view/pages/shop/login.php"); 
                 }
                 break;
-                
+
             case 'successfulConnection' :
                 include("view/pages/shop/successfulConnection.php");
                 break;
@@ -172,23 +172,23 @@ ob_start();
                     $email = $_POST["email"];
                     //true = already used // false = free
                     $accountExists = $connect->checkEmailAddress($email);
-                    if($accountExists=="true"){
-                        
-                        $isInvalid = "true";
+                    if($accountExists){ 
+                        $isInvalid = true;
                     }
                     else{
-                        $isInvalid = "false";
-                    }
-                    include("view/pages/shop/createAccount.php");
+                        //adresse bonne, allons entrer ca dans la db
+                        $isInvalid = false;
+                        $createAccount = $connect->createAccount($_POST['email'], $_POST['password']);
 
+                    }
+                    include("view/pages/shop/createAccount.php"); 
                 }
                 else{
-                    $isInvalid = "false";
+                    $isInvalid = false;
                     $accountExists = 0;
-                    include("view/pages/shop/createAccount.php");
-
+                    include("view/pages/shop/createAccount.php"); 
                 }
-                break;
+                break; 
 
             default :
                 include("view/pages/404.php");

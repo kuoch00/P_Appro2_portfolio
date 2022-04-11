@@ -287,6 +287,30 @@ class Database{
             return false;
         }
     }
+
+    public function createAccount($username, $password)
+    {
+        echo $username . " : " . $password;
+        // $query = "INSERT INTO t_client ( cliPassword, cliFirstName, cliLastName, cliAddress, cliPostalCode, cliCity, cliState, cliCountry, cliPhoneNumber, cliEmailAddress) VALUES (':password', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, ':username') ";
+        $query = 'INSERT INTO t_client SET '
+       
+        $binds = array(
+            0 => array(
+                'var' => $username,
+                'marker' => ':username',
+                'type' => PDO::PARAM_STR
+            ),
+            1 => array(
+                'var' => $password,
+                'marker' => ':password',
+                'type' => PDO::PARAM_STR
+            )
+        );
+
+        $result = $this->queryPrepareExecute($query,$binds);
+        return $result;
+        # code...
+    }
 }
 
 ?>
