@@ -3,6 +3,7 @@ josé a fait : checkauthor et insertAuthor
 
 
 create account
+account profile
 
 write in db the order
 

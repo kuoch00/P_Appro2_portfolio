@@ -9,7 +9,7 @@
                 </a>
             </li>
             
-              <?php
+            <?php
               //is connected
               if (isset($_SESSION["connected"]) == 1){?>
                 <li class="nav-item">
@@ -39,12 +39,9 @@
                   </a>
                 </li>
                 
-                <?php 
-              }
-              ?>
-                
-            
-            
+              <?php 
+            }
+            ?>
         </ul>
     </nav>
 </div>

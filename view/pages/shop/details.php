@@ -47,7 +47,6 @@ description : page où on consulte les détails d'un article
             <form method="POST" action="?order=shop&artId=<?=$products[$artId-1]["idArticle"]?>&addedToCart=true ">
                 <!-- déjà dans panier ? -->
                 
-
                 <label for="quantity">Quantity </label>
 
                 <!-- si deja dans panier, indiquer la quantité -->

@@ -65,7 +65,6 @@ ob_start();
     }
     else if (isset($_GET["order"])){
         include("view/pages/shop/shopNav.php");
-
         switch($_GET['order']){
             case 'shop':
                 $connect= new Database();
@@ -102,21 +101,35 @@ ob_start();
             case 'login':
                 $connect = new Database();
                 
-                //est co ? oui
-                if(isset($_GET['check'])){
-                    //est connecté
-                
+                //tentative de connection
+                if(isset($_POST['username'])){
+                    //verification
                     $userCheck = $connect->CheckUser($_POST['username'], $_POST['password']);
-                    if($userCheck == true){
+                    
+                    //réussi
+                    if($userCheck == true){//est connecté
                         $_SESSION["connected"] = 1;
                         // echo "successsfullyyy connectted";
-                        header("Location: " . $_SERVER["HTTP_REFERER"]);
-                     } 
+                        $isInvalid = false;
+                        include("view/pages/shop/successfulConnection.php");//contourner avec bouton  hihi
+                        
+                        //header("Location: " . $_SERVER["HTTP_REFERER"]);//retourner a page précédente si btn etait bouton login (là fait order=login&check=0 à order=login :/) 
+                        ///get order=$?
+                        //autre : va a la page suivante = processus de commande
+                    } 
+                    //raté
+                    else{
+                        //erreur
+                        $isInvalid = true;
+                        include("view/pages/shop/login.php");
+                        //header("Location: " . $_SERVER["HTTP_REFERER"]);//avec erreur retour a order=login
+                    }
                 }
                 else{
-                    include("view/pages/shop/login.php");
+                    include("view/pages/shop/login.php"); 
                 }
                 break;
+
             case 'disconnect' :
                 if(isset($_SESSION["connected"])!=0){
                     unset($_SESSION["connected"]);
@@ -140,7 +153,15 @@ ob_start();
                 }
                     include("view/pages/shop/summary.php");
                     break;
-                
+
+            case 'account':
+                include("view/pages/shop/account.php");
+                break;
+
+            case 'createAccount':
+                include("view/pages/shop/createAccount.php");
+                break;
+
             default :
                 include("view/pages/404.php");
                 break;

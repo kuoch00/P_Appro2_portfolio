@@ -16,7 +16,7 @@ description : header de la page (image avec menu de navigation)
                         <img class="header-img" src="resources/img/head2.png" alt="yay">
                     </div>
                 </div>
-                <h1 class="title ">Sarah Souffleur</h1>
+                <h1 class="title ">Onyx</h1>
             </div>
         </div>
 

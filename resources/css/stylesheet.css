@@ -294,6 +294,11 @@ a > p:hover{
 .btn-primary:hover{
     background-color: var(--accent-color-hover);
 }
-i{
-    /* margin-right: 5px; */
+
+.link {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+.link:hover{
+    color: var(--accent-color-hover);
 }
