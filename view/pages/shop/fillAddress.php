@@ -12,7 +12,15 @@ description : page où on consulte les détails d'un article
         <!-- if radio button not on here, disable -->
         <!-- http://jsfiddle.net/8NynQ/ -->
         <form method="post" action="?order=summary">
-        <fieldset >
+        <!-- <label for="radio1">        
+            <input type="radio" name="test" value="oldAddress">
+            radio 1
+        </label>
+        <label for="radio2">        
+            <input type="radio" name="test" value="newAddress">
+            radio 2
+        </label>
+        <fieldset name="for_radio2[]" class="radio2" disabled="true"> -->
         <!-- <fieldset disabled> -->
             <div class="row">    
                 <div class="form-group col-sm">

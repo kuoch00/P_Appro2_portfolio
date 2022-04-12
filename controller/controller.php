@@ -109,6 +109,8 @@ ob_start();
                     //réussi
                     if($userCheck){
                         $_SESSION["connected"] = true;
+                        $_SESSION["userinfo"] = $connect->getUserInfo($_POST["username"]);
+                        
                         // echo "successsfullyyy connectted";
                         $isInvalid = false;
                        //contourner avec bouton  hihi
@@ -171,7 +173,25 @@ ob_start();
                     break;
 
             case 'account':
+                $connect = new Database();
+                $userInfo = $_SESSION["userinfo"];
+
+
                 include("view/pages/shop/account.php");
+                if(isset($_GET['option'])){
+                    $option = $_GET['option'];
+                    if($option == "updateAddress"){
+                        //fill address .php mais avec valeurs
+
+                    }
+                    elseif($option == "addAddress"){
+                        //fill address mais vide
+
+                    }
+                    else{
+                        include("view/pages/404.php");
+                    }
+                }
                 break;
 
             case 'createAccount':

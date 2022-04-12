@@ -102,6 +102,19 @@ confirm_password.onkeyup = validatePassword;
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script>
+$(document).ready(function(){
+    $('input[type=radio][name=test]').click(function(){
+        var related_class=$(this).val();
+        $('.'+related_class).prop('disabled',false);
+        
+        $('input[type=radio][name=test]').not(':checked').each(function(){
+            var other_class=$(this).val();
+            $('.'+other_class).prop('disabled',true);
+        });
+    });
+});
 
+</script>
 </body>
 </html>

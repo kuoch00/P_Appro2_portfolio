@@ -288,6 +288,36 @@ class Database{
         }
     }
 
+    public function getUserInfo($username)
+    {
+        $query = "SELECT `idClient`,`cliFirstName`,`cliLastName`,`cliAddress`,`cliPostalCode`,`cliCity`,`cliState`,`cliCountry`,`cliPhoneNumber`,`cliEmailAddress` FROM `t_client` WHERE `cliEmailAddress` LIKE :username";
+        //addresse
+        $binds = array(
+            0 => array(
+                'var' => $username,
+                'marker' => ":username",
+                'type' => PDO::PARAM_STR
+            )
+        );
+
+        $result = $this->queryPrepareExecute($query, $binds);
+        return $result;
+        
+
+        # code...
+    }
+
+    public function getOrders($clientId)
+    {
+        $query = "SELECT * FROM `t_order` WHERE `idClient` LIKE :id ";
+        $binds = array(
+            0=> array(
+                'var' => $clientId,
+                'marker' => ":id",
+                'type' => PDO::PARAM_STR
+            )
+        );
+    }
     public function createAccount($username, $password)
     {
         echo $username . " : " . $password;
