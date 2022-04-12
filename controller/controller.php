@@ -178,8 +178,8 @@ ob_start();
                     else{
                         //adresse bonne, allons entrer ca dans la db
                         $isInvalid = false;
-                        $createAccount = $connect->createAccount($_POST['email'], $_POST['password']);
-
+                        $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+                        $createAccount = $connect->createAccount($_POST['email'], $password);
                     }
                     include("view/pages/shop/createAccount.php"); 
                 }

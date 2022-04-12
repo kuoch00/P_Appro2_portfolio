@@ -292,7 +292,7 @@ class Database{
     {
         echo $username . " : " . $password;
         // $query = "INSERT INTO t_client ( cliPassword, cliFirstName, cliLastName, cliAddress, cliPostalCode, cliCity, cliState, cliCountry, cliPhoneNumber, cliEmailAddress) VALUES (':password', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, ':username') ";
-        $query = 'INSERT INTO t_client SET '
+        $query = "INSERT INTO t_client SET cliPassword=:password, cliFirstName=:firstname, cliLastName=:lastname, cliAddress=:address, cliPostalCode=:postalcode, cliCity=:city, cliState=:state, cliCountry=:country, cliPhoneNumber=:phoneNumber, cliEmailAddress=:username";
        
         $binds = array(
             0 => array(
@@ -304,7 +304,47 @@ class Database{
                 'var' => $password,
                 'marker' => ':password',
                 'type' => PDO::PARAM_STR
-            )
+            ),
+            2 => array(
+                'var' => null,
+                'marker' => ':firstname',
+                'type' => PDO::PARAM_STR
+            ),
+            3 => array(
+                'var' => null,
+                'marker' => ':lastname',
+                'type' => PDO::PARAM_STR
+            ),
+            4 => array(
+                'var' => null,
+                'marker' => ':address',
+                'type' => PDO::PARAM_STR
+            ),
+            5 => array(
+                'var' => null,
+                'marker' => ':postalcode',
+                'type' => PDO::PARAM_STR
+            ),
+            6 => array(
+                'var' => null,
+                'marker' => ':city',
+                'type' => PDO::PARAM_STR
+            ),
+            7 => array(
+                'var' => null,
+                'marker' => ':state',
+                'type' => PDO::PARAM_STR
+            ),
+            8 => array(
+                'var' => null,
+                'marker' => ':country',
+                'type' => PDO::PARAM_STR
+            ),
+            9 => array(
+                'var' => null,
+                'marker' => ':phoneNumber',
+                'type' => PDO::PARAM_STR
+            ),
         );
 
         $result = $this->queryPrepareExecute($query,$binds);
