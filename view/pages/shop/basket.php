@@ -13,7 +13,7 @@ description : page où l'on consulte le panier
 if(isset($_SESSION['cart']) && count($_SESSION['cart'])>0){
     include("./view/pages/shop/arrayCart.php");?>
     <a class="btn btn-primary" href="?order=shop">Continue Shopping</a>
-    <a class="btn btn-primary" href="?order=login">Order</a>
+    <a class="btn btn-primary" href="?order=shipping">Order</a>
     
         <?php
 }//fin cart isset

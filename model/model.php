@@ -294,6 +294,7 @@ class Database{
         // $query = "INSERT INTO t_client ( cliPassword, cliFirstName, cliLastName, cliAddress, cliPostalCode, cliCity, cliState, cliCountry, cliPhoneNumber, cliEmailAddress) VALUES (':password', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, ':username') ";
         $query = "INSERT INTO t_client SET cliPassword=:password, cliFirstName=:firstname, cliLastName=:lastname, cliAddress=:address, cliPostalCode=:postalcode, cliCity=:city, cliState=:state, cliCountry=:country, cliPhoneNumber=:phoneNumber, cliEmailAddress=:username";
        
+        //on doit bind chaque valeur sinon erreur
         $binds = array(
             0 => array(
                 'var' => $username,

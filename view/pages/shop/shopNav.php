@@ -32,7 +32,7 @@
               else{?>
                 <!-- <a data-bs-toggle="modal" data-bs-target="#myModal" href=""> -->
                 <li class="nav-item">
-                  <a href="?order=login">
+                  <a href="?order=login" >
                     <i class="fa-solid fa-user"></i>                    
                     <!-- pas co = -->
                     Login

@@ -8,8 +8,12 @@ description : page où on consulte les détails d'un article
 <div class="container">
     <div class="container-background">
         <h1>Address</h1>
-
+        <!-- if address already exists : display here -->
+        <!-- if radio button not on here, disable -->
+        <!-- http://jsfiddle.net/8NynQ/ -->
         <form method="post" action="?order=summary">
+        <fieldset >
+        <!-- <fieldset disabled> -->
             <div class="row">    
                 <div class="form-group col-sm">
                     <!-- bootstrap verifie la forme de l'adresse !! :D -->
@@ -107,6 +111,8 @@ description : page où on consulte les détails d'un article
 
             <button type="submit" class="btn btn-primary">Next</button>
 
+        </fieldset>
+            
             
         </form>
 

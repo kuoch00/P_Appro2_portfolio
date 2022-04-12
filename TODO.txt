@@ -2,8 +2,9 @@ si catégorie ou sous catégorie inexistante : la créer
 josé a fait : checkauthor et insertAuthor 
 
 
-create account
+DONE : create account
 account profile
 
 write in db the order
 
+sauvegarder le shopping cart apres déconnection ?

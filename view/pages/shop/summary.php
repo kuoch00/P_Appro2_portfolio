@@ -6,7 +6,7 @@ description : page où on consulte les détails d'un article
 -->
 <?php
 //is connected
-if(!isset($_SESSION["connected"])){
+if(isset($_SESSION["connected"])){
 ?>
     <div class="container">
         <h1>Order Summary</h1>
@@ -44,17 +44,18 @@ if(!isset($_SESSION["connected"])){
             ?>
         </div>
 
+        <div>
+            <a class="btn btn-primary" href="?order=confirm" role="button">Finish order</a>
+
+        </div>
+
     </div>
 
 <?php    
 }
 
-else{
-    ?>
-    <div class="container">
-    <p>You must be connected to access to this page</p>
-    <a class="btn btn-primary" href="?order=login" role="button">Login</a>
-    </div>
-    <?php
+else{//not connected
+    
+    include("view/pages/shop/notConnected.php");
 }
 ?>

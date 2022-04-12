@@ -100,22 +100,26 @@ ob_start();
 
             case 'login':
                 $connect = new Database();
-                
+                // echo $_SESSION['lastpage'];
                 //tentative de connection
                 if(isset($_POST['username'])){
                     //verification
                     $userCheck = $connect->CheckUser($_POST['username'], $_POST['password']);
                     
                     //réussi
-                    if($userCheck == true){
+                    if($userCheck){
                         $_SESSION["connected"] = true;
                         // echo "successsfullyyy connectted";
                         $isInvalid = false;
                        //contourner avec bouton  hihi
+                       
+                        // if(isset($_SESSION['lastpage'])){
+                        //     echo "ok";
+                        //     header("Location:" . $_SESSION['lastpage']);
+                        // }
                         
-                        header("Location: ?order=successfulConnection");
-                        
-                        
+                        include("view/pages/shop/successfulConnection.php");
+
                         //header("Location: " . $_SERVER["HTTP_REFERER"]);//retourner a page précédente si btn etait bouton login (là fait order=login&check=0 à order=login :/) 
                         ///get order=$?
                         //autre : va a la page suivante = processus de commande
@@ -128,7 +132,7 @@ ob_start();
                         //header("Location: " . $_SERVER["HTTP_REFERER"]);//avec erreur retour a order=login
                     }
                 }
-                else{
+                else{//page de connection
                     include("view/pages/shop/login.php"); 
                 }
                 break;
@@ -148,8 +152,13 @@ ob_start();
                 }
             case 'shipping':
                 # code...
+                if(isset($_SESSION['connected']) && $_SESSION['connected']){
+                    include("view/pages/shop/fillAddress.php");
+                }
+                else{
+                    include("view/pages/shop/login.php");
+                }
                 //include shipping tracking
-                include("view/pages/shop/fillAddress.php");
                 break;
 
             case 'summary':
@@ -189,6 +198,11 @@ ob_start();
                     include("view/pages/shop/createAccount.php"); 
                 }
                 break; 
+
+            case 'confirm':
+
+                # code...
+                break;
 
             default :
                 include("view/pages/404.php");
