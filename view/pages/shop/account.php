@@ -21,7 +21,7 @@ if(isset($_SESSION["connected"]) && $_SESSION["connected"]){?>
                     <?php
                 }
                 else{ ?>
-                <ul>
+                <ul class="no-bullets">
                     <li><?=$_SESSION['userinfo'][0]['cliFirstName'] . " " . $_SESSION['userinfo'][0]['cliLastName']?></li>
                     <li><?=$_SESSION['userinfo'][0]['cliAddress']?></li>
                     <li><?=$_SESSION['userinfo'][0]['cliPostalCode'] . " " . $_SESSION['userinfo'][0]['cliCity']?></li>
@@ -37,7 +37,6 @@ if(isset($_SESSION["connected"]) && $_SESSION["connected"]){?>
                 } ?>
             
             
-            <p><?=$_SESSION['userinfo'][0]['cliFirstName']?></p>
             
             
             <a class="btn btn-primary" href="?order=changeAddress" role="button">Update informations</a>
