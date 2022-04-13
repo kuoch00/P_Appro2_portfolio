@@ -299,11 +299,12 @@ a > p:hover{
     color: var(--accent-color);
     text-decoration: underline;
 }
+
 .link:hover{
     color: var(--accent-color-hover);
 }
+
 ul.no-bullets{
     list-style-type: none;
-  margin: 0;
-  padding: 0;
+   
 }

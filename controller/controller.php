@@ -155,6 +155,7 @@ ob_start();
             case 'shipping':
                 # code...
                 if(isset($_SESSION['connected']) && $_SESSION['connected']){
+                    $userInfo = $_SESSION["userinfo"];
                     include("view/pages/shop/fillAddress.php");
                 }
                 else{
@@ -176,22 +177,46 @@ ob_start();
                 $connect = new Database();
                 $userInfo = $_SESSION["userinfo"];
 
-
-                include("view/pages/shop/account.php");
                 if(isset($_GET['option'])){
                     $option = $_GET['option'];
                     if($option == "updateAddress"){
-                        //fill address .php mais avec valeurs
-
+                        include("view/pages/shop/fillAddress.php");
+                    }
+                    else if($option == "updatingAddress"){
+                        // $firstname = $_POST['firstname'];
+                        // $lastname = $_POST['lastname'];
+                        // $address = $_POST['address'];
+                        // $postalCode = $_POST['postalCode'];
+                        // $city = $_POST['city'];
+                        // $country = $_POST['country'];
+                        // $state = $_POST['state'];
+                        // $phoneNumber = $_POST['phoneNumber'];
+                        $updateAddress = $connect->updateAddress(
+                            $userInfo[0]['cliEmailAddress'],
+                            $_POST['firstname'],
+                            $_POST['lastname'],
+                            $_POST['address'],
+                            $_POST['postalCode'],
+                            $_POST['city'],
+                            $_POST['country'],
+                            $_POST['state'],
+                            $_POST['phoneNumber']
+                            
+                        );
+                        
+                        
                     }
                     elseif($option == "addAddress"){
-                        //fill address mais vide
-
+                        include("view/pages/shop/fillAddress.php");
                     }
                     else{
                         include("view/pages/404.php");
                     }
                 }
+                else{
+                    include("view/pages/shop/account.php");
+                }
+
                 break;
 
             case 'createAccount':

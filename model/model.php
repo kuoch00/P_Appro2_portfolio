@@ -382,6 +382,77 @@ class Database{
         return $result;
         # code...
     }
+
+    public function addAddress($username)
+    {
+        # code...
+    }
+
+    public function updateAddress($username, $firstname, $lastname, $address, $postalCode, $city, $state, $country, $phoneNumber)
+    {
+        
+        $query = "UPDATE t_client SET 
+        cliFirstName = :firstname,
+        cliLastName = :lastname, 
+        cliAddress = :cliAddress, 
+        cliPostalCode = :postalCode, 
+        cliCity = :city, 
+        cliState = :cliState, 
+        cliCountry = :country, 
+        cliPhoneNumber = :phoneNumber 
+        WHERE t_client.cliEmailAddress = :username ";
+
+        $binds = array(
+            0 => array(
+                'var' => $username,
+                'marker' => ':username',
+                'type' => PDO::PARAM_STR
+            ),
+            1 => array(
+                'var' => $firstname,
+                'marker' => ':firstname',
+                'type' => PDO::PARAM_STR
+            ),
+            2 => array(
+                'var' => $lastname,
+                'marker' => ':lastname',
+                'type' => PDO::PARAM_STR
+            ),
+            3 => array(
+                'var' => $address,
+                'marker' => ':cliAddress',
+                'type' => PDO::PARAM_STR
+            ),
+            4 => array(
+                'var' => $postalCode,
+                'marker' => ':postalCode',
+                'type' => PDO::PARAM_STR
+            ),
+            5 => array(
+                'var' => $city,
+                'marker' => ':city',
+                'type' => PDO::PARAM_STR
+            ),
+            6 => array(
+                'var' => $state,
+                'marker' => ':cliState',
+                'type' => PDO::PARAM_STR
+            ),
+            7 => array(
+                'var' => $country,
+                'marker' => ':country',
+                'type' => PDO::PARAM_STR
+            ),
+            8 => array(
+                'var' => $phoneNumber,
+                'marker' => ':phoneNumber',
+                'type' => PDO::PARAM_STR
+            )
+        );
+        
+        $result = $this->queryPrepareExecute($query,$binds);
+        return $result;
+    }
 }
 
 ?>
