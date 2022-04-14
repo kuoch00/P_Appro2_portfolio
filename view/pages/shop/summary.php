@@ -15,23 +15,35 @@ if(isset($_SESSION["connected"])){
             <h4>Send to : </h4>
             <p> 
                 <?php
-                echo $_POST['firstname'] . " ";
-                echo $_POST['lastname'] . "<br> ";
-                echo $_POST['address']. "<br> ";
-                echo $_POST['postalCode']. " ";
-                echo $_POST['city']. "<br> ";
-                echo $_POST['state']. "<br> ";
-                echo $_POST['country']. "<br> ";
+                //se redéfinit si on revient en arriere et on change ou pas
+                $_SESSION['address'] = array(
+                    'firstname' => $_POST['firstname'],
+                    'lastname'=>$_POST['lastname'],
+                    'address'=>$_POST['address'],
+                    'postalCode'=>$_POST['postalCode'],
+                    'city'=>$_POST['city'],
+                    'state'=>$_POST['state'],
+                    'country'=>$_POST['country'],
+                    'phoneNumber' => $_POST['phoneNumber'],
+                    'emailAddress' => $userInfo[0]['cliEmailAddress']
+                );
 
-                echo "Phone : " . $_POST['phoneNumber']. "<br> ";
-                echo "Email : " . $userInfo[0]['cliEmailAddress']. "<br> ";
+                echo $_SESSION['address']['firstname'] . " ";
+                echo $_SESSION['address']['lastname'] . "<br>";
+                echo $_SESSION['address']['address'] . "<br>";
+                echo $_SESSION['address']['postalCode'] . " ";
+                echo $_SESSION['address']['city'] . "<br>";
+                echo $_SESSION['address']['state'] . "<br>";
+                echo $_SESSION['address']['country'] . "<br><br>";
+
+                echo "Phone : " . $_SESSION['address']['phoneNumber']. "<br> ";
+                echo "Email : " . $_SESSION['address']['emailAddress']. "<br> ";
 
                 //check val shipping tracking
                 
                 ?>
             </p>
-        </div>
-
+        </div> 
 
         <div>
         <!-- tab articles + total + (shipping ? + total) -->
@@ -39,7 +51,6 @@ if(isset($_SESSION["connected"])){
             <?php
                 $trackingFee = $_POST["radioShipping"];
                 include("view/pages/shop/arrayCart.php");
-
             ?>
         </div>
 

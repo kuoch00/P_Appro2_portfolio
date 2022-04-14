@@ -255,9 +255,34 @@ ob_start();
 
             case 'confirm':
                 $connect = new Database();
-                
+                // $_SESSION["userinfo"] = $connect->getUserInfo($userInfo[0]['cliEmailAddress']);;
+                // $userInfo = $_SESSION["userinfo"];
                 //update adress ($post dont work)
                 //add order in db
+                $newPost = array_map('htmlspecialchars' , $_SESSION['address']);
+                print_r($_SESSION["address"]);
+                $updateAddress = $connect->updateAddress(
+                    // $userInfo[0]['cliEmailAddress'],
+                    // $_POST['firstname'],
+                    // $_POST['lastname'],
+                    // $_POST['address'],
+                    // $_POST['postalCode'],
+                    // $_POST['city'],
+                    // $_POST['state'],
+                    // $_POST['country'],
+                    // $_POST['phoneNumber'] 
+                    $newPost['emailAddress'],
+                    $newPost['firstname'],
+                    $newPost['lastname'],
+                    $newPost['address'],
+                    $newPost['postalCode'],
+                    $newPost['city'],
+                    $newPost['state'],
+                    $newPost['country'],
+                    $newPost['phoneNumber']
+                    
+                );
+                $_SESSION["userinfo"] = $connect->getUserInfo($newPost['emailAddress']);
 
 
                 // $_SESSION["userinfo"] = $connect->getUserInfo($userInfo[0]['cliEmailAddress']);

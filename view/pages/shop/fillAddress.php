@@ -194,26 +194,14 @@ description : page où on remplit son addresse
                 <div class="d-flex justify-content-end">
                     <div>
                         <a class="btn btn-secondary" href="?order=account" role="button">Cancel</a> 
-                        <?php
-                        if($update){?>
-                            <button type="submit" class="btn btn-primary">Update</button>
-                            <?php
-                        }
-                        else{?>
-                            <button type="submit" class="btn btn-primary">Add address</button>
-                            <?php 
-                        }?>
+                        <button type="submit" class="btn btn-primary"><?= $update ? "Update" : "Add address" ?></button>
                     </div>
                 </div>
                 <?php
             }
             ?>
             
-        <!-- </fieldset> -->
-            
-            
-        </form>
-
-    </div>
-
+        <!-- </fieldset> --> 
+        </form> 
+    </div> 
 </div>
