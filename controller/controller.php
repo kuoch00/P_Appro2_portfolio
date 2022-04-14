@@ -260,7 +260,7 @@ ob_start();
                 //update adress ($post dont work)
                 //add order in db
                 $newPost = array_map('htmlspecialchars' , $_SESSION['address']);
-                print_r($_SESSION["address"]);
+                //print_r($_SESSION["address"]);
                 $updateAddress = $connect->updateAddress(
                     // $userInfo[0]['cliEmailAddress'],
                     // $_POST['firstname'],
