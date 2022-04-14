@@ -182,29 +182,34 @@ ob_start();
                     if($option == "updateAddress"){
                         include("view/pages/shop/fillAddress.php");
                     }
-                    else if($option == "updatingAddress"){
-                        // $firstname = $_POST['firstname'];
-                        // $lastname = $_POST['lastname'];
-                        // $address = $_POST['address'];
-                        // $postalCode = $_POST['postalCode'];
-                        // $city = $_POST['city'];
-                        // $country = $_POST['country'];
-                        // $state = $_POST['state'];
-                        // $phoneNumber = $_POST['phoneNumber'];
+                    else if($option == "updatingAddress"){ 
+                        //gere les char spéciaux
+                        $newPost = array_map('htmlspecialchars' , $_POST);
                         $updateAddress = $connect->updateAddress(
+                            // $userInfo[0]['cliEmailAddress'],
+                            // $_POST['firstname'],
+                            // $_POST['lastname'],
+                            // $_POST['address'],
+                            // $_POST['postalCode'],
+                            // $_POST['city'],
+                            // $_POST['state'],
+                            // $_POST['country'],
+                            // $_POST['phoneNumber'] 
                             $userInfo[0]['cliEmailAddress'],
-                            $_POST['firstname'],
-                            $_POST['lastname'],
-                            $_POST['address'],
-                            $_POST['postalCode'],
-                            $_POST['city'],
-                            $_POST['country'],
-                            $_POST['state'],
-                            $_POST['phoneNumber']
+                            $newPost['firstname'],
+                            $newPost['lastname'],
+                            $newPost['address'],
+                            $newPost['postalCode'],
+                            $newPost['city'],
+                            $newPost['state'],
+                            $newPost['country'],
+                            $newPost['phoneNumber']
                             
                         );
-                        
-                        
+                        $_SESSION["userinfo"] = $connect->getUserInfo($userInfo[0]['cliEmailAddress']);
+
+                        include("view/pages/shop/account.php");
+ 
                     }
                     elseif($option == "addAddress"){
                         include("view/pages/shop/fillAddress.php");
@@ -212,6 +217,8 @@ ob_start();
                     else{
                         include("view/pages/404.php");
                     }
+                    $_SESSION["userinfo"] = $connect->getUserInfo($userInfo[0]['cliEmailAddress']);
+
                 }
                 else{
                     include("view/pages/shop/account.php");

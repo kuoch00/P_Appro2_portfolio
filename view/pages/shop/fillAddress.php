@@ -30,15 +30,16 @@ description : page où on remplit son addresse
                 $update = true;
                 ?>
                 <h1>Update address information</h1>
-                <form method="post" action="?order=account&option=updatingAddress">
+                
                 <?php
             }
             else if($_GET['option'] == "addAddress"){?>
-                <h1>Add address information</h1> 
-                <form method="post" action="?order=account&option=addAddress">
+                <h1>Add address information</h1>  
                 <?php
             }
+            
             ?>
+            <form method="post" action="?order=account&option=updatingAddress">
 <!--             
             <form method="post" action="?order=account"> -->
             <?php //+ message update réussi?
@@ -58,8 +59,8 @@ description : page où on remplit son addresse
             <fieldset name="for_radio2[]" class="radio2" disabled="true"> -->
             <!-- <fieldset disabled> -->
             <?php
-                if($order){
-                    //si une addresse existe
+                //si une addresse existe
+                if($order){ 
                     if($userInfo[0]['cliAddress']!=null){
                         //donner le choix d'utiliser l'adresse existante ou de la modifier (pas de possiblité d'enregistrer plusieurs adresses pour l'instant)
                         ?>

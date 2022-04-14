@@ -385,12 +385,13 @@ class Database{
 
     public function addAddress($username)
     {
-        # code...
+        
+
+        
     }
 
     public function updateAddress($username, $firstname, $lastname, $address, $postalCode, $city, $state, $country, $phoneNumber)
-    {
-        
+    { 
         $query = "UPDATE t_client SET 
         cliFirstName = :firstname,
         cliLastName = :lastname, 
@@ -400,6 +401,7 @@ class Database{
         cliState = :cliState, 
         cliCountry = :country, 
         cliPhoneNumber = :phoneNumber 
+
         WHERE t_client.cliEmailAddress = :username ";
 
         $binds = array(

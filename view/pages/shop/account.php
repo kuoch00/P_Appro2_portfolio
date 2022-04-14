@@ -24,10 +24,12 @@ if(isset($_SESSION["connected"]) && $_SESSION["connected"]){?>
                         <li><?=$_SESSION['userinfo'][0]['cliFirstName'] . " " . $_SESSION['userinfo'][0]['cliLastName']?></li>
                         <li><?=$_SESSION['userinfo'][0]['cliAddress']?></li>
                         <li><?=$_SESSION['userinfo'][0]['cliPostalCode'] . " " . $_SESSION['userinfo'][0]['cliCity']?></li>
+                        
                         <li><?=$_SESSION['userinfo'][0]['cliState']?></li>
                         <li><?=$_SESSION['userinfo'][0]['cliCountry']?></li><br>
-                        <li><?=$_SESSION['userinfo'][0]['cliPhoneNumber']?></li>
-                        <li><?=$_SESSION['userinfo'][0]['cliEmailAddress']?></li>
+                        
+                        <li>Phone : <?=$_SESSION['userinfo'][0]['cliPhoneNumber']?></li>
+                        <li>Email : <?=$_SESSION['userinfo'][0]['cliEmailAddress']?></li>
                     </ul>
                     <a class="btn btn-primary" href="?order=account&option=updateAddress" role="button">Update informations</a>
 
