@@ -284,6 +284,9 @@ ob_start();
                 );
                 $_SESSION["userinfo"] = $connect->getUserInfo($newPost['emailAddress']);
 
+                //add order in db
+                $addOrder = $connect->addOrder($_SESSION)
+
 
                 // $_SESSION["userinfo"] = $connect->getUserInfo($userInfo[0]['cliEmailAddress']);
                 // $addOrder = $connect->addOrder($userInfo[0]['idClient'], /* $total */);
