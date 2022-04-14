@@ -18,14 +18,13 @@ if(isset($_SESSION["connected"])){
                 echo $_POST['firstname'] . " ";
                 echo $_POST['lastname'] . "<br> ";
                 echo $_POST['address']. "<br> ";
-                echo $_POST['addressComp']. "<br> ";
                 echo $_POST['postalCode']. " ";
                 echo $_POST['city']. "<br> ";
                 echo $_POST['state']. "<br> ";
                 echo $_POST['country']. "<br> ";
 
                 echo "Phone : " . $_POST['phoneNumber']. "<br> ";
-                echo "Email : " . $_POST['email']. "<br> ";
+                echo "Email : " . $userInfo[0]['cliEmailAddress']. "<br> ";
 
                 //check val shipping tracking
                 

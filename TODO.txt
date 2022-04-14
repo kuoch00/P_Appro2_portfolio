@@ -1,10 +1,17 @@
+ajout admin :
 si catégorie ou sous catégorie inexistante : la créer 
 josé a fait : checkauthor et insertAuthor 
 
 
 DONE : create account
-account profile
-
+account profile :
+    DONE : affichage adresse + modif + add
+    - affichage commadndes passées
 write in db the order
 
-sauvegarder le shopping cart apres déconnection ?
+order process :  use saved address or update address (show data)
+
+to not do bc no time :
+- sauvegarder le shopping cart apres déconnection ?
+
+

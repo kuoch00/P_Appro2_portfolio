@@ -63,8 +63,12 @@ description : page où on remplit son addresse
                 if($order){ 
                     if($userInfo[0]['cliAddress']!=null){
                         //donner le choix d'utiliser l'adresse existante ou de la modifier (pas de possiblité d'enregistrer plusieurs adresses pour l'instant)
+                        $update = true;
                         ?>
-                        <p>Use saved address :</p>
+                        <label for="useSaved">
+                            <input class="form-check-input" type="radio" id="useSaved" name="useSavedAddress"> Use saved address :
+                        </label> 
+                        <!-- si oui : show this -->
                         <ul class="no-bullets">
                             <li><?=$_SESSION['userinfo'][0]['cliFirstName'] . " " . $_SESSION['userinfo'][0]['cliLastName']?></li>
                             <li><?=$_SESSION['userinfo'][0]['cliAddress']?></li>
@@ -74,12 +78,15 @@ description : page où on remplit son addresse
                             <li>Phone : <?=$_SESSION['userinfo'][0]['cliPhoneNumber']?></li>
                             <li>Email : <?=$_SESSION['userinfo'][0]['cliEmailAddress']?></li>
                         </ul>
-                        <p>Update address information :</p>
+                        <label for="notUseSaved">
+                            <input class="form-check-input" type="radio" id="notUseSaved" name="useSavedAddress" > Update address information
+                        </label>
+                        <div id="showForms" style="display: none;">
+                        
                         <?php
                     }
                 }
             ?>
-
 
             <div class="row">    
                 <div class="form-group col-sm">
@@ -170,8 +177,16 @@ description : page où on remplit son addresse
                         </div>
                     </div> 
                 </div>
-                
+                <?php
+                if($userInfo[0]['cliAddress']!=null){
+                    ?>
+                        </div><!-- fin div display none -->
+                        <br>
+                    <?php
+                }
+                ?>
                 <button type="submit" class="btn btn-primary ">Next</button>
+                </div> 
                 <?php
             }
             else{ //= update/add address

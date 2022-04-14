@@ -78,12 +78,24 @@ const exampleModalEl = document.getElementById('exampleModal');
 exampleModalEl.addEventListener('show.bs.modal', function(event) {
   document.getElementById('modalImage').src = event.relatedTarget.src;
 });
-
-
-
-
-
 </script>
+
+<!-- show forms if radiobutton selected (fillAddress.php during order process) -->
+<script type="text/javascript">
+//source : https://khaalipaper.com/javascript/show-hide-divs-based-on-radio-button-selection-in-jquery.php#parentHorizontalTab1
+    // example used : example 2  
+  $(function() {
+    $("input[name='useSavedAddress']").click(function() {
+      if ($("#notUseSaved").is(":checked")) {
+        $("#showForms").show();
+      } else {
+        $("#showForms").hide();
+      }
+    });
+  });
+</script>
+
+<!-- password verification during account creation-->
 <script>
     // confim password 
 var password = document.getElementById("password")

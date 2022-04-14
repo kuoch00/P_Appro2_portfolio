@@ -167,11 +167,12 @@ ob_start();
             case 'summary':
                 $connect = new Database();
                 $products = $connect->getProducts();
+                $userInfo = $_SESSION["userinfo"];
                 if(isset($_SESSION['cart'])){ 
                     $cartProducts = $connect->getCartProducts($_SESSION['cart']);
                 }
                     include("view/pages/shop/summary.php");
-                    break;
+                break;
 
             case 'account':
                 $connect = new Database();
@@ -211,13 +212,14 @@ ob_start();
                         include("view/pages/shop/account.php");
  
                     }
-                    elseif($option == "addAddress"){
-                        include("view/pages/shop/fillAddress.php");
-                    }
+                    // elseif($option == "addAddress"){
+                    //     include("view/pages/shop/fillAddress.php");
+                    // }
                     else{
                         include("view/pages/404.php");
                     }
                     $_SESSION["userinfo"] = $connect->getUserInfo($userInfo[0]['cliEmailAddress']);
+                    $orders = $connect->getOrders($userInfo[0]['idClient']);
 
                 }
                 else{
@@ -252,8 +254,16 @@ ob_start();
                 break; 
 
             case 'confirm':
+                $connect = new Database();
+                
+                //update adress ($post dont work)
+                //add order in db
 
+
+                // $_SESSION["userinfo"] = $connect->getUserInfo($userInfo[0]['cliEmailAddress']);
+                // $addOrder = $connect->addOrder($userInfo[0]['idClient'], /* $total */);
                 # code...
+                // include(/*page remerciments */);
                 break;
 
             default :

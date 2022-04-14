@@ -36,15 +36,41 @@ if(isset($_SESSION["connected"]) && $_SESSION["connected"]){?>
                     <?php
                 } ?>
             
-            
-            
-            
-            
         </div>
 
         <div>
             <h3>My orders</h3>
             <!-- tab avec dernières commandes et leur état ? (delivered, finished, etc)-->
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            <th scope="col">Numéro de commande</th>
+                            <th scope="col">Prix</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Etat</th>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    foreach($orders as $order){?>
+                        <tr>
+                            <td><?=$order['ordNumber']?></td>
+                            <td><?=$order['ordTotal']?></td>
+                            <td><?=$order['ordDate']?></td>
+                            <td><?=$order['ordStatus']?></td>
+                        </tr>
+                        
+                    <?PHP
+                    }
+                    ?>
+                    
+                </tbody>
+            
+            
+            </table>
+            
         </div>
 
     </div>

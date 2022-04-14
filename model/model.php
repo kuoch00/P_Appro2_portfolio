@@ -291,7 +291,7 @@ class Database{
     public function getUserInfo($username)
     {
         $query = "SELECT `idClient`,`cliFirstName`,`cliLastName`,`cliAddress`,`cliPostalCode`,`cliCity`,`cliState`,`cliCountry`,`cliPhoneNumber`,`cliEmailAddress` FROM `t_client` WHERE `cliEmailAddress` LIKE :username";
-        //addresse
+        
         $binds = array(
             0 => array(
                 'var' => $username,
@@ -307,6 +307,51 @@ class Database{
         # code...
     }
 
+    public function addOrder($idClient, $total)
+    {
+        //ajouter order dans db 
+        // $query = "INSERT INTO `t_order` ( ordNumber, idClient, ordDate) VALUES ( ':orderNumber', ':idClient', ':ordDate') ";
+
+        $query = "INSERT INTO `t_order` (`ordNumber`, `idClient`, `ordDate`, `ordTotal`, `ordStatus`) 
+        VALUES ( ':orderNumber', ':idClient', ':ordDate', ':ordTotal', ':ordStatus') ";
+        $binds = array(
+            0=>array(
+                'var' => "randomShitGoBrrrrrr",
+                'marker' => ":orderNumber",
+                'type' => PDO::PARAM_STR
+            ),
+            1=>array(
+                'var' => $idClient,
+                'marker' => ":idClient",
+                'type' => PDO::PARAM_STR
+            ),
+            2=>array(
+                'var' =>  date("Y-m-d"),
+                'marker' => ":ordDate",
+                'type' => PDO::PARAM_STR
+            ),
+            3=>array(
+                'var' =>  $total,
+                'marker' => ":ordTotal",
+                'type' => PDO::PARAM_STR
+            ),
+            4=>array(
+                'var' =>  "en cours",
+                'marker' => ":ordStatus",
+                'type' => PDO::PARAM_STR
+            )
+        );
+
+        $result = $this->queryPrepareExecute($query, $binds);
+        return $result; 
+    }
+
+    // public function addOrderArticles($idArticle, $idOrder)
+    // {
+    //     $query = 
+        
+    // }
+
     public function getOrders($clientId)
     {
         $query = "SELECT * FROM `t_order` WHERE `idClient` LIKE :id ";
@@ -317,6 +362,14 @@ class Database{
                 'type' => PDO::PARAM_STR
             )
         );
+        $result = $this->queryPrepareExecute($query,$binds);
+        return $result;
+    }
+
+    public function getOrderArticles($idOdrer)
+    {
+        $query = "SELECT * FROM `t_include` WHERE `idOrder` LIKE 1 ";
+        # code...
     }
     public function createAccount($username, $password)
     {
@@ -379,16 +432,10 @@ class Database{
         );
 
         $result = $this->queryPrepareExecute($query,$binds);
-        return $result;
-        # code...
+        return $result; 
     }
 
-    public function addAddress($username)
-    {
-        
-
-        
-    }
+    
 
     public function updateAddress($username, $firstname, $lastname, $address, $postalCode, $city, $state, $country, $phoneNumber)
     { 
