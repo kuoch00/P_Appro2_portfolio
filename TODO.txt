@@ -6,12 +6,13 @@ josé a fait : checkauthor et insertAuthor
 DONE : create account
 account profile :
     DONE : affichage adresse + modif + add
-    - affichage commadndes passées
-write in db the order
+    DONE - affichage commadndes passées
+DONE : write in db the order
+NEW ! empecher d'ajouter la meme commande plusieurs fois dans la db (refresh de la page)
+NEW ! supprimer le cart après la fin de la commande 
 
 order process :  use saved address or update address (show data)
 
-insert order : done
 
 to not do bc no time :
 - sauvegarder le shopping cart apres déconnection ?

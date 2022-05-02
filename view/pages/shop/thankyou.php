@@ -6,8 +6,11 @@ description : page de remerciments après la commande passée
 todo ? bouton mon compte pour consulter le statut de la commande
 bouton ramenant au shop
  -->
+ 
  <div class="container">
-    <p>Thank you for ordering with us !</p>
-    <p>You can consult your order status <a class="underline" href="">here</a> or on "<a class="underline" href="">My account</a>" page anytime.</p>
+   <p>Thank you for ordering with us !</p>
+   <p>You can consult your order status <a class="underline" href="?order=account">here</a> or on "<a class="underline" href="?order=account">My account</a>" page anytime.</p>
+   <p>Numéro de votre commande : </p> 
+   
  </div>
  

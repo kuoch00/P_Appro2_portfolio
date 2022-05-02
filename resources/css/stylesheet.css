@@ -211,9 +211,15 @@ a{
 a:hover{
     color: var(--accent-color);
 }
-
 a.container-center{
     width: 70%;
+}
+.underline{
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+.underline:hover{
+    color: var(--accent-color-hover);
 }
 
 .table {
@@ -307,11 +313,4 @@ a > p:hover{
 ul.no-bullets{
     list-style-type: none;
    
-}
-.underline{
-    color: var(--accent-color);
-    text-decoration: underline;
-}
-.underline:hover{
-    color: var(--accent-color-hover);
 }

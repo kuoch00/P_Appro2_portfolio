@@ -328,7 +328,7 @@ class Database{
                 'type' => PDO::PARAM_STR
             ),
             2=>array(
-                'var' =>  date("Y-m-d"),
+                'var' =>  date("Y-m-d H:i:s"),
                 'marker' => ":ordDate",
                 'type' => PDO::PARAM_STR
             ),
@@ -356,7 +356,7 @@ class Database{
 
     public function getOrders($clientId)
     {
-        $query = "SELECT * FROM `t_order` WHERE `idClient` LIKE :id ";
+        $query = "SELECT * FROM `t_order` WHERE `idClient` LIKE :id ORDER BY `ordDate` DESC";
         $binds = array(
             0=> array(
                 'var' => $clientId,
@@ -368,11 +368,12 @@ class Database{
         return $result;
     }
 
-    public function getOrderArticles($idOdrer)
-    {
-        $query = "SELECT * FROM `t_include` WHERE `idOrder` LIKE 1 ";
-        # code...
-    }
+    // public function getOrderArticles($idOdrer)
+    // {
+    //     $query = "SELECT * FROM `t_include` WHERE `idOrder` LIKE 1 ";
+    //     # code...
+    // }
+    
     public function createAccount($username, $password)
     {
         echo $username . " : " . $password;

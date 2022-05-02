@@ -34,7 +34,7 @@
           ?>  
             <tr>
                 <th scope="row"><?=$product['artName']?></td>
-                <td><?=$product['artPrice']?></td>
+                <td><?=$product['artPrice']?> $</td>
                 <td><?=$quantity?></td>
                 <td><?=$product['artPrice']*$quantity . " $"?></td>
             </tr>
@@ -81,7 +81,7 @@
         </tr>
         <?php
         $total = $subtotal;
-        $_SESSION['total'] = $subtotal + $trackingFee;
+        $_SESSION['total'] = $subtotal ;
     }
         ?>
         </table>
