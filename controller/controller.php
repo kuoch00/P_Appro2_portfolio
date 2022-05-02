@@ -285,13 +285,17 @@ ob_start();
                 $_SESSION["userinfo"] = $connect->getUserInfo($newPost['emailAddress']);
 
                 //add order in db
-                $addOrder = $connect->addOrder($_SESSION)
-
+                //print_r ($_SESSION['userinfo']);
+                
+                $addOrder = $connect->addOrder($_SESSION['userinfo'][0]['idClient'], $_SESSION['total']);
+                //idclient
+                //$total = arrayCart.php
 
                 // $_SESSION["userinfo"] = $connect->getUserInfo($userInfo[0]['cliEmailAddress']);
                 // $addOrder = $connect->addOrder($userInfo[0]['idClient'], /* $total */);
                 # code...
                 // include(/*page remerciments */);
+                include ("view/pages/shop/thankyou.php");
                 break;
 
             default :

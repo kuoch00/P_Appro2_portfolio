@@ -312,8 +312,10 @@ class Database{
         //ajouter order dans db 
         // $query = "INSERT INTO `t_order` ( ordNumber, idClient, ordDate) VALUES ( ':orderNumber', ':idClient', ':ordDate') ";
 
-        $query = "INSERT INTO `t_order` (`ordNumber`, `idClient`, `ordDate`, `ordTotal`, `ordStatus`) 
-        VALUES ( ':orderNumber', ':idClient', ':ordDate', ':ordTotal', ':ordStatus') ";
+        //$query = "INSERT INTO `t_order` (`ordNumber`, `idClient`, `ordDate`, `ordTotal`, `ordStatus`) VALUES ( ':orderNumber', ':idClient', ':ordDate', ':ordTotal', ':ordStatus') ";
+
+        $query = "INSERT INTO `t_order` SET ordNumber=:orderNumber, idClient=:idClient, ordDate=:ordDate, ordTotal=:ordTotal, ordStatus=:ordStatus";
+
         $binds = array(
             0=>array(
                 'var' => "randomShitGoBrrrrrr",

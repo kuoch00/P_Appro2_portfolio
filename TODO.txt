@@ -11,6 +11,8 @@ write in db the order
 
 order process :  use saved address or update address (show data)
 
+insert order : done
+
 to not do bc no time :
 - sauvegarder le shopping cart apres déconnection ?
 

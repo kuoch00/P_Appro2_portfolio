@@ -66,7 +66,9 @@
             <td></td>
             <td><?=$subtotal + $trackingFee . " $"?></td>
         </tr>
-        <?php   
+        <?php
+        $total = $subtotal + $trackingFee;  
+        $_SESSION['total'] = $subtotal + $trackingFee;
         
     }
     else{ //order=checkout ou summary et no tracking
@@ -78,6 +80,8 @@
             <td><?=$subtotal?> $</td>
         </tr>
         <?php
+        $total = $subtotal;
+        $_SESSION['total'] = $subtotal + $trackingFee;
     }
         ?>
         </table>

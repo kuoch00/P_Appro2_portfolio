@@ -56,7 +56,7 @@ if(isset($_SESSION["connected"])){
 
         <div>
             <a class="btn btn-primary" href="?order=confirm" role="button">Finish order</a>
-
+            <!-- passer le total -->
         </div>
 
     </div>
