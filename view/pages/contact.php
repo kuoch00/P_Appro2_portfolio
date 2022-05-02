@@ -37,7 +37,9 @@ description : page de contact
             </div>
 
             <div class="formButtonBox ">
-                <input class="btn btn-primary formButtonSubmit" type="submit" value="Submit">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <input class="btn btn-primary formButtonSubmit" type="submit" value="Submit">
+                </div>
             </div>
         </div>
     </div>

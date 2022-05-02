@@ -10,8 +10,9 @@ description : page index/home où l'artiste est présentée
 <div class="container container-item"> 
     <h2>The Artist</h2>
     <div class="row">
-        <div class=" col-xl-3 d-flex justify-content-center">
-            <img class="img-fluid " src="./resources/img/photo.png" alt="">
+        
+        <div class=" col-lg-4 d-flex justify-content-center">
+            <img class="img-profile" src="./resources/img/photo.png" alt="">
         </div>
 
         <div class="col">

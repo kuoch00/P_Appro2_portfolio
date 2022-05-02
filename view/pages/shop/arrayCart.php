@@ -33,7 +33,8 @@
             }
           ?>  
             <tr>
-                <th scope="row"><?=$product['artName']?></td>
+                
+                <th scope="row"><a href="?order=shop&artId=<?= $product['idArticle']?>"><?=$product['artName']?></a></td>
                 <td><?=$product['artPrice']?> $</td>
                 <td><?=$quantity?></td>
                 <td><?=$product['artPrice']*$quantity . " $"?></td>

@@ -112,7 +112,7 @@ else{
     
 
     
-    print_r($_SESSION['cart']);
+    //print_r($_SESSION['cart']);
     //unset($_SESSION['cart']);
 
 }
@@ -122,8 +122,11 @@ else{
 // header("location:?order=shop&added");
 ?>
 <div class="container">
-<h1>Article successfully added to your shopping cart</h1>
-<a class="btn btn-primary" href="?order=shop">Continue Shopping</a>
-<a class="btn btn-primary" href="?order=checkout">Checkout</a>
-
+    <div class="alert alert-success" role="alert">
+        Article successfully added to your shopping cart !
+    </div>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a class="btn btn-primary" href="?order=shop">Continue shopping</a>
+        <a class="btn btn-primary" href="?order=checkout">My cart</a> 
+    </div>
 </div>

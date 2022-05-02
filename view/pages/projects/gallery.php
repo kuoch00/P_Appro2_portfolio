@@ -50,15 +50,17 @@ images lues de gauche a droite dans ordre chronologique inversé (entrées les p
       <div class="modal-content">
         <div class="modal-body">
           <div class="item"><img id="modalImage" class="img-fluid" /></div>
+          <!-- <button type="button" class="btn-close btn-close-white" aria-label="Close"></button> -->
         </div>
       </div>
     </div>
   </div>
+  
       <?php
       
       ?>
 
-  <!-- https://getbootstrap.com/docs/4.1/components/modal/#varying-modal-content -->
+  <!-- https://getbootstrap.com/docs/4.1/components/modal/#varying-modal-content
 
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -70,6 +72,6 @@ images lues de gauche a droite dans ordre chronologique inversé (entrées les p
         
       </div>
     </div>
-  </div>
+  </div> -->
 
 </div>

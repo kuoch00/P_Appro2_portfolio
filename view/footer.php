@@ -17,28 +17,28 @@ description : footer de la page
                     <!-- Section: Social media -->
                     <section class="mb-2 container-flex row " >
                         <div class="container-flex container-centertextV col"><!-- ArtStation -->
-                            <a class="btn btn-outline-light btn-floating m-2" href="#!" role="button">
+                            <a class="btn btn-outline-light btn-floating m-2" href="https://www.artstation.com/souffleur_sarah" target="_blank" role="button">
                                 <i class="fab fa-artstation"></i> 
                             </a>
                             <p>Artstation</p>
                         </div>
                         
                         <div  class="container-flex container-centertextV col"> <!-- Instagram -->
-                            <a class="btn btn-outline-light btn-floating m-2" href="#!" role="button">
+                            <a class="btn btn-outline-light btn-floating m-2" href="https://www.instagram.com/saltysailor14" target="_blank" role="button">
                                 <i class="fab fa-instagram"></i>
                             </a>
                             <p>Instagram</p>
                         </div>
                          
                         <div class="container-flex container-centertextV col"><!-- Linkedin -->
-                            <a class="btn btn-outline-light btn-floating m-2" href="#!" role="button">
+                            <a class="btn btn-outline-light btn-floating m-2" href="https://fr.linkedin.com/in/sarah-souffleur-5a6950207?trk=public_profile_browsemap" target="_blank" role="button">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
                             <p>Linkedin</p>
                         </div>
                         
                         <div class="container-flex container-centertextV col"> <!-- E-Mail -->
-                            <a class="btn btn-outline-light btn-floating m-2" href="#!" role="button">
+                            <a class="btn btn-outline-light btn-floating m-2" href="mailto:addresse@email.com" target="_blank" role="button">
                                 <i class="fa-solid fa-envelope"></i>
                             </a>
                             <p>E-mail</p>

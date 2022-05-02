@@ -300,7 +300,10 @@ a > p:hover{
 .btn-primary:hover{
     background-color: var(--accent-color-hover);
 }
-
+.btn-secondary{
+    border: none;
+    margin: 1em 0em;
+}
 .link {
     color: var(--accent-color);
     text-decoration: underline;
@@ -313,4 +316,9 @@ a > p:hover{
 ul.no-bullets{
     list-style-type: none;
    
+}
+
+.img-profile{
+    max-width: 100%;
+    height: max-content;
 }

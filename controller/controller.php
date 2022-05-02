@@ -260,7 +260,7 @@ ob_start();
                 break; 
 
             case 'confirm':
-                
+                    // change adresse (si besoin)
                     $connect = new Database();
                     // $_SESSION["userinfo"] = $connect->getUserInfo($userInfo[0]['cliEmailAddress']);;
                     // $userInfo = $_SESSION["userinfo"];
@@ -289,21 +289,35 @@ ob_start();
                         $newPost['phoneNumber']
                         
                     );
+                    //prend les nouvelles informations
                     $_SESSION["userinfo"] = $connect->getUserInfo($newPost['emailAddress']);
 
                     //add order in db
-                    //print_r ($_SESSION['userinfo']);
-                    
                     $addOrder = $connect->addOrder($_SESSION['userinfo'][0]['idClient'], $_SESSION['total']);
                     //idclient
                     //$total = arrayCart.php
 
                     // $_SESSION["userinfo"] = $connect->getUserInfo($userInfo[0]['cliEmailAddress']);
                     // $addOrder = $connect->addOrder($userInfo[0]['idClient'], /* $total */);
+                    
+                    //reduction des stocks
+                    foreach($_SESSION['cart'] as $article){
+                        $stockreduc = $connect->reduceStocks($article['artId'], $article['artQuantity']);
+                        
+                    }
+
+
+                    //DELETE SHOPPING CART
+                    unset($_SESSION['cart']);
+
+                    header("Location: ?order=thanks");
                 
+                break;
+            case 'thanks':
                 include ("view/pages/shop/thankyou.php");
                 break;
-
+                # code...
+                break;
             default :
                 include("view/pages/404.php");
                 break;

@@ -505,6 +505,29 @@ class Database{
         $result = $this->queryPrepareExecute($query,$binds);
         return $result;
     }
+
+    public function reduceStocks($id, $quantity)
+    {
+        //il faut bind plus mais je ne veux pas changer les autres infos...
+        $query = "UPDATE `t_article` 
+        SET `artStock` = 'artStock-:quantity'
+        WHERE `t_article`.`idArticle` = :id";
+
+        $binds = array(
+            0=>array(
+                'var' => $id,
+                'marker' => ':id',
+                'type' => PDO::PARAM_STR
+            ),
+            1=>array(
+                'var' => $quantity,
+                'marker' => ':quantity',
+                'type' => PDO::PARAM_STR
+            )
+        );
+        $result = $this->queryPrepareExecute($query, $binds);
+        return $result;
+    }
 }
 
 ?>

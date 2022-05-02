@@ -12,15 +12,18 @@ description : page où l'on consulte le panier
 
 if(isset($_SESSION['cart']) && count($_SESSION['cart'])>0){
     include("./view/pages/shop/arrayCart.php");?>
-    <a class="btn btn-secondary" href="?order=shop">Continue Shopping</a>
-    <a class="btn btn-primary" href="?order=shipping">Order</a>
-    
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a class="btn btn-secondary" href="?order=shop">Continue Shopping</a>
+        <a class="btn btn-primary" href="?order=shipping">Order</a>
+    </div>
         <?php
 }//fin cart isset
 else{
     ?>
     <p>Your cart is empty</p> <br>
-    <a class="btn btn-primary" href="?order=shop">Go Shopping</a>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a class="btn btn-primary" href="?order=shop">Go Shopping</a>
+    </div>
     <?php
 }
 
