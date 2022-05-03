@@ -17,7 +17,8 @@ description : page liste où tous les projets sont présentés
                 <a class="container-center" href="?page=projects&catId=<?=$project["idCategory"]?>">
 
                     <!-- affiche l'image  -->
-                    <img class="img-full"  src="resources/img/<?=$project["catImage"]?>" alt="image">
+                    
+                    <img class="cat-cover"  src="resources/img/<?=$project["catImage"]?>" alt="image">
 
                     <!-- affiche le nom du projet  -->
                     <h3><?= $project["catName"] ?></h3>

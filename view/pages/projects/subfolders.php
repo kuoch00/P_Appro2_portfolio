@@ -26,13 +26,27 @@ liste les sujets du projet (bd)
     <p><?=$projectInfo[0]["catDescription"]?></p>
 
     <?php
+        //all
+        ?>
+        <div class = "container-item container-center"> 
+            <?php $catId = $_GET['catId'] ?>
+            <a class="container-center" href="?page=projects&catId=<?=$catId?>&subcatId=all">
+            <!-- id du projet + id du subfolder -->
+            <!-- img derniere image ajoutée -->
+                <img class="cat-cover" src="resources/img/2.png" alt="image">
+                <h3>All</h3>
+            </a> 
+        </div>
+        <?php
+
+        //liste des sous cat
         foreach ($listSubcategories as $subcategory){?>
             <div class = "container-item container-center">
             <!-- id subcat?  -->
                 <a class="container-center" href="?page=projects&catId=<?= $subcategory["idCategory"]?>&subcatId=<?=$subcategory["idSubCategory"]?>">
                 <!-- id du projet + id du subfolder -->
                 <!-- img derniere image ajoutée -->
-                    <img class="subcat-cover" src="resources/img/2.png" alt="image">
+                    <img class="cat-cover" src="resources/img/2.png" alt="image">
                     <h3><?= $subcategory["subName"]?></h3>
                 </a> 
             </div>

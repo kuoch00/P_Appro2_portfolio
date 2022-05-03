@@ -2,20 +2,35 @@ ajout admin :
 si catégorie ou sous catégorie inexistante : la créer 
 josé a fait : checkauthor et insertAuthor 
 
+GéNéRAL :
+ajouter police
+
+
+galerie
+
+afficher derniere image ajoutée ? dans sur sous cat ? ou utiliser image définie...?
+- récup derniere image horizontale ?
+
+
+shop
 
 DONE : create account
 account profile :
     DONE : affichage adresse + modif + add
     DONE - affichage commadndes passées
+    DONE : cacher "My orders" si $orders == 0 !
+
 DONE : write in db the order
 DONE : empecher d'ajouter la meme commande plusieurs fois dans la db (refresh de la page)
 DONE : supprimer le cart après la fin de la commande 
 
 DONE : order process :  use saved address or update address (show data)
 
-model.php(reducestocks) 
-    reduire les stocks : difficile a cause de la construction du cart :\
-https://www.fundaofwebit.com/php-pdo/how-to-edit-update-data-into-database-using-pdo-in-php
+DONE : Reduc stocks
+    model.php(reducestocks) 
+        reduire les stocks : difficile a cause de la construction du cart :\
+    https://www.fundaofwebit.com/php-pdo/how-to-edit-update-data-into-database-using-pdo-in-php
+
 
 to not do bc no time :
 - sauvegarder le shopping cart apres déconnection ?

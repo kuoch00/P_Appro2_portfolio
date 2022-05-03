@@ -128,5 +128,18 @@ $(document).ready(function(){
 });
 
 </script>
+<script>
+    // toggle password visibility
+    // source : https://www.w3schools.com/howto/howto_js_toggle_password.asp
+
+    function togglePassword() {
+  var x = document.getElementById("MyPassword");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+} 
+</script>
 </body>
 </html>

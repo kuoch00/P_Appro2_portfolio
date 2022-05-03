@@ -174,6 +174,20 @@ class Database{
 
     }
 
+    public function getGalleryAll($catId)
+    {
+        $query = "SELECT * FROM `t_image` WHERE `idCategory` = :catId ORDER BY `idImage` DESC ";
+        $binds=array(
+            0=>array(
+                'var'=> $catId,
+                'marker'=> ':catId',
+                'type' => PDO::PARAM_STR
+            )
+        );
+        $result = $this->queryPrepareExecute($query, $binds);
+        return $result;
+    }
+
     public function getGallery($catId, $subcatId)
     {
         $query = "SELECT * FROM `t_image` WHERE `idCategory` = :catId AND `idSubCategory` = :subcatId  ORDER BY `t_image`.`idImage` DESC";
@@ -376,7 +390,7 @@ class Database{
     
     public function createAccount($username, $password)
     {
-        echo $username . " : " . $password;
+        //echo $username . " : " . $password;
         // $query = "INSERT INTO t_client ( cliPassword, cliFirstName, cliLastName, cliAddress, cliPostalCode, cliCity, cliState, cliCountry, cliPhoneNumber, cliEmailAddress) VALUES (':password', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, ':username') ";
         $query = "INSERT INTO t_client SET cliPassword=:password, cliFirstName=:firstname, cliLastName=:lastname, cliAddress=:address, cliPostalCode=:postalcode, cliCity=:city, cliState=:state, cliCountry=:country, cliPhoneNumber=:phoneNumber, cliEmailAddress=:username";
        

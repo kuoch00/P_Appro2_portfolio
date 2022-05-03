@@ -19,7 +19,7 @@ description : shop : page galerie où on consulte les articles
                         <div class="col-sm">
                            <p><?= $product['artStock']>0 ? "stock : ". $product['artStock'] : "out of stock" ?></p>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-sm-5">
                            <p style="text-align: right;"><?=$product["artPrice"]?> $</p>
                         </div>
                      </div>

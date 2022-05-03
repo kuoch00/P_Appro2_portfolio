@@ -8,14 +8,14 @@ description : page ou le client peut voir son addresse enregistrée, les modifie
 if(isset($_SESSION["connected"]) && $_SESSION["connected"]){?>
     <div class="container">
         <h1>My account</h1>
-            <p>username/email address : <?=$_SESSION['userinfo'][0]['cliEmailAddress']?></p>
+            <p>Email address : <?=$_SESSION['userinfo'][0]['cliEmailAddress']?></p>
         <div>
             <h3>My address</h3>
             <?php
                 if($_SESSION['userinfo'][0]['cliFirstName'] == null){
                     ?>
                     <p>No saved address</p>
-                    <a class="btn btn-primary" href="?order=account&option=addAddress" role="button">Add an address</a>
+                    <a class="btn btn-primary" href="?order=account&option=updateAddress" role="button">Add an address</a>
 
                     <?php
                 }
@@ -42,7 +42,8 @@ if(isset($_SESSION["connected"]) && $_SESSION["connected"]){?>
             <!-- si aucune commande a été passée, ne pas afficher cette rubrique -->
             <?php
                 
-                if(isset($orders)){//isset+true
+                if(isset($orders) && count($orders)!=0){//isset+true
+                    
                     ?>
                     <h3>My orders</h3>
                     <!-- tab avec dernières commandes et leur état ? (delivered, finished, etc)-->

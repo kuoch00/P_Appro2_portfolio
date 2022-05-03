@@ -285,11 +285,9 @@ a > p:hover{
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
-}
-
-.subcat-cover{
-    width: 100%;
-    max-height: 1020px;
+} 
+.cat-cover{ 
+    width: 100%;   
     object-fit: cover;
 }
 .btn-primary{
@@ -299,6 +297,9 @@ a > p:hover{
 }
 .btn-primary:hover{
     background-color: var(--accent-color-hover);
+}
+.btn-primary:disabled{
+    background-color: var(--accent-color);
 }
 .btn-secondary{
     border: none;
@@ -322,3 +323,4 @@ ul.no-bullets{
     max-width: 100%;
     height: max-content;
 }
+

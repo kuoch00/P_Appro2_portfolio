@@ -43,6 +43,8 @@ description : page où on consulte les détails d'un article
         <div class="row">
             <p>stock : <?=$products[$artId-1]["artStock"]?></p>
         </div>
+       
+
         <div class="row align-items-end" >
             <form method="POST" action="?order=shop&artId=<?=$products[$artId-1]["idArticle"]?>&addedToCart=true ">
                 <!-- déjà dans panier ? -->
@@ -51,11 +53,13 @@ description : page où on consulte les détails d'un article
 
                 <!-- si deja dans panier, indiquer la quantité -->
                 <input value="<?= isset($row['artQuantity']) ? $row['artQuantity'] : "1"  ?>" type="number" id="quantity" name="quantity" min="1" max="<?=$products[$artId-1]["artStock"]?>" style="width: 5em;"> 
-                
+                    <div class="d-flex justify-content-end">
                 <!-- si n'est plus en stock : disable le bouton -->
                 <br><button class="btn btn-primary formButtonSubmit" name="article" type="submit" value="<?=$products[$artId-1]["idArticle"]?>" <?=$products[$artId-1]['artStock']==0 ? "disabled" : ""?>>Ajouter au panier</button>
+                </div>
             </form>
         </div>
+        
     </div>
 
 </div>

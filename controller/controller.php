@@ -29,10 +29,13 @@ ob_start();
                     if(isset($_GET["subcatId"])){
                         
                         $subcatId = $_GET["subcatId"];
-
-                        //liste la gallerie
-                        $listGallery = $connect->getGallery($catId, $subcatId);
-                        
+                        if($subcatId == "all"){
+                            $listGallery = $connect->getGalleryAll($catId);
+                        }
+                        else{
+                            //liste la gallerie
+                            $listGallery = $connect->getGallery($catId, $subcatId);
+                        } 
                         include("view/pages/projects/gallery.php");
                     }
                     // va afficher les subcat selon le projet/school work
@@ -243,14 +246,17 @@ ob_start();
                     $accountExists = $connect->checkEmailAddress($email);
                     if($accountExists){ 
                         $isInvalid = true;
+                        include("view/pages/shop/createAccount.php"); 
                     }
                     else{
+                        //crée un compte
                         //adresse bonne, allons entrer ca dans la db
                         $isInvalid = false;
                         $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
                         $createAccount = $connect->createAccount($_POST['email'], $password);
+                        include("view/pages/shop/account.php"); 
                     }
-                    include("view/pages/shop/createAccount.php"); 
+                    
                 }
                 else{
                     $isInvalid = false;
