@@ -18,7 +18,7 @@ description : page où le client se connecte afin de recuprerer ses données
                 </div>
                 <div class="form-group row">
                     <label for="exampleInputPassword1">Password</label>
-                    <input type="password" id="MyPassword" class="form-control <?= isset($isInvalid) && $isInvalid==true ? "is-invalid" : ""?>" id="exampleInputPassword1" name="password" placeholder="Password">
+                    <input type="password" id="password" class="form-control <?= isset($isInvalid) && $isInvalid==true ? "is-invalid" : ""?>" id="exampleInputPassword1" name="password" placeholder="Password">
                    
                     <div id="validationServerUsernameFeedback" class="invalid-feedback">
                         Email address not found or wrong password.

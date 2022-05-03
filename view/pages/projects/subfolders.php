@@ -15,7 +15,11 @@ presente le projet brièvement
 liste les sujets du projet (bd)
 
 -->
-<div class="container">
+<!-- <div style="background: url('resources/img/treasuremap.jpg')  no-repeat center fixed ; background-size: cover;  ">
+</div> -->
+<div class="container ">
+<!-- style="background-image: url('resources/img/treasuremap.jpg');" -->
+    
     <?php
         if($_GET["catId"]>1){?>
             <a class="btn btn-primary" href="?page=projects" role="button"><i class="fa-solid fa-arrow-left"></i> go back</a>

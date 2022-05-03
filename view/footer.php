@@ -133,7 +133,7 @@ $(document).ready(function(){
     // source : https://www.w3schools.com/howto/howto_js_toggle_password.asp
 
     function togglePassword() {
-  var x = document.getElementById("MyPassword");
+  var x = document.getElementById("password");
   if (x.type === "password") {
     x.type = "text";
   } else {

@@ -24,10 +24,6 @@ class Database{
 
             //Activer le mode exeption du pdo
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-            
-            
- 
         }
         // message d'erreur si connection ratée
         catch (PDOException $exeption){
@@ -108,6 +104,20 @@ class Database{
     {
         $query = "SELECT * FROM t_category WHERE idCategory NOT LIKE '1'";
         $result = $this->querySimpleExecute($query);
+        return $result;
+    }
+
+    public function catExists($catId)
+    {
+        $query = "SELECT * FROM `t_category` WHERE idCategory LIKE :catId ";
+        $binds = array(
+            0=>array(
+                'var'=>$catId,
+                'marker'=> ':catId',
+                'type'=>PDO::PARAM_STR
+            )
+        );
+        $result = $this->queryPrepareExecute($query,$binds);
         return $result;
     }
 
