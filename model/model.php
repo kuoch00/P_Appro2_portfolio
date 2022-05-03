@@ -509,9 +509,9 @@ class Database{
     public function reduceStocks($id, $quantity)
     {
         //il faut bind plus mais je ne veux pas changer les autres infos...
-        $query = "UPDATE `t_article` 
-        SET `artStock` = 'artStock-:quantity'
-        WHERE `t_article`.`idArticle` = :id";
+        $query = "UPDATE t_article 
+        SET artStock = artStock-:quantity
+        WHERE t_article.idArticle = :id";
 
         $binds = array(
             0=>array(
