@@ -1,7 +1,8 @@
 <?php
+include_once("model/shopModel.php");
 switch($_GET['order']){
     case 'shop':
-        $connect= new Database();
+        $connect= new ShopModel();
         $products = $connect->getProducts();
         
         // var_dump($products);
@@ -21,7 +22,7 @@ switch($_GET['order']){
         break;
 
     case 'checkout':
-        $connect = new Database();
+        $connect = new ShopModel();
         $products = $connect->getProducts();
 
         //panier
@@ -33,7 +34,7 @@ switch($_GET['order']){
         break;
 
     case 'login':
-        $connect = new Database();
+        $connect = new ShopModel();
         // echo $_SESSION['lastpage'];
         //tentative de connection
         if(isset($_POST['username'])){
@@ -83,6 +84,7 @@ switch($_GET['order']){
             unset($_SESSION["username"]);
             unset($_SESSION["password"]);
             unset($_SESSION["cart"]);
+            unset( $_SESSION["userinfo"]);
             // echo "Successfully disconnected";
             header("Location: ?order=shop");
         }
@@ -99,7 +101,7 @@ switch($_GET['order']){
         break;
 
     case 'summary':
-        $connect = new Database();
+        $connect = new ShopModel();
         $products = $connect->getProducts();
         $userInfo = $_SESSION["userinfo"];
         if(isset($_SESSION['cart'])){ 
@@ -109,7 +111,7 @@ switch($_GET['order']){
         break;
 
     case 'account':
-        $connect = new Database();
+        $connect = new ShopModel();
         $userInfo = $_SESSION["userinfo"];
         
         //odifier addresse
@@ -169,26 +171,34 @@ switch($_GET['order']){
         break;
 
     case 'createAccount':
-        $connect = new Database();
-        // $isInvalid=true;
+        $connect = new ShopModel(); 
+
+        //verification de l'adresse email
+        //elle ne doit pas deja exister dans la db
         if(isset($_POST["email"])){ 
             $email = $_POST["email"];
-            //true = already used // false = free
-            $accountExists = $connect->checkEmailAddress($email);
+            $accountExists = $connect->CheckIfUserExists($email);
             if($accountExists){ 
+                //message d'erreur
                 $isInvalid = true;
+                //renvoie sur la creation de compte
                 include("view/pages/shop/createAccount.php"); 
             }
             else{
-                //crée un compte
-                //adresse bonne, allons entrer ca dans la db
+                //crée un compte 
                 $isInvalid = false;
                 $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
                 $createAccount = $connect->createAccount($_POST['email'], $password);
-                include("view/pages/shop/account.php"); 
-            }
-            
+                
+                //renvoie sur la page du compte
+                // include("view/pages/shop/account.php"); 
+                $_SESSION["connected"] = true;
+                $_SESSION["userinfo"] = $connect->getUserInfo($_POST["email"]);
+                
+                header("Location: ?order=account");
+            } 
         }
+        //page de création de compte
         else{
             $isInvalid = false;
             $accountExists = 0;
@@ -198,23 +208,28 @@ switch($_GET['order']){
 
     case 'confirm':
             // change adresse (si besoin)
-            $connect = new Database();
-            // $_SESSION["userinfo"] = $connect->getUserInfo($userInfo[0]['cliEmailAddress']);;
-            // $userInfo = $_SESSION["userinfo"];
-            //update adress ($post dont work)
-            //add order in db
+            $connect = new ShopModel();
+            /*
+                // $_SESSION["userinfo"] = $connect->getUserInfo($userInfo[0]['cliEmailAddress']);;
+                // $userInfo = $_SESSION["userinfo"];
+                //update adress ($post dont work)
+                //add order in db
+            
+            */
             $newPost = array_map('htmlspecialchars' , $_SESSION['address']);
             //print_r($_SESSION["address"]);
             $updateAddress = $connect->updateAddress(
-                // $userInfo[0]['cliEmailAddress'],
-                // $_POST['firstname'],
-                // $_POST['lastname'],
-                // $_POST['address'],
-                // $_POST['postalCode'],
-                // $_POST['city'],
-                // $_POST['state'],
-                // $_POST['country'],
-                // $_POST['phoneNumber'] 
+                /*
+                    // $userInfo[0]['cliEmailAddress'],
+                    // $_POST['firstname'],
+                    // $_POST['lastname'],
+                    // $_POST['address'],
+                    // $_POST['postalCode'],
+                    // $_POST['city'],
+                    // $_POST['state'],
+                    // $_POST['country'],
+                    // $_POST['phoneNumber'] 
+                */ 
                 $newPost['emailAddress'],
                 $newPost['firstname'],
                 $newPost['lastname'],
@@ -223,38 +238,37 @@ switch($_GET['order']){
                 $newPost['city'],
                 $newPost['state'],
                 $newPost['country'],
-                $newPost['phoneNumber']
-                
+                $newPost['phoneNumber'] 
             );
+            //maj du tableau
             //prend les nouvelles informations
             $_SESSION["userinfo"] = $connect->getUserInfo($newPost['emailAddress']);
 
             //add order in db
             $addOrder = $connect->addOrder($_SESSION['userinfo'][0]['idClient'], $_SESSION['total']);
-            //idclient
-            //$total = arrayCart.php
+            /*
+                //idclient
+                //$total = arrayCart.php
 
-            // $_SESSION["userinfo"] = $connect->getUserInfo($userInfo[0]['cliEmailAddress']);
-            // $addOrder = $connect->addOrder($userInfo[0]['idClient'], /* $total */);
-            
+                // $_SESSION["userinfo"] = $connect->getUserInfo($userInfo[0]['cliEmailAddress']);
+                // $addOrder = $connect->addOrder($userInfo[0]['idClient']);
+                
+            */ 
             //reduction des stocks
             foreach($_SESSION['cart'] as $article){
                 $stockreduc = $connect->reduceStocks($article['artId'], $article['artQuantity']);
-                
             }
-
 
             //DELETE SHOPPING CART
             unset($_SESSION['cart']);
-
-            header("Location: ?order=thanks");
-        
+            
+            //redirect vers remerciments
+            header("Location: ?order=thanks"); 
         break;
     case 'thanks':
         include ("view/pages/shop/thankyou.php");
-        break;
-        # code...
-        break;
+        break; 
+
     default :
         include("view/404.php");
         break;

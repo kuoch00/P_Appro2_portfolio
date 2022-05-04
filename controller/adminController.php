@@ -1,4 +1,6 @@
 <?php
+include_once("model/adminModel.php");
+
 switch($_GET['admin']){
     case 'login':
         if($_SESSION['adminConnected']){

@@ -1,13 +1,14 @@
 <?php
+include_once("model/galleryModel.php");
 switch($_GET["page"]){ 
     case 'home':
-        $connect= new Database();
+        $connect= new GalleryModel();
         $listProjects = $connect->getProjectList();
         include("view/pages/home.php");
         break;
 
     case 'projects':
-        $connect= new Database();
+        $connect= new GalleryModel();
         //set directement catId=1 si school work selectionné (défini dans le nav)
         //
         if(isset($_GET["catId"])){

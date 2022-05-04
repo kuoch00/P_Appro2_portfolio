@@ -37,7 +37,9 @@ liste les sujets du projet (bd)
             <a class="container-center" href="?page=projects&catId=<?=$catId?>&subcatId=all">
             <!-- id du projet + id du subfolder -->
             <!-- img derniere image ajoutée -->
-                <img class="cat-cover" src="resources/img/2.png" alt="image">
+                <div class="ratio ratio-21x9">
+                    <img class="cat-cover" src="resources/img/2.png" alt="image">
+                </div>
                 <h3>All</h3>
             </a> 
         </div>
@@ -50,7 +52,10 @@ liste les sujets du projet (bd)
                 <a class="container-center" href="?page=projects&catId=<?= $subcategory["idCategory"]?>&subcatId=<?=$subcategory["idSubCategory"]?>">
                 <!-- id du projet + id du subfolder -->
                 <!-- img derniere image ajoutée -->
-                    <img class="cat-cover" src="resources/img/2.png" alt="image">
+                    <div class="ratio ratio-21x9">
+                        <img class="cat-cover" src="resources/img/2.png" alt="image">
+                    </div>
+                    
                     <h3><?= $subcategory["subName"]?></h3>
                 </a> 
             </div>

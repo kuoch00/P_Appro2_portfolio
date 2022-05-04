@@ -1,7 +1,7 @@
 <?php
 header("Content-Type: text/html;charset=UTF-8");
 include_once 'BaseModel.php';
-class galleryModel extends BaseModel
+class GalleryModel extends BaseModel
 {
     /**
      * function that get the list of all projects that are not school work

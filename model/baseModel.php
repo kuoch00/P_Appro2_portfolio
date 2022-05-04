@@ -30,7 +30,7 @@ class BaseModel
      * @param string $query
      * @return array
      */
-    private function querySimpleExecute($query)
+    protected function querySimpleExecute($query)
     {
         $req = $this->pdo->query($query);
         $arrayData = $this->formatData($req);
@@ -45,7 +45,7 @@ class BaseModel
      * @param array $binds
      * @return array
      */
-    private function queryPrepareExecute($query, $binds)
+    protected function queryPrepareExecute($query, $binds)
     {
         $req = $this->pdo->prepare($query);
 

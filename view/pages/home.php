@@ -55,7 +55,7 @@ description : page index/home où l'artiste est présentée
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button> -->
                 </div>
                 <!-- images -->
-                <div class="carousel-inner">
+                <div class="carousel-inner ratio ratio-16x9">
                     
                     <!-- foreach ici -->
                     <?php
