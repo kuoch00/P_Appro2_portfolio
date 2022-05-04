@@ -46,7 +46,7 @@ images lues de gauche a droite dans ordre chronologique inversé (entrées les p
   <!-- Modal : permet d'avoir un apercu de l'image en plus grand-->
   <!-- source : https://stackoverflow.com/a/71326915 -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
       <div class="modal-content">
         <div class="modal-body">
           <div class="item"><img id="modalImage" class="img-fluid" /></div>
