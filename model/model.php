@@ -77,7 +77,7 @@ class Database{
     * traiter les données pour les retourner par exemple en tableau associatif 
     * (avec PDO::FETCH_ASSOC)
     *
-    *@param PDOStatement $req 
+    * @param PDOStatement $req 
     */
     private function formatData($req)
     {
