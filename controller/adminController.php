@@ -58,7 +58,20 @@ switch($_GET['admin']){
         
         break;
     case 'addItem':
-        include('view/pages/admin/addItem.php');
+        if (isset($_POST['name'])) {
+            //$addArticle = $connect->addArticle($_POST['name'], $_POST['description'], $_POST['price'], $_POST['stock'], $_FILES['image']);
+            $source = $_FILES['image']['tmp_name'];
+            
+            $destination = "resources/img-shop/" . $_FILES['image']['name'];
+            
+            $test = move_uploaded_file($source, $destination);
+            echo $test;
+            # code...
+        }
+        else{
+            include('view/pages/admin/addItem.php');
+        }
+        
         break;
     default :
     include("view/404.php");

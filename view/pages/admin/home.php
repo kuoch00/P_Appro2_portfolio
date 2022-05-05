@@ -10,8 +10,9 @@ edit shop
         edit article
         delete article
  -->
-
-<div class="accordion container-background" id="">
+<div class="container mt-3">
+<h3>Admin</h3>
+<div class="accordion" id="">
     <div class="accordion-item bg-transparent">
         <h2 class="accordion-header mt-0" id="headingOne">
             <button class="accordion-button collapsed bg-color" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
@@ -68,4 +69,5 @@ edit shop
             </div>
         </div>
     </div>
+</div>
 </div>

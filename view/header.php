@@ -70,8 +70,8 @@ description : header de la page (image avec menu de navigation)
                             
                         </div>
                     </div>
-                    <div>
-                        <a class="nav-item nav-link text-white" href="?admin=login">Admin</a>
+                    <div class="ps-">
+                        <a class="nav-item nav-link text-white" href="?admin=login">Admin <?= isset($_SESSION['adminConnected']) ? " (connected) " : "" ?> </a>
                     </div>
                 </div>
                 </div>
