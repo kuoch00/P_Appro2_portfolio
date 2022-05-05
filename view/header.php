@@ -16,7 +16,7 @@ description : header de la page (image avec menu de navigation)
                         <img class="header-img" src="resources/img/head2.png" alt="yay">
                     </div>
                 </div>
-                <h1 class="title ">Onyx</h1>
+                <h1 class="title">Onyx</h1>
             </div>
         </div>
 
@@ -27,7 +27,7 @@ description : header de la page (image avec menu de navigation)
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
                     <div class="container-fluid"> 
                         <div class="navbar-nav">
                             <a class="nav-item nav-link 
@@ -68,12 +68,12 @@ description : header de la page (image avec menu de navigation)
                                 <a class="nav-item nav-link <?= isset($_GET["page"])? ($_GET["page"]== "contact" ? "active" : ""):""?> " href="?page=contact">Contact</a>
                            
                             
-                            
                         </div>
                     </div>
-                    <div>
-                        <a class="nav-item nav-link" href="?admin=login">Admin</a>
+                    <div class="ps-">
+                        <a class="nav-item nav-link text-white" href="?admin=login">Admin <?= isset($_SESSION['adminConnected']) ? " (connected) " : "" ?> </a>
                     </div>
+                </div>
                 </div>
                 
             </nav>

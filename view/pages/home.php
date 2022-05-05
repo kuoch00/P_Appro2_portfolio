@@ -55,26 +55,36 @@ description : page index/home où l'artiste est présentée
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button> -->
                 </div>
                 <!-- images -->
-                <div class="carousel-inner">
+                <div class="carousel-inner ratio ratio-16x9">
                     
                     <!-- foreach ici -->
                     <?php
                     foreach($listProjects as $project){
                         if($project['idCategory'] == 2){?>
                             <div class="carousel-item active">
-                                <img src="resources/img/<?=$project['catImage']?>" class="d-block w-100" alt="1">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5><?=$project['catName']?></h5>
+                                <div class="gradient-overlay">
+                                    <img src="resources/img/<?=$project['catImage']?>" class="d-block w-100" alt="1">
                                 </div>
+                                <a href="?page=projects&catId=<?=$project['idCategory']?>">
+                                    <div class="carousel-caption d-md-block">
+                                        <h5 class="ms-0"  style="text-shadow: 2px 2px 4px black;"><?=$project['catName']?></h5>
+                                    </div>
+                                </a>
                             </div>
                             <?php
                         }
                         else{?>
                             <div class="carousel-item">
-                                <img src="resources/img/<?=$project['catImage']?>" class="d-block w-100" alt="...">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5><?=$project['catName']?></h5>
+                                <div class="gradient-overlay">
+                                    <!-- <div class=" ratio ratio-16x9"></div> -->
+                                    <img src="resources/img/<?=$project['catImage']?>" class="d-block w-100" alt="...">
                                 </div>
+                                <a href="?page=projects&catId=<?=$project['idCategory']?>">
+                                    <div class="carousel-caption d-md-block">
+                                        <h5 class="ms-0" style="text-shadow: 2px 2px 4px black;"><?=$project['catName']?></h5>
+                                    </div>
+                                </a>
+                                    
                             </div>
                             <?php
                         }

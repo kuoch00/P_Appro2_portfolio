@@ -32,7 +32,15 @@ DONE : Reduc stocks
     https://www.fundaofwebit.com/php-pdo/how-to-edit-update-data-into-database-using-pdo-in-php
 
 
+
+
+
+admin
+
+TODO : login
+
+
+
+
 to not do bc no time :
 - sauvegarder le shopping cart apres déconnection ?
-
-
