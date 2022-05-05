@@ -3,28 +3,34 @@ include_once("model/adminModel.php");
 
 switch($_GET['admin']){
     case 'login':
-        if($_SESSION['adminConnected']){
+        if(isset($_SESSION['adminConnected']) && $_SESSION['adminConnected']){
             //renvoie sur la page home
             header("Location: ?admin=home");
         }
-        else{
-            $connect = new Database();
+        else{ 
             //tentative de connection
             if(isset($_POST['username'])){
+                
+                $connect = new Database();
                 // $checkAdmin = $connect->
-
+                $_SESSION['adminConnected']=true;
+                header('Location: ?admin=home');
             }
 
             //page de connection
             else{
                 // echo "test";
                 include("view/pages/admin/login.php");
-            }
-            
+            } 
         } 
         break;
     case 'home':
-        include("view/pages/admin/home.php");
+        if(isset($_POST['option'])){
+            echo $_POST['option'];
+        }
+        else{
+            include("view/pages/admin/home.php");
+        }
         break;
     case 'edithome':
         include("view/pages/admin/editHome.php");
@@ -50,7 +56,9 @@ switch($_GET['admin']){
             // include
         }
         
-
+        break;
+    case 'addItem':
+        include('view/pages/admin/addItem.php');
         break;
     default :
     include("view/404.php");
