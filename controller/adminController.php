@@ -39,7 +39,10 @@ switch($_GET['admin']){
         if(isset($_GET['option'])){
            switch($_GET['option']){
             case 'add':
-                # code...
+                $connect= new AdminModel();
+                $listCategories = $connect->getCategories();
+                $listSubcat = $connect->getSubcategories();
+                include('view/pages/admin/addWork.php');
                 break;
             case 'edit':
                 # code...

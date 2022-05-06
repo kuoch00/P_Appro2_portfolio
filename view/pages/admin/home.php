@@ -34,7 +34,7 @@ edit shop
         </h2>
         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-                <a class="btn btn-primary" href="?admin=addWork" role="button">Add new work</a>
+                <a class="btn btn-primary" href="?admin=works&option=add" role="button">Add new work</a>
 
                 show array projects
                     button : add new work

@@ -3,6 +3,19 @@ header("Content-Type: text/html;charset=UTF-8");
 include_once 'BaseModel.php';
 class AdminModel extends BaseModel
 {
+    public function getCategories()
+    {
+        $query="SELECT * FROM t_category";
+        $result = $this->querySimpleExecute($query);
+        return $result;
+    }
+    public function getSubcategories()
+    {
+        $query="SELECT * FROM t_subcategory";
+        $result = $this->querySimpleExecute($query);
+        return $result;
+    }
+
     public function addArticle($name, $description, $price, $stock, $imageFile)
     {
         $query = "INSERT INTO `t_article` SET artName=:artName, artPrice=:artPrice, artDescription=:artDescription, artStock=:artStock, artImage=:artImage";
