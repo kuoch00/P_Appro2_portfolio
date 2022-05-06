@@ -28,54 +28,53 @@ description : header de la page (image avec menu de navigation)
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
-                    <div class="container-fluid"> 
-                        <div class="navbar-nav">
-                            <a class="nav-item nav-link 
-                                <?= isset($_GET["page"])? ($_GET["page"]== "home" ? "active" : ""):"" ?> "
-                                href="?page=home"
-                                >About me 
-                            </a>
-                            
-                            <!-- 
-                                1. classe regarde si doit mettre en active ou non 
-                                2. href va permettre au GET dans le controller de changer de page en changeant l'adresse
-                            -->
-                            
-                            <!-- ne fonctionnne plus on met un case project pour projects et school  -->
-                            <?php
-                                $activeState;
-                                if(isset($_GET['page'])){
-                                    if($_GET['page']=="projects"){
-                                        if(isset($_GET['catId'])){
-                                            if($_GET['catId']!=1){
-                                                $activeState = "active";
+                        <div class="container-fluid"> 
+                            <div class="navbar-nav">
+                                <a class="nav-item nav-link 
+                                    <?= isset($_GET["page"])? ($_GET["page"]== "home" ? "active" : ""):"" ?> "
+                                    href="?page=home"
+                                    >About me 
+                                </a>
+                                
+                                <!-- 
+                                    1. classe regarde si doit mettre en active ou non 
+                                    2. href va permettre au GET dans le controller de changer de page en changeant l'adresse
+                                -->
+                                
+                                <!-- ne fonctionnne plus on met un case project pour projects et school  -->
+                                <?php
+                                    $activeState;
+                                    if(isset($_GET['page'])){
+                                        if($_GET['page']=="projects"){
+                                            if(isset($_GET['catId'])){
+                                                if($_GET['catId']!=1){
+                                                    $activeState = "active";
+                                                }
+                                                else{
+                                                    $activeState = "";
+                                                }
                                             }
                                             else{
-                                                $activeState = "";
+                                                $activeState = "active";
                                             }
                                         }
-                                        else{
-                                            $activeState = "active";
-                                        }
                                     }
-                                }
 
-                            ?>
-                            
+                                ?>
+                                
                                 <a class="nav-item nav-link <?=$activeState?>" href="?page=projects">Projects</a>
                                 <a class="nav-item nav-link <?= isset($_GET["page"]) ? ($_GET["page"]== "projects" && isset($_GET['catId']) && $_GET['catId']==1 ? "active" : ""):"" ?> " href="?page=projects&catId=1">School work</a>
                                 <a class="nav-item nav-link <?= isset($_GET["order"])? ($_GET["order"]== "shop" ? "active" : ""):""?> " href="?order=shop">Shop</a>
                                 <a class="nav-item nav-link <?= isset($_GET["page"])? ($_GET["page"]== "contact" ? "active" : ""):""?> " href="?page=contact">Contact</a>
-                           
                             
+                                
+                            </div>
+                        </div>
+                        <div>
+                            <a class="nav-item nav-link text-white" href="?admin=login"  style="width: max-content;">Admin <?= isset($_SESSION['adminConnected']) ? " (connected) " : "" ?> </a>
                         </div>
                     </div>
-                    <div class="ps-">
-                        <a class="nav-item nav-link text-white" href="?admin=login">Admin <?= isset($_SESSION['adminConnected']) ? " (connected) " : "" ?> </a>
-                    </div>
-                </div>
-                </div>
-                
+                </div> 
             </nav>
             <!-- <nav class="navbar navbar-light">
 

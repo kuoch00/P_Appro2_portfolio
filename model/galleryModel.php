@@ -92,6 +92,11 @@ class GalleryModel extends BaseModel
 
     }
 
+    public function getSubCatImage($subcatId)
+    {
+        # code...
+    }
+
     public function getGalleryAll($catId)
     {
         $query = "SELECT * FROM `t_image` WHERE `idCategory` = :catId ORDER BY `idImage` DESC ";

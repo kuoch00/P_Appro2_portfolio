@@ -54,8 +54,8 @@ if(isset($_SESSION["connected"])){
             ?>
         </div>
 
-        <div>
-            <a class="btn btn-primary" href="?order=confirm" role="button">Finish order</a>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <a class="btn btn-primary" href="?order=confirm" role="button">Confirm order</a>
             <!-- passer le total -->
         </div>
 

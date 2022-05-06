@@ -1,5 +1,5 @@
 <div>
-    <table class="table">
+    <table class="table ">
         <tr>
             <th scope="col">Article name</th>
             <th scope="col">Price</th>
@@ -10,12 +10,9 @@
     <?php
     $subtotal = 0;
     $cart = $_SESSION['cart'];
-            //print_r($cart);
-
+            //print_r($cart); 
             //GET QUANTITY 
             // $cart[3]['artId']
-
-
 
     //echo print_r($cartProducts);
         //die();
@@ -23,7 +20,6 @@
     foreach($cartProducts as $row ){
         foreach($row as $product){
             
-
             //MATCHES ID FROM SESSION CART AND ID FROM DB
             foreach ($cart as $article){
                 if ($article['artId'] == $product['idArticle']){
@@ -32,12 +28,13 @@
                 }
             }
           ?>  
-            <tr>
-                
+            <tr> 
                 <th scope="row"><a href="?order=shop&artId=<?= $product['idArticle']?>"><?=$product['artName']?></a></td>
                 <td><?=$product['artPrice']?> $</td>
-                <td><?=$quantity?></td>
+                <td><?=$quantity?> </td>
                 <td><?=$product['artPrice']*$quantity . " $"?></td>
+                
+
             </tr>
         <?php
         //ajoute au sous-total
@@ -46,7 +43,7 @@
     }
     
     
-
+//fin de la commande
     if($_GET['order']=='summary' && isset($trackingFee) && $trackingFee!=0){
         ?>
         <tr>

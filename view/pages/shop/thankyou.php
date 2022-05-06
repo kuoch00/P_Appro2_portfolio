@@ -10,7 +10,7 @@ bouton ramenant au shop
  <div class="container">
    <p>Thank you for ordering with us !</p>
    <p>You can consult your order status <a class="underline" href="?order=account">here</a> or on "<a class="underline" href="?order=account">My account</a>" page anytime.</p>
-   <p>Numéro de votre commande : </p> 
+   <!-- <p>Numéro de votre commande : </p>  -->
    
  </div>
  

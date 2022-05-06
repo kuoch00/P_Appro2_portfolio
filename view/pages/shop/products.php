@@ -14,7 +14,7 @@ description : shop : page galerie où on consulte les articles
                <a href="?order=shop&artId=<?=$product["idArticle"]?>">
                   <div class="card rounded h-100">
                      <div class="card-img-top;"style="width: 100%; height:70%; ">
-                        <img class="rounded-top" style="width: 100%; height:100%; object-fit:cover;"  src="resources/img-shop/<?=$product["artImage"]?>" alt="image">
+                        <img class="rounded-top" style="width: 100%; height:100%; object-fit:cover;"  src="resources/img-shop/<?=$product["artImage"]?>" alt="<?=$product["artImage"]?>">
                      </div>
                      <div class="card-body">
                         <h4 class="mt-1"><?=$product["artName"]?></h4>
