@@ -242,12 +242,13 @@ a.container-center{
 .card:hover{
     background-color:#ffffff2f;
 }
+
 .img-card{
     height: auto;
-    width: auto;
+    width: 100%;
     margin-bottom: 1em;
     object-fit: contain;
-}
+} 
 a > p:hover{
     color: var(--accent-color);
 }
@@ -344,6 +345,10 @@ ul.no-bullets{
     color: var(--txt-color);
 }
 
+.form-control:hover:not(:disabled):not([readonly])::file-selector-button{
+    background-color: var(--accent-color-hover);
+    
+}
 
 
 

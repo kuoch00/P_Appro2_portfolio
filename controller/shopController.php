@@ -8,15 +8,17 @@ switch($_GET['order']){
         // var_dump($products);
         if(isset($_GET["artId"])){
             $artId = $_GET["artId"]; 
+            $product = $connect->getProduct($artId);
 
-            if(isset($_GET["addedToCart"])){
+            if(isset($_GET["addedToCart"])){//ajoute article au panier
                 include("view/pages/shop/addToBasket.php");
             }
-            else{
+            else{//montre details de l'article
                 include("view/pages/shop/details.php");
             }
         }  
-        else{
+        else{//liste des produits
+
             include("view/pages/shop/products.php");
         }
         break;

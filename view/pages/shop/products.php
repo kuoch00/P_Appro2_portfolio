@@ -9,16 +9,20 @@ description : shop : page galerie où on consulte les articles
 <div class="container ">
    <div class="row">
       <?php
-      foreach ($products as $product){?>
+      foreach ($products as $product){?> 
          <div class="col col-sm-6 col-md-3 ">
                <a href="?order=shop&artId=<?=$product["idArticle"]?>">
                   <div class="card">
-                     <img class="img-card" src="resources/img-shop/<?=$product["artImage"]?>" alt="image">
+                     <div class="artImg-container">
+                        <img class="img-card" src="resources/img-shop/<?=$product["artImage"]?>" alt="image">
+                     </div>
+                     
+                  
                      <h4><?=$product["artName"]?></h4>
                      <div class="row">
                         <div class="col-sm">
                            <p><?= $product['artStock']>0 ? "stock : ". $product['artStock'] : "out of stock" ?></p>
-                        </div>
+                        </div> 
                         <div class="col-sm-5">
                            <p style="text-align: right;"><?=$product["artPrice"]?> $</p>
                         </div>

@@ -15,6 +15,20 @@ class ShopModel extends BaseModel
         return $result; 
     }
 
+    public function getProduct($id)
+    {
+        $query = "SELECT * FROM `t_article` WHERE `idArticle` = :id";
+        $binds=array(
+            0=>array(
+                'var'=> $id,
+                'marker'=> ':id',
+                'type'=> PDO::PARAM_STR
+            )
+            );
+        $result = $this->queryPrepareExecute($query, $binds);
+        return $result; 
+    }
+
     /**
      * liste des produits du cart correspondant aux id saved
      * 
