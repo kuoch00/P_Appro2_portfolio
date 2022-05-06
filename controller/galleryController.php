@@ -38,6 +38,21 @@ switch($_GET["page"]){
                     
                     //liste des subcat
                     $listSubcategories = $connect->getSubcategoryList($catId);
+
+                    $listSubcatImages = array();
+                    //image
+                    foreach($listSubcategories as $subcategory){ 
+                        //echo "<br> ". $subcategory['idSubCategory'] .  " <br>";
+                        $subcat = $subcategory['idSubCategory'];
+                        $subcatImage = $connect->getSubcatImage($catId, $subcat);
+                        //print_r($subcatImage); 
+                        $listSubcatImages[] = $subcatImage[0];//ne marche pas
+                        // print_r($listSubcatImages);
+                        // die();
+                        
+                    }
+                    
+                   
                     include("view/pages/projects/subfolders.php");
                 }
                 else{//id n'existe pas

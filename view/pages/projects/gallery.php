@@ -10,7 +10,7 @@ images lues de gauche a droite dans ordre chronologique inversé (entrées les p
 <!-- DONE : 2/3  colonnes verticales avec largeur fixée -->
 <!-- DONE : implementer modal view (js) -->
 <div class="container">
-  <a class="btn btn-primary" href="?page=projects" role="button"><i class="fa-solid fa-arrow-left"></i> go back</a>
+  <a class="btn btn-primary" href="?page=projects&catId=<?=$_GET['catId']?>" role="button"><i class="fa-solid fa-arrow-left"></i> go back</a>
 
   <!-- galerie -->
   <div class="row">

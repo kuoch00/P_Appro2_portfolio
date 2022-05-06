@@ -53,9 +53,18 @@ liste les sujets du projet (bd)
                 <a class="" href="?page=projects&catId=<?= $subcategory["idCategory"]?>&subcatId=<?=$subcategory["idSubCategory"]?>">
                 <!-- id du projet + id du subfolder -->
                 <!-- img derniere image ajoutée -->
-                    <div class="ratio ratio-21x9">
-                        <img class="cat-cover" src="resources/img/2.png" alt="image">
-                    </div>
+                    <?php
+                    foreach($listSubcatImages as $subcatImage){
+                        if($subcatImage['idSubCategory']==$subcategory['idSubCategory']){
+                            ?>
+                                <div class="ratio ratio-21x9 bg-secondary " > 
+                                    <img class="cat-cover" src="resources/img/<?=$subcatImage['imaFilename']?>" alt="<?=$subcatImage['imaFilename']?>">
+                                </div>
+                            <?php 
+                        }
+                    }
+                    ?>
+                    
                     
                     <h3 class="text-center"><?= $subcategory["subName"]?></h3>
                 </a> 
