@@ -178,7 +178,7 @@ class ShopModel extends BaseModel
 
         $binds = array(
             0=>array(
-                'var' => "randomShitGoBrrrrrr",
+                'var' => "1234",
                 'marker' => ":orderNumber",
                 'type' => PDO::PARAM_STR
             ),
@@ -204,6 +204,79 @@ class ShopModel extends BaseModel
             )
         );
 
+        $result = $this->queryPrepareExecute($query, $binds);
+        return $result; 
+    }
+
+    /**
+     * get latest order information
+     *
+     * @return array
+     */
+    public function getLastOrder()
+    {
+        $query = "SELECT * FROM `t_order` ORDER BY `idOrder` DESC LIMIT 1 ";
+
+        $result = $this->querySimpleExecute($query);
+        return $result;
+    }
+
+    /**
+     * find article info/price
+     *
+     * @param [type] $id
+     * @return void
+     */
+    public function findArtPrice($id)
+    {
+        $query = "SELECT * FROM `t_article` WHERE `idArticle` = :id ";
+        $binds=array(
+            0=>array(
+                'var'=>$id,
+                'marker'=>':id',
+                'type'=>PDO::PARAM_STR
+            )
+        );
+        $result = $this->queryPrepareExecute($query, $binds);
+        return $result;
+    }
+
+    /**
+     * add data in t_include
+     *
+     * @param [type] $artId
+     * @param [type] $ordId
+     * @param [type] $artQuantity
+     * @param [type] $artPrice
+     * @return void
+     */
+    public function addInclude($artId, $ordId, $artQuantity, $artPrice)
+    {
+        $query = "INSERT INTO `t_include` SET idArticle=:artId, idOrder=:ordId, incQuantity=:artQuantity, incArtPrice=:artPrice";
+        // echo $artId . "<br>" . $ordId . "<br>" . $artQuantity . "<br>" . $artPrice;
+        // die();
+        $binds= array(
+            0=>array(
+                'var'=> $artId ,
+                'marker'=>':artId',
+                'type'=> PDO::PARAM_STR
+            ),
+            1=>array(
+                'var'=> $ordId ,
+                'marker'=>':ordId',
+                'type'=> PDO::PARAM_STR
+            ),
+            2=>array(
+                'var'=> $artQuantity ,
+                'marker'=>':artQuantity',
+                'type'=> PDO::PARAM_STR
+            ),
+            3=>array(
+                'var'=> $artPrice ,
+                'marker'=>':artPrice',
+                'type'=> PDO::PARAM_STR
+            )
+        );
         $result = $this->queryPrepareExecute($query, $binds);
         return $result; 
     }

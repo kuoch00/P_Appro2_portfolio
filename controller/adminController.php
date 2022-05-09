@@ -40,9 +40,43 @@ switch($_GET['admin']){
            switch($_GET['option']){
             case 'add':
                 $connect= new AdminModel();
-                $listCategories = $connect->getCategories();
-                $listSubcat = $connect->getSubcategories();
-                include('view/pages/admin/addWork.php');
+                if(isset($_POST['category'])){//insert in db
+                    // echo $_POST['category'] . "<br>" . $_POST['subCategory'] . "<br>" . $_FILES['image']['name'];
+                    // die();
+
+                    //verifier si catégorie existe
+                    //+get id car on a que le nom
+                    $category = $connect->getCategory($_POST['category']);
+                    //si retourne rien : elle n'existe pas donc il faut la créer
+                    if(empty($category)){
+                        $add = $connect->addCategory($_POST['category']);
+                        //prendre data de la nouvelle category
+                        $category = $connect->getCategory($_POST['category']);
+                    }
+
+                    //verifier si sub-catégorie existe
+                    //+get id car on a que le nom
+                    $subCategory = $connect->getSubcategory($_POST['subCategory']);
+                    //si retourne rien : elle n'existe pas donc il faut la créer
+                    if(empty($subCategory)){
+                        $add = $connect->addSubCategory($_POST['subCategory']);
+                        //prendre data de la nouvelle category
+                        $subCategory = $connect->getSubCategory($_POST['subCategory']);
+                    }
+
+                    // print_r($category);
+                    // print_r($subCategory);
+                    //ajouter dans la db
+                    $addWork = $connect->addWork( $category[0]['idCategory'], $subCategory['idSubCategory'], $_FILES['image']['name']);
+
+                }
+                else{//forms
+                    
+                    $listCategories = $connect->getCategories();
+                    $listSubcat = $connect->getSubcategories();
+                    include('view/pages/admin/addWork.php');
+                }
+                
                 break;
             case 'edit':
                 # code...

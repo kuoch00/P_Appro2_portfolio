@@ -15,10 +15,10 @@
                                 <input type="file" name="image" class="form-control uploadFile img " value="Upload Photo" required>
                             <!-- </label> -->
                             <!-- <input class="form-control" type="file" id="formFile"> -->
-                        </div><!-- col-2 --> 
+                        </div><!-- col --> 
                     </div><!-- row -->
                 </div><!-- row -->  
-            </div>
+            </div> 
         </div>    
         <div class="col-sm-7">
             <div class="row">

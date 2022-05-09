@@ -43,4 +43,4 @@ TODO : add work
 
 
 to not do bc no time :
-- sauvegarder le shopping cart apres déconnection ?
+- sauvegarder le cart apres déconnection ?

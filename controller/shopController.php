@@ -256,11 +256,21 @@ switch($_GET['order']){
                 // $addOrder = $connect->addOrder($userInfo[0]['idClient']);
                 
             */ 
-            //reduction des stocks
+            
             foreach($_SESSION['cart'] as $article){
+                //ajoute article dans include
+                //get order id
+                $orderInfo = $connect->getLastOrder();
+                //get article price
+                $artPrice = $connect->findArtPrice($article['artId']);
+                $addInclude = $connect->addInclude($article['artId'], $orderInfo[0]['idOrder'], $article['artQuantity'], $artPrice[0]['artPrice']);
+                // die();
+                
+                //reduction des stocks
                 $stockreduc = $connect->reduceStocks($article['artId'], $article['artQuantity']);
             }
 
+            
             //DELETE SHOPPING CART
             unset($_SESSION['cart']);
             

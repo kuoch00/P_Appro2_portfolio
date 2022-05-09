@@ -27,7 +27,7 @@
                             <?php
                             foreach($listCategories as $category){
                                 ?>
-                                <option value="<?=$category['catName']?>"> 
+                                <option value="<?=$category['catName']?> "></option>
                                 <?php
                             }
                             ?> 
@@ -39,7 +39,7 @@
                         <label for="itemName" class="form-label">Subcategory</label>
                     </div>
                     <div> 
-                        <input class="form-control" name="subcategory" list="listSubcategories" id="exampleDataList2" placeholder="Ex : Character Design, Storyboard, ..." required>
+                        <input class="form-control" name="subCategory" list="listSubcategories" id="exampleDataList2" placeholder="Ex : Character Design, Storyboard, ..." required>
                         <datalist id="listSubcategories">
                             <?php
                             foreach($listSubcat as $subcat){
