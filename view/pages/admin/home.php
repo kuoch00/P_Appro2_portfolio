@@ -36,12 +36,32 @@ edit shop
             <div class="accordion-body">
                 <a class="btn btn-primary" href="?admin=works&option=add" role="button">Add new work</a>
 
-                show array projects
-                    button : add new work
-                        to add when inserting new work : 
-                            create new category 
-                            create new subcat 
+                <div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Cover</th>
+                            <th scope="col">Description</th> 
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+                            foreach($projects as $project){?>
+                                <tr>
+                                <th scope="row"><?=$project['catName']?></th>
+                                <td><?=$project['catImage']?></td>
+                                <td><?=$project['catDescription']?></td>
+                                </tr>
+                                <?php
+                            }
                             
+                        ?>
+                    
+                        </tbody>
+                    </table>
+                    
+                </div>
                     project 1
                         array all gallery
                     project 2

@@ -18,7 +18,7 @@ class AdminModel extends BaseModel
 
     public function getCategory($catName)
     {
-        $query="SELECT * FROM `t_category` WHERE `catName` LIKE :catName ";
+        $query="SELECT * FROM t_category WHERE catName = :catName";
         $binds=array(
             0=>array(
                 'var'=>$catName,
@@ -32,7 +32,7 @@ class AdminModel extends BaseModel
 
     public function getSubcategory($subName)
     {
-        $query="SELECT * FROM `t_subcategory` WHERE `subName` LIKE :subName ";
+        $query="SELECT * FROM t_subcategory WHERE subName = :subName ";
         $binds=array(
             0=>array(
                 'var'=>$subName,
@@ -46,7 +46,7 @@ class AdminModel extends BaseModel
 
     public function addCategory($catName)//marche pas ?
     {
-        $query="INSERT INTO `t_category` SET catName=:catName";
+        $query="INSERT INTO t_category SET catName=:catName";
         $binds=array(
             0=>array(
                 'var'=>$catName,
@@ -58,18 +58,19 @@ class AdminModel extends BaseModel
         return $result;
     }
 
-    public function addSubcategory($subName)//marche pas ?
+    public function addSubcategory($subcatName)//marche pas ?
     {
         
-        $query="INSERT INTO `t_subcategory` SET subName=:subname";
+        $query="INSERT INTO t_subcategory SET subName=:subcatName";
         $binds=array(
             0=>array(
-                'var'=>$subName,
-                'marker'=>':subName',
+                'var'=>$subcatName,
+                'marker'=>':subcatName',
                 'type'=>PDO::PARAM_STR
             )
         );
-        $result = $this->queryPrepareExecute($query, $binds);
+        
+        $result = $this->queryPrepareExecute($query, $binds); 
         return $result;
         
     }
@@ -78,24 +79,25 @@ class AdminModel extends BaseModel
     {
         // INSERT INTO `t_image` (`idImage`, `idCategory`, `idSubCategory`, `imaFilename`) VALUES (NULL, '3', '1', 'filenameme.jpg') 
         
-        $query="INSERT INTO `t_image` SET idCategory=:idCat , idSubCategory=:idSub , imaFilename=:imaFilename) ";
+        $query="INSERT INTO t_image SET idCategory=:idCat, idSubCategory=:idSub, imaFilename=:imaFilename";
         $binds=array(
             0=>array(
                 'var'=>$idCat,
                 'marker'=>':idCat',
                 'type'=>PDO::PARAM_STR
             ),
-            0=>array(
+            1=>array(
                 'var'=>$idSub,
                 'marker'=>':idSub',
                 'type'=>PDO::PARAM_STR
             ),
-            0=>array(
+            2=>array(
                 'var'=>$filename,
                 'marker'=>':imaFilename',
                 'type'=>PDO::PARAM_STR
             )
         );
+        
         $result = $this->queryPrepareExecute($query, $binds);
         return $result;
     }

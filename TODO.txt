@@ -38,8 +38,13 @@ DONE : Reduc stocks
 admin
 
 TODO : login
-TODO : add work
-
+DONE : add work
+show array projects
+DONE : button : add new work
+    to add when inserting new work : 
+        create new category 
+        create new subcat 
+                            
 
 
 to not do bc no time :

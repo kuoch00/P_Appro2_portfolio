@@ -41,22 +41,27 @@ switch($_GET['admin']){
             case 'add':
                 $connect= new AdminModel();
                 if(isset($_POST['category'])){//insert in db
-                    // echo $_POST['category'] . "<br>" . $_POST['subCategory'] . "<br>" . $_FILES['image']['name'];
+                    echo $_POST['category'] . "<br>" . $_POST['subCategory'] . "<br>" . $_FILES['image']['name'];
                     // die();
 
                     //verifier si catégorie existe
                     //+get id car on a que le nom
                     $category = $connect->getCategory($_POST['category']);
+
                     //si retourne rien : elle n'existe pas donc il faut la créer
                     if(empty($category)){
+                        // print_r($category);
+                        // die('is empty');
+                        $isNewCat = true;
                         $add = $connect->addCategory($_POST['category']);
                         //prendre data de la nouvelle category
                         $category = $connect->getCategory($_POST['category']);
                     }
 
+                    // die('is not empty');
                     //verifier si sub-catégorie existe
-                    //+get id car on a que le nom
                     $subCategory = $connect->getSubcategory($_POST['subCategory']);
+
                     //si retourne rien : elle n'existe pas donc il faut la créer
                     if(empty($subCategory)){
                         $add = $connect->addSubCategory($_POST['subCategory']);
@@ -64,11 +69,15 @@ switch($_GET['admin']){
                         $subCategory = $connect->getSubCategory($_POST['subCategory']);
                     }
 
-                    // print_r($category);
-                    // print_r($subCategory);
-                    //ajouter dans la db
-                    $addWork = $connect->addWork( $category[0]['idCategory'], $subCategory['idSubCategory'], $_FILES['image']['name']);
+                    //ajoute a la bd
+                    $addWork = $connect->addWork( $category[0]['idCategory'], $subCategory[0]['idSubCategory'], $_FILES['image']['name']);
+                    
+                    //ajoute dans les fichiers
+                    $source = $_FILES['image']['tmp_name'];            
+                    $destination = "resources/img/" . $_FILES['image']['name'];
+                    $moveFile = move_uploaded_file($source, $destination);
 
+                    include('view/pages/admin/successfulAdd.php');
                 }
                 else{//forms
                     
@@ -100,7 +109,7 @@ switch($_GET['admin']){
             $addArticle = $connect->addArticle($_POST['name'], $_POST['description'], $_POST['price'], $_POST['stock'], $_FILES['image']['name']);
             $source = $_FILES['image']['tmp_name'];            
             $destination = "resources/img-shop/" . $_FILES['image']['name'];
-            $test = move_uploaded_file($source, $destination);
+            $moveFile = move_uploaded_file($source, $destination);
             include('view/pages/admin/itemAdded.php');
             # code...
         }
