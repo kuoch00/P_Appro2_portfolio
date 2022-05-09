@@ -18,7 +18,7 @@ class AdminModel extends BaseModel
 
     public function addArticle($name, $description, $price, $stock, $imageFile)
     {
-        $query = "INSERT INTO `t_article` SET artName=:artName, artPrice=:artPrice, artDescription=:artDescription, artStock=:artStock, artImage=:artImage";
+        $query = "INSERT INTO `t_article` SET artName=:artName, artDescription=:artDescription, artPrice=:artPrice, artStock=:artStock, artImage=:artImage";
 
         $binds = array(
             0=>array(
@@ -28,13 +28,13 @@ class AdminModel extends BaseModel
             ),
             1=>array(
                 'var' => $description,
-                'marker'=> ':artPrice',
+                'marker'=> ':artDescription',
                 'type'=> PDO::PARAM_STR
             ),
             2=>array(
                 'var' => $price,
-                'marker'=> ':artDescription',
-                'type'=> PDO::PARAM_STR
+                'marker'=> ':artPrice',
+                'type'=> PDO::PARAM_STR 
             ),
             3=>array(
                 'var' => $stock,
