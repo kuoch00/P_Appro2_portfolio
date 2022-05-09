@@ -13,7 +13,7 @@ switch($_GET['admin']){
                 
                 $connect = new Database();
                 // $checkAdmin = $connect->
-                $_SESSION['adminConnected']=true;
+                $_SESSION['adminConnected']=true; 
                 header('Location: ?admin=home');
             }
 
@@ -25,6 +25,8 @@ switch($_GET['admin']){
         } 
         break;
     case 'home':
+        $connect = new AdminModel();
+        $listProjects = $connect->getCategories();
         if(isset($_POST['option'])){
             echo $_POST['option'];
         }
@@ -49,16 +51,13 @@ switch($_GET['admin']){
                     $category = $connect->getCategory($_POST['category']);
 
                     //si retourne rien : elle n'existe pas donc il faut la créer
-                    if(empty($category)){
-                        // print_r($category);
-                        // die('is empty');
+                    if(empty($category)){ 
                         $isNewCat = true;
                         $add = $connect->addCategory($_POST['category']);
                         //prendre data de la nouvelle category
                         $category = $connect->getCategory($_POST['category']);
                     }
-
-                    // die('is not empty');
+ 
                     //verifier si sub-catégorie existe
                     $subCategory = $connect->getSubcategory($_POST['subCategory']);
 
@@ -87,8 +86,8 @@ switch($_GET['admin']){
                 }
                 
                 break;
-            case 'edit':
-                # code...
+            case 'editProject':
+                include('view/pages/admin/editProject.php');
                 break;
             case 'delete':
                 # code...
@@ -103,6 +102,7 @@ switch($_GET['admin']){
         }
         
         break;
+    // shop
     case 'addItem':
         if (isset($_POST['name'])) {
             $connect= new AdminModel();

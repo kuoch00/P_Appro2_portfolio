@@ -35,7 +35,6 @@ edit shop
         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
             <div class="accordion-body">
                 <a class="btn btn-primary" href="?admin=works&option=add" role="button">Add new work</a>
-
                 <div>
                     <table class="table">
                         <thead>
@@ -43,15 +42,26 @@ edit shop
                             <th scope="col">Name</th>
                             <th scope="col">Cover</th>
                             <th scope="col">Description</th> 
+                            <th>Options</th>
                             </tr>
                         </thead>
                         <tbody>
                         <?php
-                            foreach($projects as $project){?>
+                            foreach($listProjects as $project){?>
                                 <tr>
                                 <th scope="row"><?=$project['catName']?></th>
                                 <td><?=$project['catImage']?></td>
                                 <td><?=$project['catDescription']?></td>
+                                <td>
+                                    <a href="?admin=works&option=editProject"> 
+                                        <i class="fa-solid fa-pen fa-lg "></i>
+                                    </a>
+                                    <a href="?admin=works&option=deleteProject" class="ms-2">
+                                        <i class="fa-solid fa-trash fa-lg "></i> 
+                                    </a>
+                                    <!-- action dangereuse donc mettre un avertissement!! ou faire un hidden ? -->
+                                
+                                </td>
                                 </tr>
                                 <?php
                             }
