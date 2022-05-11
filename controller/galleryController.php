@@ -4,6 +4,7 @@ switch($_GET["page"]){
     case 'home':
         $connect= new GalleryModel();
         $listProjects = $connect->getProjectList();
+        
         include("view/pages/home.php");
         break;
 

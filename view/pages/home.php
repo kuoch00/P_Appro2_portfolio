@@ -7,7 +7,7 @@ description : page index/home où l'artiste est présentée
 
 <!-- faire flex son contenu  -->
 <!-- faire un media query pour celui là peut etre à cause de la photo  -->
-<div class="container container-item"> 
+<div class="container container-item "> 
     <h2>The Artist</h2>
     <div class="row">
         
@@ -57,14 +57,17 @@ description : page index/home où l'artiste est présentée
                     <!-- foreach ici -->
                     <?php
                     foreach($listProjects as $project){
-                        if($project['idCategory'] == 2){?>
+                        if($project['idCategory'] == 2){
+                        //1= school work, >2= other projects
+                        ?>
                             <div class="carousel-item active">
-                                <div class="gradient-overlay">
-                                    <img src="resources/img/<?=$project['catImage']?>" class="d-block w-100" alt="1">
+                                <div class="gradient-overlay d-flex align-items-center">
+                                    <img src="resources/img/<?=$project['catImage']?>" class="d-block w-100" alt="<?=$project['catImage'] ? $project['catImage'] : "Aucun apercu disponible" ?>" style="height: 100%;">
                                 </div>
                                 <a href="?page=projects&catId=<?=$project['idCategory']?>">
                                     <div class="carousel-caption d-md-block">
                                         <h5 class="ms-0"  style="text-shadow: 2px 2px 4px black;"><?=$project['catName']?></h5>
+                                        
                                     </div>
                                 </a>
                             </div>
@@ -72,9 +75,9 @@ description : page index/home où l'artiste est présentée
                         }
                         else{?>
                             <div class="carousel-item">
-                                <div class="gradient-overlay">
+                                <div class="gradient-overlay d-flex align-items-center">
                                     <!-- <div class=" ratio ratio-16x9"></div> -->
-                                    <img src="resources/img/<?=$project['catImage']?>" class="d-block w-100" alt="<?=$project['catImage']?>">
+                                    <img src="resources/img/<?=$project['catImage']?>" class="d-block w-100" alt="<?=$project['catImage'] ? $project['catImage'] : "Aucun apercu disponible" ?>">
                                 </div>
                                 <a href="?page=projects&catId=<?=$project['idCategory']?>">
                                     <div class="carousel-caption d-md-block">

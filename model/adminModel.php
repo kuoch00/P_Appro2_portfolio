@@ -139,7 +139,19 @@ class AdminModel extends BaseModel
 
     }
 
-    
+    public function getProject($id)
+    {
+        $query="SELECT * FROM `t_category` WHERE `idCategory` = :id";
+        $binds=array(
+            0=>array(
+                'var'=>$id,
+                'marker'=>':id',
+                'type'=>PDO::PARAM_STR
+            )
+        );
+        $result = $this->queryPrepareExecute($query,$binds);
+        return $result;
+    }
 
 }
 

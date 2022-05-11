@@ -53,7 +53,7 @@ edit shop
                                 <td><?=$project['catImage']?></td>
                                 <td><?=$project['catDescription']?></td>
                                 <td>
-                                    <a href="?admin=works&option=editProject"> 
+                                    <a href="?admin=works&option=editProject&id=<?=$project['idCategory']?>"> 
                                         <i class="fa-solid fa-pen fa-lg "></i>
                                     </a>
                                     <a href="?admin=works&option=deleteProject" class="ms-2">

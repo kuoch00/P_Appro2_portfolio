@@ -87,10 +87,20 @@ switch($_GET['admin']){
                 
                 break;
             case 'editProject':
-                include('view/pages/admin/editProject.php');
+                $connect = new AdminModel();
+                if(isset($_GET['id'])){
+                    $id = $_GET['id'];
+                    $projectInfo = $connect->getProject($id);
+                    include('view/pages/admin/editProject.php');
+                }
                 break;
             case 'delete':
                 # code...
+                // if(isset($_GET['id'])){
+                //     $id = $_GET['id'];
+                //     $projectInfo = $connect->getProject($id);
+                //     include('view/pages/admin/editProject.php');
+                // }
                 break;
             default :
 
