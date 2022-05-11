@@ -401,3 +401,8 @@ ul.no-bullets{
   cursor:pointer;
   font-size:15px;
 }
+
+.mySlides 
+{
+    display:none;
+}

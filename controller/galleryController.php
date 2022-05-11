@@ -42,7 +42,7 @@ switch($_GET["page"]){
                     $listSubcatImages = array();
 
                     //img pour subcat All
-                    $subcatAllImage = $connect->getSubCatImage($catId, 'all');
+                    $subcatAllArray = $connect->getSubCatImage($catId, 'all');
 
                     //image pour chaque subcat
                     foreach($listSubcategories as $subcategory){ 

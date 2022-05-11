@@ -96,7 +96,7 @@ class GalleryModel extends BaseModel
     public function getSubCatImage($catId, $subcatId)
     { 
         if ($subcatId=='all') {
-            $query = "SELECT * FROM `t_image` WHERE `idCategory` = :catId ORDER BY `idImage` DESC LIMIT 1";
+            $query = "SELECT * FROM `t_image` WHERE `idCategory` = :catId ORDER BY `idImage` DESC LIMIT 5";
             $binds=array(
                 0=>array(
                     'var' => $catId,

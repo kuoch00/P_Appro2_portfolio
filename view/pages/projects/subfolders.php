@@ -38,8 +38,16 @@ liste les sujets du projet (bd)
             <a class="" href="?page=projects&catId=<?=$catId?>&subcatId=all">
             <!-- id du projet + id du subfolder -->
             <!-- img derniere image ajoutée -->
-                <div class="ratio ratio-21x9" style="background-color: var(--secondbg-color)">
-                    <img class="cat-cover" src="resources/img/<?= $subcatAllImage[0]['imaFilename']?>" alt="<?=$subcatAllImage[0]['imaFilename']?>">
+                <div class="ratio ratio-21x9 carousel-fade " style="background-color: var(--secondbg-color)">
+                    <?php
+                        // print_r($subcatAllArray);
+                        // die();
+                        foreach($subcatAllArray as $image){?>
+                            <img class="cat-cover mySlides" src="resources/img/<?= $image['imaFilename']?>" alt="<?=$image['imaFilename']?>">
+                            <?php
+                        }
+                    ?>
+                    <!-- <img class="cat-cover" src="resources/img/<?= $subcatAllArray[0]['imaFilename']?>" alt="<?=$subcatAllArray[0]['imaFilename']?>"> -->
                 </div>
                 <h3 class="text-center">All</h3>
             </a> 
@@ -77,6 +85,7 @@ liste les sujets du projet (bd)
     
     
     
-    
+
+</script>
 </div>
 

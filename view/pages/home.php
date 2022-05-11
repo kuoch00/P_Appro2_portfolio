@@ -30,9 +30,7 @@ description : page index/home où l'artiste est présentée
     <h2>Projects</h2>
     <div class="d-flex justify-content-center">
         <div class="container-mini">
-            <!-- slider ? -->
-            <!-- http://sachinchoolur.github.io/lightslider/ -->
-
+            
             <!-- carousel 
             source : https://getbootstrap.com/docs/4.3/components/carousel/#individual-carousel-item-interval
             -->
@@ -44,8 +42,7 @@ description : page index/home où l'artiste est présentée
                     <?php
                     $numberProjects = count($listProjects); //=2
 
-                    for ($i=0; $i < $numberProjects-1 ; $i++) { 
-                        ?>
+                    for ($i=0; $i < $numberProjects-1 ; $i++) { ?>
                         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to= <?= $i + 1?> aria-label="slide 2"></button>
                         <?php
                     }
@@ -77,7 +74,7 @@ description : page index/home où l'artiste est présentée
                             <div class="carousel-item">
                                 <div class="gradient-overlay">
                                     <!-- <div class=" ratio ratio-16x9"></div> -->
-                                    <img src="resources/img/<?=$project['catImage']?>" class="d-block w-100" alt="...">
+                                    <img src="resources/img/<?=$project['catImage']?>" class="d-block w-100" alt="<?=$project['catImage']?>">
                                 </div>
                                 <a href="?page=projects&catId=<?=$project['idCategory']?>">
                                     <div class="carousel-caption d-md-block">
