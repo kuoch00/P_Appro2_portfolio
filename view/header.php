@@ -20,7 +20,7 @@ description : header de la page (image avec menu de navigation)
             </div>
         </div>
 
-            <!-- menu de navigation  -->
+            <!-- barre de navigation  -->
         <div>
             <nav class="navbar navbar-expand-lg navbar-light ">
                 <div class="container">

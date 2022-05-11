@@ -18,8 +18,8 @@ description : page liste où tous les projets sont présentés
                     <a class="" href="?page=projects&catId=<?=$project["idCategory"]?>">
 
                         <!-- affiche l'image  -->
-                        <div class="ratio ratio-21x9 mt-3">
-                            <img class="cat-cover"  src="resources/img/<?=$project["catImage"]?>" alt="image">
+                        <div class="ratio ratio-21x9 mt-3" style="background-color: var(--secondbg-color)">
+                            <img class="cat-cover"  src="resources/img/<?=$project["catImage"]?>" alt="<?=$project["catImage"] ? $project["catImage"] : 'image' ?>">
                         </div>
 
                         <!-- affiche le nom du projet  -->

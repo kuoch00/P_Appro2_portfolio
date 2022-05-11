@@ -27,7 +27,7 @@ switch($_GET["page"]){
                 } 
                 include("view/pages/projects/gallery.php");
             }
-            // va afficher les cat selon le projet/school work
+            // va afficher les subcat selon le projet/school work
             else{
                 
                 //vérifie que l'id existe
@@ -40,12 +40,16 @@ switch($_GET["page"]){
                     $listSubcategories = $connect->getSubcategoryList($catId);
 
                     $listSubcatImages = array();
-                    //image
+
+                    //img pour subcat All
+                    $subcatAllImage = $connect->getSubCatImage($catId, 'all');
+
+                    //image pour chaque subcat
                     foreach($listSubcategories as $subcategory){ 
                         //echo "<br> ". $subcategory['idSubCategory'] .  " <br>";
                         $subcat = $subcategory['idSubCategory'];
                         $subcatImage = $connect->getSubcatImage($catId, $subcat);
-                        //print_r($subcatImage); 
+                        //print_r($subcatImage);  
                         $listSubcatImages[] = $subcatImage[0];//ne marche pas
                         // print_r($listSubcatImages);
                         // die();

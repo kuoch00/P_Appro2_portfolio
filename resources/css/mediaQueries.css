@@ -5,12 +5,3 @@
 
 
 
-/* @media screen and (max-width: 750px) */
-@include media-breakpoint-down(md){
-    /* petit ecran 
-        wrap image en dessous du texte ? enlever complletement ? osef ?
-    */
-    .col-3{
-        width : 50%;
-    }
-}

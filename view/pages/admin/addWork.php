@@ -25,12 +25,9 @@
                         <input class="form-control" name="category" list="listCategories" id="exampleDataList" placeholder="Ex: School Work, Son of Wrath, ..." required>
                         <datalist id="listCategories">
                             <?php
-                            foreach($listCategories as $category){
-                                ?>
-                                <option value="<?=$category['catName']?> "></option>
-                                <?php
-                            }
-                            ?> 
+                            foreach($listCategories as $category){?>
+                                <option value="<?=$category['catName']?> "></option><?php
+                            }?>
                         </datalist> 
                     </div> 
                 </div>    
@@ -42,8 +39,7 @@
                         <input class="form-control" name="subCategory" list="listSubcategories" id="exampleDataList2" placeholder="Ex : Character Design, Storyboard, ..." required>
                         <datalist id="listSubcategories">
                             <?php
-                            foreach($listSubcat as $subcat){
-                                ?>
+                            foreach($listSubcat as $subcat){?>
                                 <option value="<?=$subcat['subName']?>"> 
                                 <?php
                             }

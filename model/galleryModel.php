@@ -95,20 +95,32 @@ class GalleryModel extends BaseModel
     //error
     public function getSubCatImage($catId, $subcatId)
     { 
+        if ($subcatId=='all') {
+            $query = "SELECT * FROM `t_image` WHERE `idCategory` = :catId ORDER BY `idImage` DESC LIMIT 1";
+            $binds=array(
+                0=>array(
+                    'var' => $catId,
+                    'marker'=>':catId',
+                    'type'=>PDO::PARAM_STR
+                )
+            );
+        }
+        else{
+            $query = "SELECT * FROM t_image WHERE idCategory = :catId AND idSubCategory = :subcatId ORDER BY idImage DESC LIMIT 1";
+            $binds=array(
+                0=>array(
+                    'var' => $catId,
+                    'marker'=>':catId',
+                    'type'=>PDO::PARAM_STR
+                ),
+                1=>array(
+                    'var' => $subcatId,
+                    'marker'=>':subcatId',
+                    'type'=>PDO::PARAM_STR
+                )
+            );
+        }
         
-        $query = "SELECT * FROM t_image WHERE idCategory = :catId AND idSubCategory = :subcatId ORDER BY idImage DESC ";
-        $binds=array(
-            0=>array(
-                'var' => $catId,
-                'marker'=>':catId',
-                'type'=>PDO::PARAM_STR
-            ),
-            1=>array(
-                'var' => $subcatId,
-                'marker'=>':subcatId',
-                'type'=>PDO::PARAM_STR
-            )
-        );
         $result = $this->queryPrepareExecute($query, $binds);
         return $result; 
     }

@@ -35,11 +35,11 @@ liste les sujets du projet (bd)
         ?>
         <div class = "container-item col-md-6"> 
             <?php $catId = $_GET['catId'] ?>
-            <a class=" " href="?page=projects&catId=<?=$catId?>&subcatId=all">
+            <a class="" href="?page=projects&catId=<?=$catId?>&subcatId=all">
             <!-- id du projet + id du subfolder -->
             <!-- img derniere image ajoutée -->
-                <div class="ratio ratio-21x9">
-                    <img class="cat-cover" src="resources/img/2.png" alt="image">
+                <div class="ratio ratio-21x9" style="background-color: var(--secondbg-color)">
+                    <img class="cat-cover" src="resources/img/<?= $subcatAllImage[0]['imaFilename']?>" alt="<?=$subcatAllImage[0]['imaFilename']?>">
                 </div>
                 <h3 class="text-center">All</h3>
             </a> 
@@ -57,7 +57,8 @@ liste les sujets du projet (bd)
                     foreach($listSubcatImages as $subcatImage){
                         if($subcatImage['idSubCategory']==$subcategory['idSubCategory']){
                             ?>
-                                <div class="ratio ratio-21x9 bg-secondary " > 
+                                <div class="ratio ratio-21x9 " style="background-color: var(--secondbg-color);
+" > 
                                     <img class="cat-cover" src="resources/img/<?=$subcatImage['imaFilename']?>" alt="<?=$subcatImage['imaFilename']?>">
                                 </div>
                             <?php 
